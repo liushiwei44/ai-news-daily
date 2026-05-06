@@ -3,210 +3,455 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI 行业快讯 · 归档导航</title>
+  <title>AI 行业快讯 · 期刊归档</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #f6f7f9;
-      --surface: #ffffff;
-      --border: #e4e7ed;
-      --text-primary: #111827;
-      --text-secondary: #6b7280;
-      --text-muted: #9ca3af;
-      --accent: #2563eb;
-      --accent-light: #eff6ff;
-      --radius: 12px;
-      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-hover: 0 4px 16px rgba(0,0,0,0.10);
+      --ink:        #0c0c0e;
+      --ink-2:      #141418;
+      --ink-3:      #1e1e24;
+      --rule:       #2a2a32;
+      --text-1:     #f0ede8;
+      --text-2:     #9e9a94;
+      --text-3:     #5a5760;
+      --gold:       #d4952a;
+      --gold-dim:   #a37220;
+      --gold-glow:  rgba(212,149,42,0.15);
+      --gold-pale:  rgba(212,149,42,0.08);
+      --teal:       #2dd4bf;
+      --radius-sm:  6px;
+      --radius:     10px;
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-                   "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
-      color: var(--text-primary);
+      font-family: "Outfit", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--ink);
+      color: var(--text-1);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      /* subtle noise via repeating-conic-gradient trick */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
     }
 
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%);
-      color: #fff;
-      padding: 48px 24px 40px;
-      text-align: center;
-    }
-    header .eyebrow {
-      font-size: 12px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #93c5fd;
-      margin-bottom: 12px;
-    }
-    header h1 {
-      font-size: clamp(22px, 4vw, 34px);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 10px;
-    }
-    header .subtitle {
-      font-size: 14px;
-      color: #93c5fd;
-      opacity: 0.85;
+    /* ══════════════════════════════════════
+       MASTHEAD
+    ══════════════════════════════════════ */
+    .masthead {
+      border-bottom: 1px solid var(--rule);
+      padding: 0 clamp(20px, 5vw, 80px);
     }
 
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 36px 20px 64px;
-    }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .issue-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .issue-card {
+    /* top bar */
+    .masthead-topbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px 24px;
-      box-shadow: var(--shadow);
-      text-decoration: none;
-      color: inherit;
-      transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
-      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    .issue-card:hover {
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-2px);
-      border-color: #bfdbfe;
+    .topbar-left { display: flex; align-items: center; gap: 16px; }
+    .topbar-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 6px var(--gold);
+      animation: blink 2.4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.3; }
     }
 
-    .issue-card-left {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      min-width: 0;
+    /* wordmark */
+    .masthead-wordmark {
+      text-align: center;
+      padding: 40px 0 32px;
     }
-
-    .issue-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: var(--accent-light);
+    .wordmark-zh {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--text-1);
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .wordmark-rule {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      gap: 12px;
+      margin: 14px auto 16px;
+    }
+    .wordmark-rule-line {
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim));
+    }
+    .wordmark-rule-line.right {
+      background: linear-gradient(90deg, var(--gold-dim), transparent);
+    }
+    .wordmark-diamond {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
       flex-shrink: 0;
     }
+    .wordmark-en {
+      font-family: "Outfit", sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
 
-    .issue-meta { min-width: 0; }
+    /* bottom meta bar */
+    .masthead-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 12px 0;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--rule);
+    }
+    .masthead-meta-sep {
+      width: 3px; height: 3px;
+      background: var(--rule);
+      border-radius: 50%;
+    }
 
-    .issue-title {
-      font-size: 15px;
+    /* ══════════════════════════════════════
+       MAIN
+    ══════════════════════════════════════ */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px clamp(20px, 5vw, 40px) 96px;
+    }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .section-eyebrow-text {
+      font-size: 10.5px;
       font-weight: 600;
-      color: var(--text-primary);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-3);
       white-space: nowrap;
+    }
+    .section-eyebrow-line {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ══════════════════════════════════════
+       ISSUE CARDS
+    ══════════════════════════════════════ */
+    .issues { display: flex; flex-direction: column; gap: 2px; }
+
+    .issue {
+      position: relative;
+      display: grid;
+      grid-template-columns: 72px 1fr auto;
+      align-items: center;
+      gap: 0 24px;
+      padding: 24px 28px;
+      background: var(--ink-2);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: inherit;
       overflow: hidden;
-      text-overflow: ellipsis;
+      transition: border-color 0.22s ease, background 0.22s ease;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: rise 0.5s ease forwards;
+    }
+    .issue:first-child { animation-delay: 0.1s; }
+    .issue:nth-child(2) { animation-delay: 0.2s; }
+    .issue:nth-child(3) { animation-delay: 0.3s; }
+    .issue:nth-child(4) { animation-delay: 0.4s; }
+    .issue:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* gold left accent */
+    .issue::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--gold);
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+    /* hover glow */
+    .issue::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--gold-pale);
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      pointer-events: none;
+    }
+    .issue:hover { border-color: #3a3a46; background: var(--ink-3); }
+    .issue:hover::before { opacity: 1; }
+    .issue:hover::after  { opacity: 1; }
+    .issue:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    /* issue number */
+    .issue-num {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--text-3);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      user-select: none;
+      transition: color 0.22s ease;
+      text-align: center;
+    }
+    .issue:hover .issue-num { color: var(--gold-dim); }
+
+    /* center content */
+    .issue-body { min-width: 0; }
+    .issue-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-1);
+      line-height: 1.3;
+      margin-bottom: 5px;
+      letter-spacing: 0.01em;
     }
     .issue-date {
       font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 2px;
+      font-weight: 300;
+      color: var(--text-2);
+      letter-spacing: 0.04em;
     }
 
-    .issue-badge {
+    /* right side */
+    .issue-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
       flex-shrink: 0;
-      font-size: 11px;
+    }
+    .badge {
+      font-size: 10px;
       font-weight: 600;
-      color: #2563eb;
-      background: var(--accent-light);
-      border: 1px solid #bfdbfe;
-      border-radius: 6px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       padding: 3px 10px;
+      border-radius: 20px;
       white-space: nowrap;
     }
-    .issue-badge.latest {
-      color: #059669;
-      background: #ecfdf5;
-      border-color: #6ee7b7;
+    .badge-latest {
+      color: var(--gold);
+      background: var(--gold-pale);
+      border: 1px solid rgba(212,149,42,0.3);
+    }
+    .badge-archive {
+      color: var(--text-3);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--rule);
+    }
+    .issue-arrow {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-3);
+      transition: border-color 0.22s ease, color 0.22s ease, transform 0.22s ease;
+    }
+    .issue:hover .issue-arrow {
+      border-color: var(--gold-dim);
+      color: var(--gold);
+      transform: translateX(3px);
     }
 
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
     footer {
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 12px;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--rule);
+      padding: 28px clamp(20px, 5vw, 80px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+    }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--text-3);
+      letter-spacing: 0.05em;
+    }
+    .footer-copy a {
+      color: var(--gold-dim);
+      text-decoration: none;
+    }
+    .footer-copy a:hover { color: var(--gold); }
+    .footer-copy a:focus-visible { outline: 1px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+
+    /* ══════════════════════════════════════
+       REDUCED MOTION
+    ══════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      .issue { animation: none; opacity: 1; transform: none; }
+      .topbar-dot { animation: none; }
+      .issue, .issue-arrow, .issue::before, .issue::after,
+      .issue .issue-num { transition: none; }
     }
 
-    @media (max-width: 480px) {
-      .issue-card { padding: 14px 16px; }
-      .issue-badge { display: none; }
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 540px) {
+      .masthead-topbar .topbar-right { display: none; }
+      .issue {
+        grid-template-columns: 48px 1fr;
+        grid-template-rows: auto auto;
+        gap: 0 16px;
+        padding: 18px 18px 18px 20px;
+      }
+      .issue-num { font-size: 26px; }
+      .issue-right {
+        grid-column: 2;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 8px;
+      }
+      .masthead-wordmark { padding: 28px 0 20px; }
+      footer { flex-direction: column; align-items: flex-start; gap: 6px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="eyebrow">Archive · 期刊归档</div>
-  <h1>AI 行业快讯</h1>
-  <p class="subtitle">聚焦软件开发 · 模型前沿 · 中国动态</p>
+<!-- ══ MASTHEAD ══════════════════════════════════════════ -->
+<header class="masthead">
+  <div class="masthead-topbar">
+    <div class="topbar-left">
+      <span class="topbar-dot" aria-hidden="true"></span>
+      <span>AI 行业情报 · 每日更新</span>
+    </div>
+    <div class="topbar-right">2026年 · 北京时间</div>
+  </div>
+
+  <div class="masthead-wordmark">
+    <span class="wordmark-zh">AI 行业快讯</span>
+    <div class="wordmark-rule" aria-hidden="true">
+      <span class="wordmark-rule-line"></span>
+      <span class="wordmark-diamond"></span>
+      <span class="wordmark-rule-line right"></span>
+    </div>
+    <span class="wordmark-en">AI Industry Daily · Archive</span>
+  </div>
+
+  <div class="masthead-meta" aria-label="刊物信息">
+    <span>聚焦软件开发</span>
+    <span class="masthead-meta-sep" aria-hidden="true"></span>
+    <span>模型前沿</span>
+    <span class="masthead-meta-sep" aria-hidden="true"></span>
+    <span>中国动态</span>
+    <span class="masthead-meta-sep" aria-hidden="true"></span>
+    <span>权威媒体综合整理</span>
+  </div>
 </header>
 
+<!-- ══ MAIN ══════════════════════════════════════════ -->
 <main>
-  <p class="section-label">所有期刊</p>
-
-  <div class="issue-list">
-
-    <a class="issue-card" href="ai-news-20260506-1554.html">
-      <div class="issue-card-left">
-        <div class="issue-icon">📰</div>
-        <div class="issue-meta">
-          <div class="issue-title">AI 行业快讯 Top 10</div>
-          <div class="issue-date">2026年5月6日 · 15:54（北京时间）</div>
-        </div>
-      </div>
-      <span class="issue-badge latest">最新一期</span>
-    </a>
-
-    <a class="issue-card" href="ai-news-20260506-1458.html">
-      <div class="issue-card-left">
-        <div class="issue-icon">📰</div>
-        <div class="issue-meta">
-          <div class="issue-title">AI 行业快讯 Top 10</div>
-          <div class="issue-date">2026年5月6日 · 14:58（北京时间）</div>
-        </div>
-      </div>
-      <span class="issue-badge">往期</span>
-    </a>
-
-    <!-- 新增期刊时在上方插入一个 <a class="issue-card"> 条目，并将旧的 latest badge 去掉 -->
-
+  <div class="section-eyebrow" aria-hidden="true">
+    <span class="section-eyebrow-text">所有期刊</span>
+    <span class="section-eyebrow-line"></span>
   </div>
+
+  <nav class="issues" aria-label="期刊列表">
+
+    <a class="issue" href="ai-news-20260506-1554.html" aria-label="第2期 — 2026年5月6日 15:54，最新一期">
+      <div class="issue-num" aria-hidden="true">02</div>
+      <div class="issue-body">
+        <div class="issue-title">AI 行业快讯 Top 10</div>
+        <div class="issue-date">2026年5月6日 &nbsp;·&nbsp; 15:54 北京时间</div>
+      </div>
+      <div class="issue-right">
+        <span class="badge badge-latest">最新一期</span>
+        <span class="issue-arrow" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+    <a class="issue" href="ai-news-20260506-1458.html" aria-label="第1期 — 2026年5月6日 14:58，往期">
+      <div class="issue-num" aria-hidden="true">01</div>
+      <div class="issue-body">
+        <div class="issue-title">AI 行业快讯 Top 10</div>
+        <div class="issue-date">2026年5月6日 &nbsp;·&nbsp; 14:58 北京时间</div>
+      </div>
+      <div class="issue-right">
+        <span class="badge badge-archive">往期</span>
+        <span class="issue-arrow" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- 新增期刊时在上方插入条目，期号递增，旧条目 badge 改为 badge-archive -->
+
+  </nav>
 </main>
 
+<!-- ══ FOOTER ══════════════════════════════════════════ -->
 <footer>
-  由 <a href="https://claude.ai" style="color:#2563eb;text-decoration:none;" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新
+  <span class="footer-brand">AI 行业快讯 · 期刊归档</span>
+  <span class="footer-copy">
+    由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新
+  </span>
 </footer>
 
 </body>
