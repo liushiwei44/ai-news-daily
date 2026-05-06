@@ -1,9 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=ai-news-20260506-1458.html" />
-  <title>AI 行业快讯</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 行业快讯 · 归档导航</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --border: #e4e7ed;
+      --text-primary: #111827;
+      --text-secondary: #6b7280;
+      --text-muted: #9ca3af;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-hover: 0 4px 16px rgba(0,0,0,0.10);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                   "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%);
+      color: #fff;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+    header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    header .subtitle {
+      font-size: 14px;
+      color: #93c5fd;
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 36px 20px 64px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .issue-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .issue-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+      gap: 16px;
+    }
+    .issue-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: #bfdbfe;
+    }
+
+    .issue-card-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .issue-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .issue-meta { min-width: 0; }
+
+    .issue-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .issue-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .issue-badge {
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 600;
+      color: #2563eb;
+      background: var(--accent-light);
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      padding: 3px 10px;
+      white-space: nowrap;
+    }
+    .issue-badge.latest {
+      color: #059669;
+      background: #ecfdf5;
+      border-color: #6ee7b7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 480px) {
+      .issue-card { padding: 14px 16px; }
+      .issue-badge { display: none; }
+    }
+  </style>
 </head>
-<body></body>
+<body>
+
+<header>
+  <div class="eyebrow">Archive · 期刊归档</div>
+  <h1>AI 行业快讯</h1>
+  <p class="subtitle">聚焦软件开发 · 模型前沿 · 中国动态</p>
+</header>
+
+<main>
+  <p class="section-label">所有期刊</p>
+
+  <div class="issue-list">
+
+    <a class="issue-card" href="ai-news-20260506-1458.html">
+      <div class="issue-card-left">
+        <div class="issue-icon">📰</div>
+        <div class="issue-meta">
+          <div class="issue-title">AI 行业快讯 Top 10</div>
+          <div class="issue-date">2026年5月6日 · 14:58（北京时间）</div>
+        </div>
+      </div>
+      <span class="issue-badge latest">最新一期</span>
+    </a>
+
+    <!-- 新增期刊时在上方插入一个 <a class="issue-card"> 条目，并将旧的 latest badge 去掉 -->
+
+  </div>
+</main>
+
+<footer>
+  由 <a href="https://claude.ai" style="color:#2563eb;text-decoration:none;" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新
+</footer>
+
+</body>
 </html>
