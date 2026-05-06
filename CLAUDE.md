@@ -142,6 +142,6 @@ Update AI news YYYY-MM-DD      # 更新 index.html
 
 - 内容页头图：深蓝渐变 `linear-gradient(140deg, #060d1f, #0c1f45, #0f3460, #1d4ed8)`
 - 卡片布局：左侧彩色竖线区分分类，卡片含编号、分类标签、标题、摘要、来源、原文链接按钮
-- 字体：`Instrument Serif`（标题）+ `IBM Plex Mono`（编号/元数据）+ `IBM Plex Sans`（正文）
+- 字体：`Noto Serif SC`（卡片标题）+ `IBM Plex Mono`（编号/元数据）+ `IBM Plex Sans`（正文）
 - 支持移动端响应式，所有动画需有 `prefers-reduced-motion` 兜底
 - 所有链接需有 `aria-label`，装饰性 SVG 需有 `aria-hidden="true"`
