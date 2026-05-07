@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'ai-news-*.html'
+  workflow_dispatch:  # 手动触发，用于测试
 
 jobs:
   notify:
@@ -15,22 +16,27 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: 检测新增快讯文件
+      - name: 检测目标快讯文件
         id: detect
         run: |
-          # 取本次 push 中新增的 ai-news-*.html（A = added，取最新一个）
-          ADDED=$(git diff --name-status HEAD~1 HEAD -- 'ai-news-*.html' \
-                  | awk '$1=="A"{print $2}' | sort | tail -1)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # 手动触发：取仓库中最新的 ai-news-*.html
+            TARGET=$(ls ai-news-*.html 2>/dev/null | sort | tail -1)
+          else
+            # push 触发：取本次新增的 ai-news-*.html
+            TARGET=$(git diff --name-status HEAD~1 HEAD -- 'ai-news-*.html' \
+                    | awk '$1=="A"{print $2}' | sort | tail -1)
+          fi
 
-          if [ -z "$ADDED" ]; then
+          if [ -z "$TARGET" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          echo "file=$ADDED" >> "$GITHUB_OUTPUT"
+          echo "file=$TARGET" >> "$GITHUB_OUTPUT"
 
           # 解析文件名 ai-news-YYYYMMDD-HHMM.html → 可读日期时间
-          STEM="${ADDED%.html}"
+          STEM="${TARGET%.html}"
           CODE="${STEM#ai-news-}"
           DATE_RAW="${CODE%-*}"
           TIME_RAW="${CODE##*-}"
@@ -44,7 +50,7 @@ jobs:
           echo "datetime=${YEAR}-${MONTH}-${DAY} ${HOUR}:${MIN}" >> "$GITHUB_OUTPUT"
 
           # 从 HTML 提取话题芯片（最多 6 个）
-          TOPICS=$(grep -oP '(?<=<span class="topic-chip">)[^<]+' "$ADDED" \
+          TOPICS=$(grep -oP '(?<=<span class="topic-chip">)[^<]+' "$TARGET" \
                    | head -6 | paste -sd ' · ')
           echo "topics=$TOPICS" >> "$GITHUB_OUTPUT"
 
