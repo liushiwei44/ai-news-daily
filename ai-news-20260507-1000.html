@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI 行业快讯 · 2026-05-06 15:54</title>
+  <title>AI 行业快讯 · 2026-05-07 10:00</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -32,7 +32,9 @@
       --c-biz:   #be185d; --bg-biz:   #fdf2f8; --bd-biz:   #f9a8d4;
     }
 
-    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
 
     body {
       font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB",
@@ -55,7 +57,6 @@
       text-align: center;
     }
 
-    /* grid mesh overlay */
     header::before {
       content: "";
       position: absolute;
@@ -67,7 +68,6 @@
       pointer-events: none;
     }
 
-    /* radial glow */
     header::after {
       content: "";
       position: absolute;
@@ -209,7 +209,6 @@
     @keyframes card-in {
       to { opacity: 1; transform: translateY(0); }
     }
-    /* stagger */
     .card:nth-child(1)  { animation-delay: 0.06s; }
     .card:nth-child(2)  { animation-delay: 0.12s; }
     .card:nth-child(3)  { animation-delay: 0.18s; }
@@ -221,7 +220,6 @@
     .card:nth-child(9)  { animation-delay: 0.54s; }
     .card:nth-child(10) { animation-delay: 0.60s; }
 
-    /* category accent colours */
     .card.cat-cn     { --card-accent: var(--c-cn); }
     .card.cat-model  { --card-accent: var(--c-model); }
     .card.cat-dev    { --card-accent: var(--c-dev); }
@@ -229,7 +227,6 @@
     .card.cat-ind    { --card-accent: var(--c-ind); }
     .card.cat-biz    { --card-accent: var(--c-biz); }
 
-    /* number badge */
     .card-num {
       font-family: "IBM Plex Mono", monospace;
       font-size: 22px;
@@ -245,7 +242,6 @@
 
     .card-body { min-width: 0; }
 
-    /* tags row */
     .card-tags {
       display: flex;
       flex-wrap: wrap;
@@ -271,7 +267,6 @@
     .tag-ind { color: var(--c-ind);   background: var(--bg-ind);   border-color: var(--bd-ind); }
     .tag-biz { color: var(--c-biz);   background: var(--bg-biz);   border-color: var(--bd-biz); }
 
-    /* title */
     .card-title {
       font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
       font-size: 18px;
@@ -282,7 +277,6 @@
       letter-spacing: -0.01em;
     }
 
-    /* summary */
     .card-summary {
       font-size: 13.5px;
       color: var(--text-secondary);
@@ -290,7 +284,6 @@
       margin-bottom: 14px;
     }
 
-    /* footer row */
     .card-footer {
       display: flex;
       align-items: center;
@@ -323,9 +316,7 @@
       border-color: #93c5fd;
       color: #1e40af;
     }
-    .card-link svg {
-      transition: transform 0.15s;
-    }
+    .card-link svg { transition: transform 0.15s; }
     .card-link:hover svg { transform: translateX(2px); }
 
     /* ═══════════════════════════════
@@ -356,11 +347,7 @@
 
     /* ── Reduced motion ── */
     @media (prefers-reduced-motion: reduce) {
-      .card {
-        animation: none;
-        opacity: 1;
-        transform: none;
-      }
+      .card { animation: none; opacity: 1; transform: none; }
       .header-eyebrow .dot { animation: none; }
       .card-link svg { transition: none; }
       .card, .card-link { transition: none; }
@@ -408,6 +395,7 @@
       border-radius: 6px;
       transition: background .15s, color .15s;
       white-space: nowrap;
+      touch-action: manipulation;
     }
     .nav-back:hover, .nav-pager-link:hover {
       background: rgba(255,255,255,0.08);
@@ -449,13 +437,13 @@
   </a>
   <span class="nav-title" aria-hidden="true">AI 行业快讯</span>
   <div class="nav-pager">
-    <a class="nav-pager-link" href="ai-news-20260506-1458.html" aria-label="上一期">
+    <a class="nav-pager-link" href="ai-news-20260506-1554.html" aria-label="上一期">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
         <path d="M9 3L5 7L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       上一期
     </a>
-    <a class="nav-pager-link" href="ai-news-20260507-1000.html" aria-label="下一期">
+    <a class="nav-pager-link disabled" aria-label="下一期（暂无）" aria-disabled="true" tabindex="-1">
       下一期
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
         <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -475,8 +463,8 @@
     <h1>AI 行业快讯 <em>Top 10</em></h1>
     <p class="header-subtitle">聚焦软件开发 · 模型前沿 · 中国动态</p>
     <div class="header-pills">
-      <span class="header-pill">2026年5月6日</span>
-      <span class="header-pill">北京时间 15:54</span>
+      <span class="header-pill">2026年5月7日</span>
+      <span class="header-pill">北京时间 10:00</span>
       <span class="header-pill">权威媒体综合整理</span>
     </div>
   </div>
@@ -492,20 +480,20 @@
   <div class="cards">
 
     <!-- 01 -->
-    <article class="card cat-mod">
+    <article class="card cat-model">
       <div class="card-num">01</div>
       <div class="card-body">
         <div class="card-tags">
           <span class="tag tag-mod">大模型发布</span>
-          <span class="tag tag-dev">软件开发</span>
+          <span class="tag tag-dev">开发工具</span>
         </div>
-        <div class="card-title">OpenAI 正式发布 GPT-5.5：最强 Agentic 编程模型，Codex 全面升级，API 访问受限</div>
+        <div class="card-title">OpenAI 发布 GPT-5.5 Instant：成为 ChatGPT 新默认模型，Agentic 能力全面升级</div>
         <p class="card-summary">
-          OpenAI 于4月23日推出 GPT-5.5，在编程、计算机操作与深度研究上全面超越 GPT-5.4，且 token 效率大幅提升。模型现已驱动 Codex，运行于 NVIDIA GB200 NVL72 机架，拥有 400K context 窗口，支持 Plus/Pro/Enterprise 全线订阅。值得注意的是，OpenAI 暂不开放 API 访问，理由是"需要不同级别的安全防护"，开发者需排队等候。
+          OpenAI 于5月5日正式发布 GPT-5.5 Instant，取代 GPT-5.3 Instant 成为 ChatGPT 的新默认模型。这是 OpenAI 迄今 Agentic 能力最强的基础模型，专为企业知识工作与编程场景打造，token 效率显著提升，全线订阅层级可用，API 同步开放。TechCrunch 指出，GPT-5.5 Instant 在多步骤任务规划与工具调用上较前代模型有显著飞跃，标志着 OpenAI 正式将 Agentic 能力推向日常用户。
         </p>
         <div class="card-footer">
-          <span class="card-source">OpenAI · CNBC · TechCrunch · NVIDIA Blog</span>
-          <a class="card-link" href="https://openai.com/index/introducing-gpt-5-5/" target="_blank" rel="noopener" aria-label="阅读原文：OpenAI 正式发布 GPT-5.5">
+          <span class="card-source">TechCrunch · OpenAI Blog</span>
+          <a class="card-link" href="https://techcrunch.com/2026/05/05/openai-releases-gpt-5-5-instant-a-new-default-model-for-chatgpt/" target="_blank" rel="noopener" aria-label="阅读原文：OpenAI 发布 GPT-5.5 Instant">
             阅读原文
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -518,16 +506,16 @@
       <div class="card-num">02</div>
       <div class="card-body">
         <div class="card-tags">
-          <span class="tag tag-cn">🇨🇳 国产大模型</span>
-          <span class="tag tag-mod">开源</span>
+          <span class="tag tag-cn">🇨🇳 国产AI</span>
+          <span class="tag tag-biz">融资动态</span>
         </div>
-        <div class="card-title">DeepSeek V4 Pro & Flash 开源：1.6 万亿参数、百万 Token，攻克全部开源 SOTA</div>
+        <div class="card-title">国家大基金拟领投 DeepSeek 首轮融资，估值飙升至 450 亿美元</div>
         <p class="card-summary">
-          深度求索于4月24日正式开源 DeepSeek-V4-Pro（1.6T 参数，49B 激活）与 V4-Flash（284B 参数），上下文窗口均达 100 万 token。全新混合注意力机制（CSA + HCA）让长上下文推理 FLOPs 降至仅 27%，KV 缓存缩减至 10%。在 Agentic 编程、数学/STEM/代码推理上超越所有现役开源模型，促销定价（有效至5月31日）使 V4 Pro 较正价便宜5倍。
+          据新浪财经、观察者网多方消息源披露，中国国家集成电路产业投资基金（大基金）正主导 DeepSeek 有史以来首轮外部融资谈判，潜在投后估值高达 450 亿美元（约合 3265 亿元人民币），较半个月前翻倍。创始人梁文锋已于4月27日将直接持股从 1% 提升至 34%，此前公司研发资金全部来自幻方量化内部。多家互联网巨头与其他国家基金据悉也在参与洽谈。若融资落地，国家级资本将首次成为 DeepSeek 外部股东，意义重大。
         </p>
         <div class="card-footer">
-          <span class="card-source">DeepSeek API Docs · MIT Technology Review · SitePoint</span>
-          <a class="card-link" href="https://api-docs.deepseek.com/news/news260424" target="_blank" rel="noopener" aria-label="阅读原文：DeepSeek V4 Pro & Flash 开源发布">
+          <span class="card-source">新浪财经 · 观察者网 · 证券时报</span>
+          <a class="card-link" href="https://finance.sina.com.cn/tech/digi/2026-05-06/doc-inhwxxkm5830513.shtml" target="_blank" rel="noopener" aria-label="阅读原文：国家大基金拟领投 DeepSeek 首轮融资">
             阅读原文
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -536,20 +524,20 @@
     </article>
 
     <!-- 03 -->
-    <article class="card cat-sec">
+    <article class="card cat-biz">
       <div class="card-num">03</div>
       <div class="card-body">
         <div class="card-tags">
-          <span class="tag tag-sec">AI 安全</span>
-          <span class="tag tag-mod">前沿模型</span>
+          <span class="tag tag-biz">行业格局</span>
+          <span class="tag tag-mod">AI 竞争</span>
         </div>
-        <div class="card-title">Anthropic Project Glasswing：未公开模型 Claude Mythos 自主发现数千零日漏洞，含潜伏 17 年的 FreeBSD RCE</div>
+        <div class="card-title">Anthropic ARR 首次超越 OpenAI 达 300 亿美元，千家企业客户年消费超百万</div>
         <p class="card-summary">
-          Anthropic 启动 Project Glasswing，将 Claude Mythos Preview 有限开放给 AWS、Apple、Cisco、Google、Microsoft 等12家关键合作伙伴，专项用于安全漏洞发现与修复。Mythos 已全自主挖掘数千个零日漏洞，包括一个17年老洞 CVE-2026-4747（FreeBSD NFS 远程 root 提权）。Anthropic 预计同等能力将在6至18个月内在其他 AI 实验室扩散，此举被视为史上最强的 AI 进攻性安全能力公开演示。
+          Anthropic 年化收入（ARR）于4月突破 300 亿美元，首度超越 OpenAI（约 250 亿美元），且研发支出仅为 OpenAI 的四分之一。Anthropic 在15个月内从 10 亿成长至 300 亿，年均消费超百万美元的企业客户已超 1000 家（两个月前为 500 家）。约 80% 收入来自企业 API，显示 Claude 的开发者路线正在击败 ChatGPT 的消费者订阅模式。OpenAI 对该数字存在约 80 亿美元的口径争议，但这场收入赛跑已成为 AI 商业化格局最重要的风向标。
         </p>
         <div class="card-footer">
-          <span class="card-source">Anthropic · The Hacker News · Fortune · Schneier on Security</span>
-          <a class="card-link" href="https://www.anthropic.com/project/glasswing" target="_blank" rel="noopener" aria-label="阅读原文：Anthropic Project Glasswing">
+          <span class="card-source">SaaStr · The AI Corner · BigGo Finance</span>
+          <a class="card-link" href="https://www.the-ai-corner.com/p/anthropic-30b-arr-passed-openai-revenue-2026" target="_blank" rel="noopener" aria-label="阅读原文：Anthropic ARR 首次超越 OpenAI">
             阅读原文
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -562,16 +550,16 @@
       <div class="card-num">04</div>
       <div class="card-body">
         <div class="card-tags">
-          <span class="tag tag-biz">战略投资</span>
-          <span class="tag tag-mod">行业动态</span>
+          <span class="tag tag-biz">企业战略</span>
+          <span class="tag tag-ind">产业格局</span>
         </div>
-        <div class="card-title">Google 追加投资 Anthropic 最高 400 亿美元：提供 5GW 算力，史上最大单笔 AI 战略投资</div>
+        <div class="card-title">Anthropic 与 OpenAI 同日发布华尔街企业 AI 合资公司，合计融资超 55 亿美元</div>
         <p class="card-summary">
-          谷歌宣布对 Anthropic 的最新投资额最高达 400 亿美元（现金+算力），谷歌云同步承诺在五年内提供5吉瓦全新算力容量。这笔投资与 Anthropic 发布 Claude Mythos 系列的时间高度重合，显示双方战略绑定持续深化。分析人士指出，此举将深刻影响全球 AI 算力格局，并进一步巩固 Anthropic 在企业安全和前沿模型两个维度的竞争壁垒。
+          5月4日，Anthropic 联合高盛、黑石、Hellman &amp; Friedman 发布估值 15 亿美元企业 AI 合资公司；OpenAI 随即宣布"The Deployment Company"，获 TPG、Brookfield、Bain Capital 等19家机构注资逾 40 亿美元，估值 100 亿美元。两家公司战略逻辑相同：与私募基金共建企业 AI 落地通路，借助其投资组合获取大客户。分析人士认为，这是两家公司冲刺 IPO 前最关键的商业模式变革信号，标志 AI 正式进入"被集成进企业核心工作流"的新阶段。
         </p>
         <div class="card-footer">
-          <span class="card-source">TechCrunch · Bloomberg · The Motley Fool</span>
-          <a class="card-link" href="https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/" target="_blank" rel="noopener" aria-label="阅读原文：Google 追加投资 Anthropic 最高 400 亿美元">
+          <span class="card-source">TechCrunch · CNBC · SiliconANGLE</span>
+          <a class="card-link" href="https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/" target="_blank" rel="noopener" aria-label="阅读原文：Anthropic 与 OpenAI 同日发布企业 AI 合资公司">
             阅读原文
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -580,20 +568,20 @@
     </article>
 
     <!-- 05 -->
-    <article class="card cat-mod">
+    <article class="card cat-sec">
       <div class="card-num">05</div>
       <div class="card-body">
         <div class="card-tags">
-          <span class="tag tag-mod">行业动态</span>
-          <span class="tag tag-dev">多模态</span>
+          <span class="tag tag-sec">AI 军事</span>
+          <span class="tag tag-biz">政策博弈</span>
         </div>
-        <div class="card-title">Google I/O 2026 定档 5月19日：Gemini 4.0 Agentic、Android XR 智能眼镜与全新 Aluminum OS 齐亮相</div>
+        <div class="card-title">五角大楼与 8 家科技公司签 AI 保密网协议，Anthropic 因拒绝"全用途"条款出局</div>
         <p class="card-summary">
-          Google 正式宣布 I/O 2026 将于5月19日举行，核心看点包括：Gemini 4.0 Agentic 版（可跨 App 独立规划并执行多步骤任务，支持 A2A 协议）、Android XR 智能眼镜首发（与三星、Gentle Monster、Warby Parker 联名），以及面向消费级 PC 的 Aluminum OS 正式首秀。这是 Google 历史上最密集的一次 AI+硬件融合发布，业界预期将直接对标 Apple WWDC 与 OpenAI 的 AGI 路线。
+          美国国防部5月1日宣布与亚马逊 AWS、谷歌、微软、NVIDIA、OpenAI、SpaceX、Reflection 及甲骨文签署协议，允许其 AI 工具部署在 IL-6/IL-7 保密网络，服务超过130万国防部人员。Anthropic 因拒绝提供 Claude 的"全用途（all lawful use）"访问授权——担忧被用于大规模监控和自主武器——而被明确排除。五角大楼强调此举旨在"防止 AI 供应商锁定"。这是迄今最大规模的商业 AI 军事保密化合同，标志 AI 军事化进程进入实质阶段。
         </p>
         <div class="card-footer">
-          <span class="card-source">Google I/O · Android Central · TechRadar · OpenTools AI</span>
-          <a class="card-link" href="https://opentools.ai/news/google-io-2026-ai-gemini-updates-and-android-xr-innovations" target="_blank" rel="noopener" aria-label="阅读原文：Google I/O 2026 定档 5月19日">
+          <span class="card-source">TechCrunch · CNN Business · DefenseScoop</span>
+          <a class="card-link" href="https://techcrunch.com/2026/05/01/pentagon-inks-deals-with-nvidia-microsoft-and-aws-to-deploy-ai-on-classified-networks/" target="_blank" rel="noopener" aria-label="阅读原文：五角大楼与 8 家科技公司签 AI 保密网协议">
             阅读原文
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -602,20 +590,20 @@
     </article>
 
     <!-- 06 -->
-    <article class="card cat-cn">
+    <article class="card cat-dev">
       <div class="card-num">06</div>
       <div class="card-body">
         <div class="card-tags">
-          <span class="tag tag-cn">🇨🇳 阿里巴巴</span>
-          <span class="tag tag-dev">软件开发</span>
+          <span class="tag tag-dev">编程工具</span>
+          <span class="tag tag-mod">Agent</span>
         </div>
-        <div class="card-title">阿里 23 天两次 AI 变阵：Qwen3.6-plus Agent 编程能力炸裂，1000 亿美元目标倒逼"战时状态"</div>
+        <div class="card-title">Cursor × Claude Code × Codex 正式融合：AI 编程进入多 Agent 协作新时代</div>
         <p class="card-summary">
-          阿里巴巴2026年4月在23天内完成两次重大 AI 组织架构调整，全面进入"战时状态"，目标是 1000 亿美元 AI 收入。技术层面，Qwen3.6-plus 在 Agent 编程能力上实现突破性跃升，支持百万 token 超长上下文，在代码修复、终端操作等任务上全面领先同期竞品。阿里云同期内测"世界模型"，被视为多模态推理与具身智能的前沿布局。
+          据 The New Stack 报道，4月第一周，Cursor 发布并行 Agent 编排界面；OpenAI 在 Claude Code 内发布官方插件；早期用户已开始三工具并联运行。Claude Code 以 SWE-bench Verified 80.8% 得分排名第一；Cursor 凭超百万用户与 Supermaven 自动补全成为最佳 IDE；Codex 则专攻大批量云端任务。业界指出：AI 编程工具正像浏览器一样"分层"，高级开发者同时使用 2–3 套工具，叠加后可实现 3–5 倍生产力提升，单一工具获胜的格局已终结。
         </p>
         <div class="card-footer">
-          <span class="card-source">新浪财经 · 36氪 · 知乎</span>
-          <a class="card-link" href="https://finance.sina.cn/stock/jdts/2026-04-09/detail-inhtwtew2039289.d.html" target="_blank" rel="noopener" aria-label="阅读原文：阿里 23 天两次 AI 变阵">
+          <span class="card-source">The New Stack · NxCode · DEV Community</span>
+          <a class="card-link" href="https://thenewstack.io/ai-coding-tool-stack/" target="_blank" rel="noopener" aria-label="阅读原文：AI 编程工具三大堆栈融合">
             阅读原文
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -628,16 +616,16 @@
       <div class="card-num">07</div>
       <div class="card-body">
         <div class="card-tags">
-          <span class="tag tag-cn">🇨🇳 字节跳动</span>
-          <span class="tag tag-mod">Agent</span>
+          <span class="tag tag-cn">🇨🇳 华为</span>
+          <span class="tag tag-mod">开源模型</span>
         </div>
-        <div class="card-title">字节豆包 Doubao-Seed-2.0 发布：复杂 Agent 评估业界第一梯队，视觉推理显著提升</div>
+        <div class="card-title">华为开源盘古 7B + 72B MoE，全流程昇腾训练——国产 AI 算力闭环成立</div>
         <p class="card-summary">
-          字节跳动于2月发布豆包 Doubao-Seed-2.0，设 Lite（通用生产场景）与 Mini（高并发优化）两个版本，在视觉推理与感知上实现显著提升，复杂 Agent 能力评估进入业界第一梯队。这标志着字节在大模型赛道从追赶者转型为 Agent 时代的有力竞争者。随着 Chat 范式终结，中国厂商的模型竞争正全面转向"能办事"的 Agentic 能力。
+          华为正式开源盘古大模型，含 70 亿参数稠密模型与 720 亿参数 Pro MoE 混合专家模型，同步开源基于昇腾的推理技术栈。这是首批在国产算力硬件全栈闭环下完成并开源的大规模模型，直接证明"无英伟达芯片也能训练世界级大模型"。此前发布的盘古 Ultra MoE（7180亿参数）已在国内数学与代码基准上刷新国产模型 SOTA，万卡集群预训练 MFU 从 30% 提升至 41%，创昇腾平台训练效率新高。
         </p>
         <div class="card-footer">
-          <span class="card-source">知乎 · 36氪 · 智源社区</span>
-          <a class="card-link" href="https://zhuanlan.zhihu.com/p/670574382" target="_blank" rel="noopener" aria-label="阅读原文：字节豆包 Doubao-Seed-2.0 发布">
+          <span class="card-source">北京新闻 · 知乎 · 新浪科技</span>
+          <a class="card-link" href="https://m.bjnews.com.cn/detail/1751291109168839.html" target="_blank" rel="noopener" aria-label="阅读原文：华为开源盘古大模型">
             阅读原文
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -646,20 +634,20 @@
     </article>
 
     <!-- 08 -->
-    <article class="card cat-dev">
+    <article class="card cat-cn">
       <div class="card-num">08</div>
       <div class="card-body">
         <div class="card-tags">
-          <span class="tag tag-dev">开发工具</span>
-          <span class="tag tag-mod">企业 AI</span>
+          <span class="tag tag-cn">🇨🇳 开源模型</span>
+          <span class="tag tag-dev">软件开发</span>
         </div>
-        <div class="card-title">NVIDIA GTC 2026：Agent Toolkit 开源发布，Adobe / SAP / Salesforce 同步宣布落地 Fortune 500</div>
+        <div class="card-title">中国四大实验室集中发布开源代码模型：GLM-5.1 / MiniMax M2.7 / Kimi K2.6 / DeepSeek V4</div>
         <p class="card-summary">
-          NVIDIA 在 GTC 2026 发布开源企业级 Agent Toolkit，为构建自主企业 AI Agent 提供标准化平台。Adobe、Atlassian、Salesforce、SAP、ServiceNow、Siemens 等 Fortune 500 核心软件伙伴同步宣布整合该 Toolkit，覆盖制造、物流、金融等场景。此外，NeMoCLAW 与 OpenCLAW 两大 Agentic 编排框架成为本届 GTC 的最高人气项目，标志着企业级 Agentic AI 进入生产部署阶段。
+          Z.ai（智谱）GLM-5.1、MiniMax M2.7、月之暗面 Kimi K2.6、DeepSeek V4 在2026年4–5月密集亮相，推理成本均不超过 Claude Opus 4.7 的三分之一，Agentic 编程能力与西方前沿模型大体持平。这是中国开源代码模型史上最密集的一次集体亮相，显示中国实验室在"推理成本 + 代码能力"卡位战上已进入全球第一梯队，为国内开发者提供高质量低成本替代方案，进一步压缩西方模型的价格空间。
         </p>
         <div class="card-footer">
-          <span class="card-source">NVIDIA Blog · Crescendo AI · GTC 2026 Keynote</span>
-          <a class="card-link" href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank" rel="noopener" aria-label="阅读原文：NVIDIA GTC 2026 Agent Toolkit">
+          <span class="card-source">LLM Stats · Air Street Press · MIT Technology Review</span>
+          <a class="card-link" href="https://llm-stats.com/ai-news" target="_blank" rel="noopener" aria-label="阅读原文：中国四大实验室开源代码模型">
             阅读原文
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -668,20 +656,20 @@
     </article>
 
     <!-- 09 -->
-    <article class="card cat-dev">
+    <article class="card cat-model">
       <div class="card-num">09</div>
       <div class="card-body">
         <div class="card-tags">
-          <span class="tag tag-dev">编程工具</span>
-          <span class="tag tag-biz">行业格局</span>
+          <span class="tag tag-mod">大模型</span>
+          <span class="tag tag-dev">开发者福利</span>
         </div>
-        <div class="card-title">Cursor 估值 500 亿美元 vs GitHub Copilot 470 万付费用户：AI 编程工具战争全面升级</div>
+        <div class="card-title">Claude Opus 4.6 &amp; Sonnet 4.6 百万 Token 上下文不加价，长文档分析门槛骤降</div>
         <p class="card-summary">
-          2026年 AI 编程赛道格局：Cursor 已估值 500 亿美元，GitHub Copilot 付费订阅突破 470 万，Claude Code 异军突起。实测数据显示 AI 编程工具带来 20–30% 的生产力提升，但在复杂任务上经验丰富的开发者实际慢了 19%，初级开发者则加速 26–39%。Cursor 以 72% 代码接受率、Composer 多文件编辑等领先体验获评最佳个人工具；Copilot 以 38ms 响应和团队协作优势守住企业端市场。
+          Anthropic 宣布 Claude Opus 4.6 与 Sonnet 4.6 的百万 token 上下文窗口以标准 API 定价提供，无任何附加费。此前超长上下文通常需要专用高价计划，此举大幅降低企业和开发者处理超长文档、巨型代码库的门槛。结合 Claude Code 在 SWE-bench 上 80.8% 的得分，Anthropic 正以"超长上下文 + 顶级编程能力"双轮驱动 API 端市场攻势，向 OpenAI 和 Google 的企业 API 版图发起正面冲击。
         </p>
         <div class="card-footer">
-          <span class="card-source">NxCode · Ryz Labs · Faros AI · DigitalOcean</span>
-          <a class="card-link" href="https://www.nxcode.io/resources/news/cursor-vs-claude-code-vs-github-copilot-2026-ultimate-comparison" target="_blank" rel="noopener" aria-label="阅读原文：Cursor 估值 500 亿美元 AI 编程工具战争">
+          <span class="card-source">LLM Stats · Air Street Press</span>
+          <a class="card-link" href="https://press.airstreet.com/p/state-of-ai-may-2026" target="_blank" rel="noopener" aria-label="阅读原文：Claude Opus 4.6 百万 Token 上下文不加价">
             阅读原文
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -695,15 +683,15 @@
       <div class="card-body">
         <div class="card-tags">
           <span class="tag tag-cn">🇨🇳 中国AI</span>
-          <span class="tag tag-ind">产业观察</span>
+          <span class="tag tag-ind">产业转向</span>
         </div>
-        <div class="card-title">斯坦福 AI Index 2026：中国 AI 专利占全球 60%，产业规模突破 1.2 万亿元，开源下载破百亿</div>
+        <div class="card-title">中国 AI 投资重心转向 AI for Science：大量资金离开大模型赛道</div>
         <p class="card-summary">
-          斯坦福 HAI 发布《AI Index 2026 报告》：中国 AI 企业超 6000 家，核心产业规模预计突破 1.2 万亿元（同比增长约 30%），国产开源大模型全球累计下载量突破 100 亿次，AI 专利占全球总量 60%，位居第一。工信部等八部门推进《"AI+制造"专项行动》，计划到 2027 年推广 500 个典型应用场景。竞争重心已从模型能力转向应用规模与生态控制力之争。
+          东方财富、36氪等财经媒体报道，2026年春，中国科技投资圈出现明显转向——大量资金从大模型基础设施撤出，流向 AI for Science（蛋白质折叠、药物研发、新材料计算等）。分析人士认为，这是在国际芯片封锁与基础模型同质化双重压力下的"理性收缩"，中科曙光等具备大规模科学计算能力的企业成为新热点。这一转向被视为中国 AI 商业化路径从"模型军备竞赛"向"垂直行业深度渗透"历史性转型的重要信号。
         </p>
         <div class="card-footer">
-          <span class="card-source">Stanford HAI · 新华网 · 工信部 · CCTV</span>
-          <a class="card-link" href="https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report" target="_blank" rel="noopener" aria-label="阅读原文：斯坦福 AI Index 2026 报告">
+          <span class="card-source">东方财富 · 36氪 · CSDN</span>
+          <a class="card-link" href="https://caifuhao.eastmoney.com/news/20260504212156544817030" target="_blank" rel="noopener" aria-label="阅读原文：中国 AI 投资转向 AI for Science">
             阅读原文
             <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -715,7 +703,7 @@
 </main>
 
 <footer>
-  由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新 · 2026-05-06 15:54 BJT
+  由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新 · 2026-05-07 10:00 BJT
 </footer>
 
 </body>
