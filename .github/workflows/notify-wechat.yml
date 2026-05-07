@@ -20,10 +20,8 @@ jobs:
         id: detect
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            # 手动触发：取仓库中最新的 ai-news-*.html
             TARGET=$(ls ai-news-*.html 2>/dev/null | sort | tail -1)
           else
-            # push 触发：取本次新增的 ai-news-*.html
             TARGET=$(git diff --name-status HEAD~1 HEAD -- 'ai-news-*.html' \
                     | awk '$1=="A"{print $2}' | sort | tail -1)
           fi
@@ -35,49 +33,77 @@ jobs:
 
           echo "file=$TARGET" >> "$GITHUB_OUTPUT"
 
-          # 解析文件名 ai-news-YYYYMMDD-HHMM.html → 可读日期时间
-          STEM="${TARGET%.html}"
-          CODE="${STEM#ai-news-}"
-          DATE_RAW="${CODE%-*}"
-          TIME_RAW="${CODE##*-}"
-
-          YEAR="${DATE_RAW:0:4}"
-          MONTH="${DATE_RAW:4:2}"
-          DAY="${DATE_RAW:6:2}"
-          HOUR="${TIME_RAW:0:2}"
-          MIN="${TIME_RAW:2:2}"
-
-          echo "datetime=${YEAR}-${MONTH}-${DAY} ${HOUR}:${MIN}" >> "$GITHUB_OUTPUT"
-
-          # 从 HTML 提取话题芯片（最多 6 个）
-          TOPICS=$(grep -oP '(?<=<span class="topic-chip">)[^<]+' "$TARGET" \
-                   | head -6 | paste -sd ' · ')
-          echo "topics=$TOPICS" >> "$GITHUB_OUTPUT"
-
-      - name: 发送企微 Markdown 通知
+      - name: 提取内容并发送企微通知
         if: steps.detect.outputs.skip != 'true'
         env:
           WECHAT_KEY: ${{ secrets.WECHAT_WEBHOOK_KEY }}
           SITE_BASE: https://liushiwei44.github.io/ai-news-daily
         run: |
-          FILE="${{ steps.detect.outputs.file }}"
-          DATETIME="${{ steps.detect.outputs.datetime }}"
-          TOPICS="${{ steps.detect.outputs.topics }}"
-          URL="${SITE_BASE}/${FILE}"
+          TARGET="${{ steps.detect.outputs.file }}"
+          URL="${SITE_BASE}/${TARGET}"
 
+          # ── 期号：仓库内 ai-news-*.html 总数 ──────────────────────────
+          ISSUE_NUM=$(ls ai-news-*.html 2>/dev/null | wc -l)
+
+          # ── 日期时间（从文件名解析）────────────────────────────────────
+          STEM="${TARGET%.html}"
+          CODE="${STEM#ai-news-}"
+          DATE_RAW="${CODE%-*}"; TIME_RAW="${CODE##*-}"
+          DATETIME="${DATE_RAW:0:4}-${DATE_RAW:4:2}-${DATE_RAW:6:2} ${TIME_RAW:0:2}:${TIME_RAW:2:2}"
+
+          # ── 话题芯片 ──────────────────────────────────────────────────
+          TOPICS=$(grep -oP '(?<=<span class="topic-chip">)[^<]+' "$TARGET" \
+                   | head -6 | sed 's/^/`/; s/$/'\''\`/' | paste -sd ' ')
+          # 用反引号包裹每个话题，效果：`话题一` `话题二` ...
+          TOPICS=$(grep -oP '(?<=<span class="topic-chip">)[^<]+' "$TARGET" \
+                   | head -6 | awk '{print "`" $0 "`"}' | paste -sd ' ')
+
+          # ── 前3条标题（清理多余空白 + HTML 实体 + 截断）─────────────
+          decode_html() {
+            echo "$1" | sed 's/&amp;/\&/g; s/&lt;/</g; s/&gt;/>/g; s/&#[0-9]*;//g' \
+                      | sed 's/  */ /g; s/^ //; s/ $//'
+          }
+          truncate_str() {
+            local s="$1"
+            [ ${#s} -gt 36 ] && echo "${s:0:36}…" || echo "$s"
+          }
+
+          mapfile -t RAW_TITLES < <(
+            grep -oP '(?<=<div class="card-title">)[^<]+' "$TARGET" | head -3
+          )
+          T1=$(truncate_str "$(decode_html "${RAW_TITLES[0]}")")
+          T2=$(truncate_str "$(decode_html "${RAW_TITLES[1]}")")
+          T3=$(truncate_str "$(decode_html "${RAW_TITLES[2]}")")
+
+          # ── 组装消息 ──────────────────────────────────────────────────
+          # 企微 Markdown 支持：**粗体** / > 引用 / <font color="info/warning/comment">
           BODY=$(jq -n \
+            --arg issue "$ISSUE_NUM" \
             --arg dt "$DATETIME" \
+            --arg t1 "$T1" \
+            --arg t2 "$T2" \
+            --arg t3 "$T3" \
             --arg topics "$TOPICS" \
             --arg url "$URL" \
             '{
               msgtype: "markdown",
               markdown: {
-                content: ("## 🤖 AI 行业快讯已更新\n" +
-                          "> **" + $dt + " BJT**\n\n" +
-                          ($topics | if . != "" then "**本期话题：**" + . + "\n\n" else "" end) +
-                          "[→ 点击阅读本期 Top 10](" + $url + ")")
+                content: (
+                  "## 📡 AI 行业快讯 · No." + $issue + "\n" +
+                  "<font color=\"comment\">" + $dt + " BJT · 聚焦软件开发 / 模型前沿 / 中国动态</font>\n\n" +
+                  "**🔥 今日头条**\n" +
+                  "> **01** " + $t1 + "\n" +
+                  "> **02** " + $t2 + "\n" +
+                  "> **03** " + $t3 + "\n\n" +
+                  "<font color=\"comment\">本期话题：</font> " + $topics + "\n\n" +
+                  "**[→ 查看完整 Top 10 精选 ↗](" + $url + ")**"
+                )
               }
             }')
+
+          echo "===== 发送内容预览 ====="
+          echo "$BODY" | jq -r '.markdown.content'
+          echo "========================"
 
           HTTP=$(curl -sf -o /tmp/wx_resp.json -w "%{http_code}" \
             -X POST \
@@ -88,7 +114,6 @@ jobs:
           echo "HTTP status: $HTTP"
           cat /tmp/wx_resp.json
 
-          # errcode=0 表示成功
           ERRCODE=$(jq -r '.errcode' /tmp/wx_resp.json)
           if [ "$ERRCODE" != "0" ]; then
             echo "WeChat API error: $(jq -r '.errmsg' /tmp/wx_resp.json)"
