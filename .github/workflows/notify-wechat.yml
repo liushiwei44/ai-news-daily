@@ -1,0 +1,92 @@
+name: 企微群通知
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'ai-news-*.html'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 检测新增快讯文件
+        id: detect
+        run: |
+          # 取本次 push 中新增的 ai-news-*.html（A = added，取最新一个）
+          ADDED=$(git diff --name-status HEAD~1 HEAD -- 'ai-news-*.html' \
+                  | awk '$1=="A"{print $2}' | sort | tail -1)
+
+          if [ -z "$ADDED" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "file=$ADDED" >> "$GITHUB_OUTPUT"
+
+          # 解析文件名 ai-news-YYYYMMDD-HHMM.html → 可读日期时间
+          STEM="${ADDED%.html}"
+          CODE="${STEM#ai-news-}"
+          DATE_RAW="${CODE%-*}"
+          TIME_RAW="${CODE##*-}"
+
+          YEAR="${DATE_RAW:0:4}"
+          MONTH="${DATE_RAW:4:2}"
+          DAY="${DATE_RAW:6:2}"
+          HOUR="${TIME_RAW:0:2}"
+          MIN="${TIME_RAW:2:2}"
+
+          echo "datetime=${YEAR}-${MONTH}-${DAY} ${HOUR}:${MIN}" >> "$GITHUB_OUTPUT"
+
+          # 从 HTML 提取话题芯片（最多 6 个）
+          TOPICS=$(grep -oP '(?<=<span class="topic-chip">)[^<]+' "$ADDED" \
+                   | head -6 | paste -sd ' · ')
+          echo "topics=$TOPICS" >> "$GITHUB_OUTPUT"
+
+      - name: 发送企微 Markdown 通知
+        if: steps.detect.outputs.skip != 'true'
+        env:
+          # 如需保密，可将 key 移至 repo secret WECHAT_WEBHOOK_KEY
+          # 并改为 ${{ secrets.WECHAT_WEBHOOK_KEY }}
+          WECHAT_KEY: ce03b68b-d127-4a7b-a4e5-68306bf3d031
+          SITE_BASE: https://liushiwei44.github.io/ai-news-daily
+        run: |
+          FILE="${{ steps.detect.outputs.file }}"
+          DATETIME="${{ steps.detect.outputs.datetime }}"
+          TOPICS="${{ steps.detect.outputs.topics }}"
+          URL="${SITE_BASE}/${FILE}"
+
+          BODY=$(jq -n \
+            --arg dt "$DATETIME" \
+            --arg topics "$TOPICS" \
+            --arg url "$URL" \
+            '{
+              msgtype: "markdown",
+              markdown: {
+                content: ("## 🤖 AI 行业快讯已更新\n" +
+                          "> **" + $dt + " BJT**\n\n" +
+                          ($topics | if . != "" then "**本期话题：**" + . + "\n\n" else "" end) +
+                          "[→ 点击阅读本期 Top 10](" + $url + ")")
+              }
+            }')
+
+          HTTP=$(curl -sf -o /tmp/wx_resp.json -w "%{http_code}" \
+            -X POST \
+            "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${WECHAT_KEY}" \
+            -H "Content-Type: application/json" \
+            -d "$BODY")
+
+          echo "HTTP status: $HTTP"
+          cat /tmp/wx_resp.json
+
+          # errcode=0 表示成功
+          ERRCODE=$(jq -r '.errcode' /tmp/wx_resp.json)
+          if [ "$ERRCODE" != "0" ]; then
+            echo "WeChat API error: $(jq -r '.errmsg' /tmp/wx_resp.json)"
+            exit 1
+          fi
