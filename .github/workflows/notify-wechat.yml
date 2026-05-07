@@ -48,50 +48,9 @@ jobs:
           DATE_RAW="${CODE%-*}"; TIME_RAW="${CODE##*-}"
           DATETIME="${DATE_RAW:0:4}-${DATE_RAW:4:2}-${DATE_RAW:6:2} ${TIME_RAW:0:2}:${TIME_RAW:2:2}"
 
-          # 用 Python 生成完整的企微 Markdown 消息文本
-          CONTENT=$(python3 - "$TARGET" "$ISSUE_NUM" "$DATETIME" "$URL" <<'PYEOF'
-import sys, re, html as h
-
-src        = open(sys.argv[1]).read()
-issue_num  = sys.argv[2]
-datetime_  = sys.argv[3]
-url        = sys.argv[4]
-
-def clean(s):
-    s = h.unescape(s)
-    return re.sub(r'\s+', ' ', s).strip()
-
-def shorten(s, n):
-    s = clean(s)
-    return s[:n] + ('…' if len(s) > n else '')
-
-def first_clause(s):
-    s = clean(s)
-    for sep in ['。', '；']:
-        idx = s.find(sep)
-        if 0 < idx <= 52:
-            return s[:idx + 1]
-    return shorten(s, 52)
-
-titles    = re.findall(r'<div class="card-title">(.*?)</div>', src)
-summaries = re.findall(r'<p class="card-summary">(.*?)</p>', src, re.DOTALL)
-
-lines = [
-    f'## 📡 AI 行业快讯 · No.{issue_num}',
-    f'<font color="comment">{datetime_} BJT · 软件开发 / 模型前沿 / 中国动态</font>',
-    '',
-]
-
-for i, (t, s) in enumerate(zip(titles[:10], summaries[:10]), 1):
-    lines.append(f'<font color="info">**{i:02d}** {shorten(t, 36)}</font>')
-    lines.append(f'<font color="comment">　▸ {first_clause(s)}</font>')
-    lines.append('')
-
-lines.append(f'**[→ 查看完整 Top 10 精选 ↗]({url})**')
-
-print('\n'.join(lines))
-PYEOF
-)
+          # 生成消息正文
+          CONTENT=$(python3 .github/scripts/build_wechat_message.py \
+                      "$TARGET" "$ISSUE_NUM" "$DATETIME" "$URL")
 
           echo "===== 消息预览 ====="
           echo "$CONTENT"
