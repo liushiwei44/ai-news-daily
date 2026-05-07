@@ -51,9 +51,7 @@ jobs:
       - name: 发送企微 Markdown 通知
         if: steps.detect.outputs.skip != 'true'
         env:
-          # 如需保密，可将 key 移至 repo secret WECHAT_WEBHOOK_KEY
-          # 并改为 ${{ secrets.WECHAT_WEBHOOK_KEY }}
-          WECHAT_KEY: ce03b68b-d127-4a7b-a4e5-68306bf3d031
+          WECHAT_KEY: ${{ secrets.WECHAT_WEBHOOK_KEY }}
           SITE_BASE: https://liushiwei44.github.io/ai-news-daily
         run: |
           FILE="${{ steps.detect.outputs.file }}"
