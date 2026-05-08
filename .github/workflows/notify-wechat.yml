@@ -22,7 +22,14 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             TARGET=$(ls ai-news-*.html 2>/dev/null | sort | tail -1)
           else
-            TARGET=$(git diff --name-status HEAD~1 HEAD -- 'ai-news-*.html' \
+            # 用整次 push 的起止 SHA，覆盖一次推送中所有 commit（而非只看最后一个）
+            BEFORE="${{ github.event.before }}"
+            AFTER="${{ github.sha }}"
+            # 首次推送时 before 全为 0，回退到 HEAD~1
+            if echo "$BEFORE" | grep -qE '^0+$'; then
+              BEFORE="HEAD~1"
+            fi
+            TARGET=$(git diff --name-status "$BEFORE" "$AFTER" -- 'ai-news-*.html' \
                     | awk '$1=="A"{print $2}' | sort | tail -1)
           fi
           if [ -z "$TARGET" ]; then
