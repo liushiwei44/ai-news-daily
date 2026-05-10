@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 行业快讯 · 2026-05-10 08:07</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --border: #e2e5eb;
+      --text-primary: #0d1117;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --accent: #1d4ed8;
+      --accent-dim: #3b82f6;
+      --radius: 10px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 28px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
+
+      /* category palette */
+      --c-cn:    #dc2626; --bg-cn:    #fef2f2; --bd-cn:    #fca5a5;
+      --c-model: #0891b2; --bg-model: #ecfeff; --bd-model: #67e8f9;
+      --c-dev:   #7c3aed; --bg-dev:   #f5f3ff; --bd-dev:   #c4b5fd;
+      --c-sec:   #b45309; --bg-sec:   #fffbeb; --bd-sec:   #fcd34d;
+      --c-ind:   #065f46; --bg-ind:   #ecfdf5; --bd-ind:   #6ee7b7;
+      --c-biz:   #be185d; --bg-biz:   #fdf2f8; --bd-biz:   #f9a8d4;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB",
+                   "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(140deg, #060d1f 0%, #0c1f45 38%, #0f3460 65%, #1a4fa8 88%, #1d4ed8 100%);
+      overflow: hidden;
+      padding: 56px 24px 52px;
+      text-align: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,179,237,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,179,237,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 640px;
+      height: 380px;
+      background: radial-gradient(ellipse, rgba(56,130,246,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 18px;
+    }
+    .header-eyebrow .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    header h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    header h1 em {
+      font-style: italic;
+      color: #93c5fd;
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: #93c5fd;
+      opacity: 0.8;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .header-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .header-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #bfdbfe;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 4px 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 72px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .section-count {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--card-accent, #e2e5eb);
+      border-radius: var(--radius);
+      padding: 22px 26px 20px 26px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 18px;
+      align-items: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: card-in 0.45s ease forwards;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-left-color: var(--card-accent, var(--accent-dim));
+    }
+
+    @keyframes card-in {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card:nth-child(1)  { animation-delay: 0.06s; }
+    .card:nth-child(2)  { animation-delay: 0.12s; }
+    .card:nth-child(3)  { animation-delay: 0.18s; }
+    .card:nth-child(4)  { animation-delay: 0.24s; }
+    .card:nth-child(5)  { animation-delay: 0.30s; }
+    .card:nth-child(6)  { animation-delay: 0.36s; }
+    .card:nth-child(7)  { animation-delay: 0.42s; }
+    .card:nth-child(8)  { animation-delay: 0.48s; }
+    .card:nth-child(9)  { animation-delay: 0.54s; }
+    .card:nth-child(10) { animation-delay: 0.60s; }
+
+    .card.cat-cn     { --card-accent: var(--c-cn); }
+    .card.cat-model  { --card-accent: var(--c-model); }
+    .card.cat-dev    { --card-accent: var(--c-dev); }
+    .card.cat-sec    { --card-accent: var(--c-sec); }
+    .card.cat-ind    { --card-accent: var(--c-ind); }
+    .card.cat-biz    { --card-accent: var(--c-biz); }
+
+    .card-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 22px;
+      font-weight: 600;
+      color: #d1d5db;
+      line-height: 1;
+      padding-top: 4px;
+      user-select: none;
+      transition: color 0.2s;
+      letter-spacing: -0.02em;
+    }
+    .card:hover .card-num { color: var(--card-accent, var(--accent-dim)); }
+
+    .card-body { min-width: 0; }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 9px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border: 1px solid transparent;
+      line-height: 1.6;
+    }
+    .tag-cn  { color: var(--c-cn);    background: var(--bg-cn);    border-color: var(--bd-cn); }
+    .tag-mod { color: var(--c-model); background: var(--bg-model); border-color: var(--bd-model); }
+    .tag-dev { color: var(--c-dev);   background: var(--bg-dev);   border-color: var(--bd-dev); }
+    .tag-sec { color: var(--c-sec);   background: var(--bg-sec);   border-color: var(--bd-sec); }
+    .tag-ind { color: var(--c-ind);   background: var(--bg-ind);   border-color: var(--bd-ind); }
+    .tag-biz { color: var(--c-biz);   background: var(--bg-biz);   border-color: var(--bd-biz); }
+
+    .card-title {
+      font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.38;
+      margin-bottom: 9px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-source {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 5px 13px;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      background: #eff6ff;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover {
+      background: #dbeafe;
+      border-color: #93c5fd;
+      color: #1e40af;
+    }
+    .card-link svg { transition: transform 0.15s; }
+    .card-link:hover svg { transform: translateX(2px); }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 36px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .card-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      background: #dbeafe;
+      border-color: #93c5fd;
+    }
+    footer a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { animation: none; opacity: 1; transform: none; }
+      .header-eyebrow .dot { animation: none; }
+      .card-link svg { transition: none; }
+      .card, .card-link { transition: none; }
+    }
+
+    @media (max-width: 580px) {
+      header { padding: 44px 20px 36px; }
+      .card {
+        grid-template-columns: 1fr;
+        padding: 18px 18px 16px;
+        border-left-width: 2px;
+      }
+      .card-num { display: none; }
+      .card-title { font-size: 16px; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 48px;
+      background: rgba(9, 18, 40, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .nav-back, .nav-pager-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #93c5fd;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+      touch-action: manipulation;
+    }
+    .nav-back:hover, .nav-pager-link:hover {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+    .nav-back:focus-visible, .nav-pager-link:focus-visible {
+      outline: 2px solid #60a5fa;
+      outline-offset: 2px;
+    }
+    .nav-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+    }
+    .nav-pager { display: flex; gap: 4px; }
+    .nav-pager-link.disabled {
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    body { padding-top: 48px; }
+    @media (max-width: 480px) {
+      .nav-title { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="站点导航">
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    返回列表
+  </a>
+  <span class="nav-title" aria-hidden="true">AI 行业快讯</span>
+  <div class="nav-pager">
+    <a class="nav-pager-link" href="ai-news-20260508-0814.html" aria-label="上一期">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M9 3L5 7L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      上一期
+    </a>
+    <a class="nav-pager-link disabled" aria-label="下一期（暂无）" aria-disabled="true" tabindex="-1">
+      下一期
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow" aria-hidden="true">
+      <span class="dot"></span>
+      AI Daily Briefing
+      <span class="dot"></span>
+    </div>
+    <h1>AI 行业快讯 <em>Top 10</em></h1>
+    <p class="header-subtitle">聚焦软件开发 · 模型前沿 · 中国动态</p>
+    <div class="header-pills">
+      <span class="header-pill">2026年5月10日</span>
+      <span class="header-pill">北京时间 08:07</span>
+      <span class="header-pill">权威媒体综合整理</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-header">
+    <span class="section-title">本期精选</span>
+    <span class="section-count">10 条重要消息</span>
+  </div>
+
+  <div class="cards">
+
+    <!-- 01 -->
+    <article class="card cat-dev">
+      <div class="card-num">01</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">开发实践</span>
+          <span class="tag tag-biz">企业级 AI</span>
+        </div>
+        <div class="card-title">Airbnb CEO 宣布：AI 已代写公司 60% 工程代码，"纯管理者没有立足之地"，工程师须学 Claude Code</div>
+        <p class="card-summary">
+          Airbnb 在 2026 年 Q1 财报电话会上披露，本季度 AI 代写了工程师所产出代码的约 60%，大约是行业平均水平的两倍。CEO Brian Chesky 表示，这一数字在短短数季度内从接近零迅速攀升，是公司研发流程的结构性转变而非暂时现象。Chesky 同时指出，公司内部已没有"纯人员管理者"的空间——所有管理岗位要么需要具备写代码的能力，要么必须熟练掌握 Claude Code 等 AI 编程工具，并将此定为用人标准。在代码以外，Airbnb 的 AI 客服机器人目前已能无需人工干预地解决 40% 的客户问题，较年初的 33% 再次提升。从财务数据看，Q1 净利润同比增长 3.9% 至 1.6 亿美元，营收增长 18% 至 27 亿美元，验证了 AI 效能提升与商业增长的正向关联。Airbnb 的案例是迄今公开披露的大型科技公司 AI 代码占比最高的真实案例，为整个行业提供了一个标杆性的参照数字。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch · Benzinga · Airbnb Q1 2026 Earnings</span>
+          <a class="card-link" href="https://techcrunch.com/2026/05/08/airbnb-says-ai-now-writes-60-of-its-new-code/" target="_blank" rel="noopener" aria-label="阅读原文：Airbnb AI 代写 60% 代码">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="card cat-model">
+      <div class="card-num">02</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">前沿模型</span>
+          <span class="tag tag-mod">平台更新</span>
+        </div>
+        <div class="card-title">OpenAI 发布 GPT-5.5 Instant：幻觉减少 52.5%，5月5日起推送全体用户成为 ChatGPT 新全局默认</div>
+        <p class="card-summary">
+          OpenAI 于 5 月 5 日将 GPT-5.5 Instant 推送给所有 ChatGPT 用户（含免费层级），正式取代 GPT-5.3 Instant 成为全球默认模型，同时在 API 中以 chat-latest 标识对外开放。GPT-5.5 本体于 4 月 23 日发布，5.5 Instant 是其针对速度与日常使用场景优化的精简版本——在内部高风险问题（医疗、法律、金融）评测中，幻觉声明数量比前代减少 52.5%，是 OpenAI 历次迭代中准确性改善幅度最大的一次。在能力层面，GPT-5.5 Instant 被官方描述为"更快理解意图、更主动承担任务"，在代码调试与在线研究类任务上明显优于上代。值得关注的是，本次更新将"更少 emoji、更直接的表达风格"作为显著改进点，回应了开发者对 GPT-5.3 Instant 过于圆滑、拐弯抹角的长期抱怨。GPT-5.5 Pro 版本则面向 API 付费用户，适用于推理密集型任务。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">OpenAI · TechCrunch · 9to5Mac</span>
+          <a class="card-link" href="https://openai.com/index/gpt-5-5-instant/" target="_blank" rel="noopener" aria-label="阅读原文：GPT-5.5 Instant 官方公告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="card cat-model">
+      <div class="card-num">03</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">前沿模型</span>
+          <span class="tag tag-mod">XR 硬件</span>
+        </div>
+        <div class="card-title">Google I/O 2026 倒计时 9 天：Android Show 5月12日先行揭幕，Gemini 深度代理「Remy」与 AR 眼镜双线并进</div>
+        <p class="card-summary">
+          Google 将本届最大年度开发者峰会拆分为两幕：5 月 12 日的 "The Android Show: I/O Edition" 专场将预发 Android 17 早期功能，5 月 19 日正式 I/O 则集中呈现 Gemini 模型全面升级。目前泄露和官方预告指向的核心看点：① 代号"Remy"的全新 Gemini 旗舰代理——定位"7×24 小时数字伙伴"，可主动完成跨应用任务（发消息、下单、整理日历），无需逐条指令；② Android XR 平台两款智能眼镜同期亮相，一款仅语音交互、一款内置显示导航，与三星深度协作研发，为今年内正式上市做铺垫；③ Gemini 深度整合进 Gmail、Drive、Workspace，依托完整个人上下文实现跨应用无缝操作；④ 开发者工具方面，Firebase Genkit 与 Vertex AI 的更新将为 Android 开发者提供更完整的端云一体 AI 开发链。Google 此次分两场发布的节奏，被分析人士解读为对苹果 WWDC 排期的有意竞争策略。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Android Authority · Eastern Herald · NewsBytesApp</span>
+          <a class="card-link" href="https://www.androidauthority.com/what-to-expect-from-google-io-2026-3664979/" target="_blank" rel="noopener" aria-label="阅读原文：Google I/O 2026 预期报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="card cat-cn">
+      <div class="card-num">04</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 中美关系</span>
+          <span class="tag tag-sec">地缘博弈</span>
+        </div>
+        <div class="card-title">中美 AI 外交关键一周：特朗普访华（5月14-15日）拟将 AI 风险管控纳入峰会议程，"盗窃"指控使谈判复杂化</div>
+        <p class="card-summary">
+          距特朗普总统访问北京（5 月 14-15 日）不足一周，白宫与中方正评估是否将 AI 安全议题正式列入峰会议程。美财长贝森特有望主导美方的 AI 议题磋商，但中方尚未指定对口负责人，谈判框架尚不明朗。推动此议的背景是：两国政府和学术界普遍意识到，在 AI Agent 自主性快速提升的背景下，缺乏双边安全对话框架存在系统性风险。然而局势并不乐观：白宫本周发表声明，指控中国从事"工业规模"的美国 AI 模型窃密行为；中国此前也以国家安全为由叫停 Meta 对 Manus 的收购。双重对抗信号使得本轮 AI 外交谈判面临显著的政治阻力。分析人士普遍认为，即便峰会期间达成某种框架协议，也难以转化为实质性的技术合作，更多象征意义上的信号价值或许是本轮接触最可预期的成果。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">TechStory · Digital Watch Observatory · Invezz</span>
+          <a class="card-link" href="https://techstory.in/us-and-china-may-launch-official-ai-talks-as-tech-rivalry-enters-a-new-phase/" target="_blank" rel="noopener" aria-label="阅读原文：中美 AI 外交谈判">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="card cat-ind">
+      <div class="card-num">05</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-ind">行业研究</span>
+          <span class="tag tag-ind">基准评测</span>
+        </div>
+        <div class="card-title">斯坦福 AI Index 2026：SWE-bench 一年内从 60% 飙至接近满分，中美顶级模型性能差距已实质消失</div>
+        <p class="card-summary">
+          斯坦福人工智能研究院（HAI）发布 2026 年度 AI Index 报告，揭示出若干令业界震动的结论。技术能力层面：在 SWE-bench Verified（真实 GitHub 问题修复）基准上，最优模型得分在一年内从 60% 飙升至接近满分（~100%），前沿模型已在博士级科学问答、多模态推理、数学竞赛题等维度超越人类基线。地缘格局层面：美国 2025 年私人 AI 投资额达 2,859 亿美元，是中国 124 亿美元的 23 倍有余；但顶级模型性能差距已实质消失，中美两国自 2025 年初以来多次交替登顶主要榜单。透明度层面令人担忧：基础模型透明度指数平均分从去年的 58 分骤降至 40 分，各大 AI 公司对训练数据、算力、风险和使用政策的披露程度显著退步。生成式 AI 工具消费者价值估算在 2026 年初已达每年 1,720 亿美元，中位用户价值在一年内翻了三倍。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Stanford HAI · IEEE Spectrum · Digital Information World</span>
+          <a class="card-link" href="https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report" target="_blank" rel="noopener" aria-label="阅读原文：斯坦福 AI Index 2026 报告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="card cat-cn">
+      <div class="card-num">06</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 国产芯片</span>
+          <span class="tag tag-ind">算力自主</span>
+        </div>
+        <div class="card-title">寒武纪 Q1 营收 4.23 亿美元、利润暴增 185%：中国本土 AI 芯片迎来里程碑级爆发，目标 50 万片算力卡</div>
+        <p class="card-summary">
+          寒武纪发布 2026 年一季度财报，营收达 4.23 亿美元（约合 30 亿元人民币），同比增长 160%，净利润同比暴增 185%；全年 2025 年营收已从 2024 年的 12 亿元跃升至 65 亿元，并首次实现年度盈利（净利润 21 亿元，扭亏近 4.5 亿元）。这一爆发式增长的背后，是美国对华 AI 芯片出口管制收紧后，国内头部云厂商、互联网公司和政府机构大规模转向国产替代的趋势。寒武纪旗舰产品思元 590 和 690 系列处理器是主要收入来源，公司 2026 年目标出货量约 50 万片，但高带宽存储器（HBM）依赖南韩供应商的瓶颈仍是制约产能的核心风险。同期竞争对手摩尔线程（MetaX）营收同样大幅提升。分析师将 2026 年视为中国 AI 芯片产业从"应急替代"迈向"规模商业化"的关键转折年。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Tom's Hardware · Bloomberg · South China Morning Post</span>
+          <a class="card-link" href="https://www.tomshardware.com/tech-industry/cambricons-q1-revenue-hits-423-million-as-chinas-domestic-ai-chip-market-accelerates" target="_blank" rel="noopener" aria-label="阅读原文：寒武纪 Q1 业绩报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 -->
+    <article class="card cat-dev">
+      <div class="card-num">07</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">开发工具</span>
+          <span class="tag tag-dev">企业 Agent</span>
+        </div>
+        <div class="card-title">Microsoft Agent 365 正式 GA：$15/用户/月统一管控企业 AI Agent 舰队，Shadow AI 扫描与多云注册表同步</div>
+        <p class="card-summary">
+          微软于 5 月 1 日宣布 Microsoft Agent 365 正式对商业客户全面开放（General Availability），定价 15 美元/用户/月，与 Microsoft 365 E7 "Frontier Suite" 同步上线。Agent 365 定位为企业统一的 AI Agent 管控平台，核心能力围绕三个维度：① 观测（Observe）——仪表板实时呈现企业内所有已注册 Agent 的运行时长、活跃用户、增长趋势和风险信号；② 治理（Govern）——跨 Microsoft 365 生态及 AWS Bedrock、Google Cloud 等第三方平台自动发现和注册 Agent，实现统一生命周期管理；③ 安全（Secure）——新上线的 Shadow AI 页面联动 Microsoft Defender 和 Intune，识别 Windows 设备上未受管控的本地 Agent 活动并施加端点策略。5 月更新还新增对 Slack、Jira、ServiceNow 的 Agent 网关集成。随着企业 Agent 部署数量以月为单位倍增，Agent 365 的价值主张——在不阻断生产力的前提下建立安全合规的 Agent 治理层——正受到大型企业客户的认可。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Microsoft Security Blog · WinBuzzer · Nerd Level Tech</span>
+          <a class="card-link" href="https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/" target="_blank" rel="noopener" aria-label="阅读原文：Microsoft Agent 365 GA 公告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 -->
+    <article class="card cat-dev">
+      <div class="card-num">08</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">开发工具</span>
+          <span class="tag tag-dev">前端 AI</span>
+        </div>
+        <div class="card-title">Amazon Kiro：规格驱动型 AI 开发 IDE 走向大众，从自然语言需求规格直接生成全栈实现，以"Hooks"自动化代码质量守护</div>
+        <p class="card-summary">
+          亚马逊旗下的 Kiro 是今年最受关注的新一代 AI 开发环境之一，其核心理念是"规格驱动开发"（Spec-Driven Development）——开发者先以结构化自然语言写下功能规格（Spec），Kiro 依据规格跨越整个代码库完成规划、实现与验证，而非只是补全当前光标处的代码。这一模式下，Kiro 能理解架构意图、追踪需求变更，大幅降低 AI 代码与项目整体架构脱节的风险。"Hooks"功能则在文件保存、提交等事件触发时自动运行测试、更新文档、执行代码规范检查，无需手动介入。近期 Kiro 进入快速推广期：5 月 6 日 AWS 新加坡峰会上宣布向新加坡各高校学生开放 1,000 个免费 Credits（个人免费版仅 50 个），折射出 AWS 力推 Kiro 抢占教育与开发者市场的战略意图。MarkTechPost 对比测评显示，在大型项目的需求对齐与跨文件重构场景，Kiro 的规格驱动模式已优于 Cursor 的自由对话模式。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">AWS · MarkTechPost · WeavAI Blog</span>
+          <a class="card-link" href="https://kiro.dev/" target="_blank" rel="noopener" aria-label="阅读原文：Amazon Kiro 官网">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 09 -->
+    <article class="card cat-biz">
+      <div class="card-num">09</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-biz">战略合作</span>
+          <span class="tag tag-ind">AI + 医药</span>
+        </div>
+        <div class="card-title">Novo Nordisk × OpenAI 签署战略合作协议：AI 全面渗透药物发现、临床试验、供应链与商业化全链路</div>
+        <p class="card-summary">
+          全球最大医药企业之一诺和诺德（Novo Nordisk，GLP-1 减重药巨头）与 OpenAI 达成深度战略合作，计划在 2026 年底前将 AI 能力全面整合到业务的每一个环节：药物发现阶段利用 AI 筛选靶点与分子结构，临床试验阶段运用 AI 优化受试者入组与数据分析，制造与供应链阶段通过 AI 预测需求与控制质检，商业化阶段则借助 AI 进行个性化患者教育与医生触达。这是制药行业迄今与 AI 大模型公司规模最大的端到端战略合作之一，也是 OpenAI 将企业 AI 合作从技术试点向全面 Agentic 工作流落地推进的旗帜案例。分析人士指出，此次合作的战略意义在于验证"AI 能否真正压缩新药研发周期"——诺和诺德此前的 GLP-1 产品线证明了其超强的临床开发能力，若 AI 在此基础上显著提速，将为行业提供有说服力的参照。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Crescendo AI · TLDL · Coaio</span>
+          <a class="card-link" href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank" rel="noopener" aria-label="阅读原文：Novo Nordisk × OpenAI 合作报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card cat-cn">
+      <div class="card-num">10</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 中国生态</span>
+          <span class="tag tag-ind">产业盛会</span>
+        </div>
+        <div class="card-title">2026 全国 AI 产业发展大会暨杭州国际人工智能博览会 5月13日开幕：聚焦核心技术展示，千家企业赋能百业</div>
+        <p class="card-summary">
+          2026 年全国人工智能产业发展大会暨杭州国际人工智能博览会将于 5 月 13 至 15 日在杭州国际博览中心举行，主题定为"展示核心技术、赋能每个行业"。作为中国目前规格最高的 AI 产业综合性展会，本届活动将汇聚来自政府机构、大型科技公司、AI 创业企业及高校科研院所的逾千家参展单位，重点展示方向涵盖：大模型与 Foundation Model 应用落地、具身智能与工业机器人、AI+ 医疗、AI+ 教育、AI+ 制造等垂直场景，以及国产 AI 算力芯片与基础设施。背景上，此次博览会举办之际，杭州已被列为中国首批"国家人工智能创新发展实验区"，本地聚集了阿里巴巴（通义千问）、网易、海康威视、大华等一线 AI 企业。在中国"十五五"规划将 AI 与机器人列为核心产业、中央政府持续加大政策支持的背景下，本届展会被视为中国 AI 产业年中进展的权威展示窗口。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Origin CG · Hangzhou IEC · Global Times</span>
+          <a class="card-link" href="https://www.origincg.cn/en/news/20265/" target="_blank" rel="noopener" aria-label="阅读原文：杭州 AI 博览会报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新 · 2026-05-10 08:07 BJT
+</footer>
+
+</body>
+</html>
