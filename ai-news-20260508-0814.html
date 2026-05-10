@@ -46,9 +46,6 @@
       min-height: 100vh;
     }
 
-    /* ═══════════════════════════════
-       HEADER
-    ═══════════════════════════════ */
     header {
       position: relative;
       background: linear-gradient(140deg, #060d1f 0%, #0c1f45 38%, #0f3460 65%, #1a4fa8 88%, #1d4ed8 100%);
@@ -80,10 +77,7 @@
       pointer-events: none;
     }
 
-    .header-inner {
-      position: relative;
-      z-index: 1;
-    }
+    .header-inner { position: relative; z-index: 1; }
 
     .header-eyebrow {
       display: inline-flex;
@@ -118,10 +112,7 @@
       line-height: 1.15;
       margin-bottom: 12px;
     }
-    header h1 em {
-      font-style: italic;
-      color: #93c5fd;
-    }
+    header h1 em { font-style: italic; color: #93c5fd; }
 
     .header-subtitle {
       font-size: 13px;
@@ -148,9 +139,6 @@
       backdrop-filter: blur(4px);
     }
 
-    /* ═══════════════════════════════
-       LAYOUT
-    ═══════════════════════════════ */
     main {
       max-width: 900px;
       margin: 0 auto;
@@ -179,9 +167,6 @@
       color: var(--text-muted);
     }
 
-    /* ═══════════════════════════════
-       CARDS
-    ═══════════════════════════════ */
     .cards { display: flex; flex-direction: column; gap: 14px; }
 
     .card {
@@ -206,9 +191,7 @@
       border-left-color: var(--card-accent, var(--accent-dim));
     }
 
-    @keyframes card-in {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes card-in { to { opacity: 1; transform: translateY(0); } }
     .card:nth-child(1)  { animation-delay: 0.06s; }
     .card:nth-child(2)  { animation-delay: 0.12s; }
     .card:nth-child(3)  { animation-delay: 0.18s; }
@@ -311,17 +294,10 @@
       transition: background 0.15s, border-color 0.15s, color 0.15s;
       white-space: nowrap;
     }
-    .card-link:hover {
-      background: #dbeafe;
-      border-color: #93c5fd;
-      color: #1e40af;
-    }
+    .card-link:hover { background: #dbeafe; border-color: #93c5fd; color: #1e40af; }
     .card-link svg { transition: transform 0.15s; }
     .card-link:hover svg { transform: translateX(2px); }
 
-    /* ═══════════════════════════════
-       FOOTER
-    ═══════════════════════════════ */
     footer {
       text-align: center;
       padding: 28px 20px 36px;
@@ -332,20 +308,9 @@
     }
     footer a { color: var(--accent); text-decoration: none; }
 
-    /* ── Focus states ── */
-    .card-link:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-      background: #dbeafe;
-      border-color: #93c5fd;
-    }
-    footer a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-      border-radius: 2px;
-    }
+    .card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; background: #dbeafe; border-color: #93c5fd; }
+    footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
 
-    /* ── Reduced motion ── */
     @media (prefers-reduced-motion: reduce) {
       .card { animation: none; opacity: 1; transform: none; }
       .header-eyebrow .dot { animation: none; }
@@ -353,22 +318,14 @@
       .card, .card-link { transition: none; }
     }
 
-    /* ═══════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════ */
     @media (max-width: 580px) {
       header { padding: 44px 20px 36px; }
-      .card {
-        grid-template-columns: 1fr;
-        padding: 18px 18px 16px;
-        border-left-width: 2px;
-      }
+      .card { grid-template-columns: 1fr; padding: 18px 18px 16px; border-left-width: 2px; }
       .card-num { display: none; }
       .card-title { font-size: 16px; }
       .section-header { flex-direction: column; gap: 4px; }
     }
 
-    /* ── Site nav bar ── */
     .site-nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -397,14 +354,8 @@
       white-space: nowrap;
       touch-action: manipulation;
     }
-    .nav-back:hover, .nav-pager-link:hover {
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-    }
-    .nav-back:focus-visible, .nav-pager-link:focus-visible {
-      outline: 2px solid #60a5fa;
-      outline-offset: 2px;
-    }
+    .nav-back:hover, .nav-pager-link:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .nav-back:focus-visible, .nav-pager-link:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
     .nav-title {
       font-family: "IBM Plex Mono", monospace;
       font-size: 12px;
@@ -415,19 +366,13 @@
       left: 50%; transform: translateX(-50%);
     }
     .nav-pager { display: flex; gap: 4px; }
-    .nav-pager-link.disabled {
-      opacity: 0.25;
-      pointer-events: none;
-    }
+    .nav-pager-link.disabled { opacity: 0.25; pointer-events: none; }
     body { padding-top: 48px; }
-    @media (max-width: 480px) {
-      .nav-title { display: none; }
-    }
+    @media (max-width: 480px) { .nav-title { display: none; } }
   </style>
 </head>
 <body>
 
-<!-- ══ SITE NAV ══════════════════════════════════════════ -->
 <nav class="site-nav" aria-label="站点导航">
   <a class="nav-back" href="index.html">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -443,7 +388,7 @@
       </svg>
       上一期
     </a>
-    <a class="nav-pager-link disabled" aria-label="下一期（暂无）" aria-disabled="true" tabindex="-1">
+    <a class="nav-pager-link" href="ai-news-20260510-0807.html" aria-label="下一期">
       下一期
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
         <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -452,7 +397,6 @@
   </div>
 </nav>
 
-<!-- ══ HEADER ══════════════════════════════════════════ -->
 <header>
   <div class="header-inner">
     <div class="header-eyebrow" aria-hidden="true">
@@ -470,7 +414,6 @@
   </div>
 </header>
 
-<!-- ══ MAIN ══════════════════════════════════════════ -->
 <main>
   <div class="section-header">
     <span class="section-title">本期精选</span>
@@ -479,7 +422,6 @@
 
   <div class="cards">
 
-    <!-- 01 -->
     <article class="card cat-biz">
       <div class="card-num">01</div>
       <div class="card-body">
@@ -501,7 +443,6 @@
       </div>
     </article>
 
-    <!-- 02 -->
     <article class="card cat-cn">
       <div class="card-num">02</div>
       <div class="card-body">
@@ -511,7 +452,7 @@
         </div>
         <div class="card-title">DeepSeek V4 Preview 正式开源：双模型架构，1.6 万亿参数，支持百万 Token 超长上下文</div>
         <p class="card-summary">
-          4 月 24 日，DeepSeek 发布并开源 V4 Preview，这是其迄今参数规模最大、能力最强的基础模型。本次发布包含两款混合专家（MoE）模型：旗舰版 DeepSeek-V4-Pro 总参数量 1.6 万亿（推理时激活 490 亿），以及轻量版 DeepSeek-V4-Flash 总参数量 2840 亿（激活 130 亿），两款模型均支持高达 100 万 token 的超长上下文窗口，大幅超越 V3。DeepSeek-V4-Pro 在 SWE-bench 等 Agentic 编程基准上的得分已与 GPT-5.5 及 Claude Opus 4.7 持平，代表中国开源模型首次在最高难度评测中正面竞争国际顶级闭源模型。模型权重全量开放，任何人均可下载、使用和修改，完全延续 DeepSeek 的开源传统。值得注意的是，V4 已完成对华为昇腾芯片的全面适配，国内算力生态的自洽性进一步增强。
+          4 月 24 日，DeepSeek 发布并开源 V4 Preview，这是其迌今参数规模最大、能力最强的基础模型。本次发布包含两款混合专家（MoE）模型：旗舰版 DeepSeek-V4-Pro 总参数量 1.6 万亿（推理时激活 490 亿），以及轻量版 DeepSeek-V4-Flash 总参数量 2840 亿（激活 130 亿），两款模型均支持高达 100 万 token 的超长上下文窗口，大幅超越 V3。DeepSeek-V4-Pro 在 SWE-bench 等 Agentic 编程基准上的得分已与 GPT-5.5 及 Claude Opus 4.7 持平，代表中国开源模型首次在最高难度评测中正面第争国际顶级闭源模型。模型权重全量开放，任何人均可下载、使用和修改，完全延续 DeepSeek 的开源传统。值得注意的是，V4 已完成对华为昕腾芯片的全面适配，国内算力生态的自洽性进一步增强。
         </p>
         <div class="card-footer">
           <span class="card-source">DeepSeek API Docs · MIT Technology Review · SitePoint</span>
@@ -523,7 +464,6 @@
       </div>
     </article>
 
-    <!-- 03 -->
     <article class="card cat-cn">
       <div class="card-num">03</div>
       <div class="card-body">
@@ -531,9 +471,9 @@
           <span class="tag tag-cn">🇨🇳 中国政策</span>
           <span class="tag tag-sec">安全审查</span>
         </div>
-        <div class="card-title">中国 NDRC 叫停 Meta 20 亿美元收购 Manus AI：首例 AI 安全审查完整案例，"新加坡洗壳"被穿透</div>
+        <div class="card-title">中国 NDRC 叫停 Meta 20 亿美元收购 Manus AI：首例 AI 安全审查完整案例，“新加坡洗壳”被穿透</div>
         <p class="card-summary">
-          中国国家发展和改革委员会（NDRC）以国家安全为由，强制叫停 Meta 对 AI Agent 初创公司 Manus 约 20 亿美元的收购，这是中国首次公开对外资收购本土 AI 公司启动安全审查并完整执行撤销的案例。Manus 由中国团队创立，此后在新加坡完成离岸架构重组、引入美元风投并随后进入被收购流程——NDRC 的审查直接穿透了离岸架构，以"技术起源地为中国、核心研发团队仍位于中国"为依据，认定交易需接受安全审查。此案确立了至少两项重要原则：① 中国的 AI 核心技术即便通过境外公司持有，仍受跨境安全审查约束；② "新加坡洗壳"（Singapore washing）不能规避中国监管，NDRC 将以穿透审查方式追溯技术根源。外国律所及投资人普遍将此案视为重要信号，对于拥有中国技术起源的 AI 公司在进行跨境并购时必须提前进行合规评估。
+          中国国家发展和改革委员会（NDRC）以国家安全为由，强制叫停 Meta 对 AI Agent 初创公司 Manus 约 20 亿美元的收购，这是中国首次公开对外资收购本土 AI 公司启动安全审查并完整执行撤销的案例。Manus 由中国团队创立，此后在新加坡完成离岸架构重组、引入美元风投并随后进入被收购流程——NDRC 的审查直接穿透了离岸架构，以“技术起源地为中国、核心研发团队仍位于中国”为依据，认定交易需接受安全审查。此案确立了至少两项重要原则：① 中国的 AI 核心技术即便通过境外公司持有，仍受跨境安全审查约束；② “新加坡洗壳”（Singapore washing）不能规避中国监管，NDRC 将以穿透审查方式追溯技术根源。外国律所及投资人普遍将此案视为重要信号，对于拥有中国技术起源的 AI 公司在进行跨境并购时必须提前进行合规评估。
         </p>
         <div class="card-footer">
           <span class="card-source">The Next Web · Morgan Lewis · Foreign Policy</span>
@@ -545,7 +485,6 @@
       </div>
     </article>
 
-    <!-- 04 -->
     <article class="card cat-dev">
       <div class="card-num">04</div>
       <div class="card-body">
@@ -555,7 +494,7 @@
         </div>
         <div class="card-title">Cursor 3 重磅发布：告别传统 IDE，迈向 Agent 优先全新开发范式，内置 Design Mode 精准指定 UI 元素</div>
         <p class="card-summary">
-          Cursor 推出全面重构的 Cursor 3，这是其从"AI 增强型 IDE"向"Agent 原生开发环境"转型的里程碑。核心变化：① 全新 Agent 优先界面从头构建，原生多工作区布局，本地 Agent 与云端 Agent 统一显示在侧边栏，来自 Mobile、Slack、GitHub、Linear 的 Agent 任务进度一目了然；② Design Mode 让开发者在浏览器中直接圈选标注 UI 元素，把精准的界面位置信息传递给 Agent，大幅提升前端迭代效率；③ Bugbot 已从 beta 毕业，PR 问题识别后的解决率从 52% 提升至近 80%；④ Agent Tabs 支持多个 Chat 并排或网格展示；⑤ Cursor SDK 开放给团队构建自定义 CI/CD 集成 Agent。对前端开发者而言，Design Mode 提供了一种革新性的"所指即所得"AI 交互方式，精准替代了以往大量的文字描述，是 2026 年前端 AI 工具中最值得关注的交互创新。
+          Cursor 推出全面重构的 Cursor 3，这是其从“AI 增强型 IDE”向“Agent 原生开发环境”转型的里程碑。核心变化：① 全新 Agent 优先界面从头构建，原生多工作区布局，本地 Agent 与云端 Agent 统一显示在侧边栏，来自 Mobile、Slack、GitHub、Linear 的 Agent 任务进度一目了然；② Design Mode 让开发者在浏览器中直接圈选标注 UI 元素，把精准的界面位置信息传递给 Agent，大幅提升前端迭代效率；③ Bugbot 已从 beta 毕业，PR 问题识别后的解决率从 52% 提升至近80%；④ Agent Tabs 支持多个 Chat 并排或网格展示；⑤ Cursor SDK 开放给团队构建自定义 CI/CD 集成 Agent。对前端开发者而言，Design Mode 提供了一种革新性的“所指即所得”AI 交互方式，精准替代了以往大量的文字描述，是 2026 年前端 AI 工具中最値得关注的交互创新。
         </p>
         <div class="card-footer">
           <span class="card-source">Cursor Blog · InfoQ · MindStudio</span>
@@ -567,7 +506,6 @@
       </div>
     </article>
 
-    <!-- 05 -->
     <article class="card cat-dev">
       <div class="card-num">05</div>
       <div class="card-body">
@@ -575,9 +513,9 @@
           <span class="tag tag-dev">开发工具</span>
           <span class="tag tag-sec">计费变革</span>
         </div>
-        <div class="card-title">GitHub Copilot 6 月起转按量计费，VS Code 1.119 回滚"自动署名 AI"争议，Copilot 新功能密集上线</div>
+        <div class="card-title">GitHub Copilot 6 月起转按量计费，VS Code 1.119 回滚“自动署名 AI”争议，Copilot 新功能密集上线</div>
         <p class="card-summary">
-          GitHub 宣布自 6 月 1 日起将 Copilot 切换至按量计费模式：Pro 用户每月获得 1,000 AI Credits，Pro+ 用户 3,900 Credits，超出部分按量付费，5 月初将上线"预览账单"让用户提前了解费用预测。这标志着 AI 编程助手向使用量与价值挂钩的成熟商业模式过渡。与此同时，4 月底 VS Code 1.118 因自动在所有 Git commit 中追加"Co-authored-by: Copilot"引发开发者强烈反弹——即便未使用 Copilot 功能也会被加注，5 月 3 日发布的 1.119 已将此行为改回默认关闭。此外，Copilot 五月更新带来工作区跨文件语义搜索、/chronicle 对话历史、BYOK（自带密钥）支持、终端与浏览器共享、远程 Copilot CLI 控制等新能力，GitHub MCP 服务器中的 Secret Scanning 也正式 GA，允许 AI 编码 Agent 在提交前自动扫描代码中的密钥泄露风险。
+          GitHub 宣布自 6 月 1 日起将 Copilot 切换至按量计费模式：Pro 用户每月获得 1,000 AI Credits，Pro+ 用户 3,900 Credits，超出部分按量付费，5 月初将上线“预览账单”让用户提前了解费用预测。这标志着 AI 编程助手向使用量与价值挂钉的成熟商业模式过渡。与此同时，4 月底 VS Code 1.118 因自动在所有 Git commit 中追加“Co-authored-by: Copilot”引发开发者强烈反弹——即便未使用 Copilot 功能也会被加注，5 月 3 日发布的 1.119 已将此行为改回默认关闭。此外，Copilot 五月更新带来工作区跨文件语义搜索、/chronicle 对话历史、BYOK（自带密鑰）支持、终端与浏览器共享、远程 Copilot CLI 控制等新能力，GitHub MCP 服务器中的 Secret Scanning 也正式 GA，允许 AI 编码 Agent 在提交前自动扫描代码中的密鑰泄露风险。
         </p>
         <div class="card-footer">
           <span class="card-source">The Register · MSN · GitHub Release Notes</span>
@@ -589,7 +527,6 @@
       </div>
     </article>
 
-    <!-- 06 -->
     <article class="card cat-model">
       <div class="card-num">06</div>
       <div class="card-body">
@@ -599,7 +536,7 @@
         </div>
         <div class="card-title">Google I/O 2026 将于 5 月 19 日开幕：预期 Gemini 4.0 旗舰、AI 眼镜首发与 Aluminum OS 全面亮相</div>
         <p class="card-summary">
-          Google 年度最重要的开发者大会 I/O 2026 将于 5 月 19 至 20 日举行，AI 是本届压倒一切的核心主题。主要预期：① 新一代旗舰模型 Gemini 4.0 大概率亮相，具备更强的多模态能力和 Agentic 自主性；② Android XR 平台将发布两款智能眼镜——无显示屏语音交互款与带内置显示屏导航款，剑指苹果 Vision Pro 与 Meta Ray-Ban；③ 全新操作系统 Aluminum OS 首次公开，被视为 AI 原生 PC 的系统层基础；④ Google Workspace AI 深度整合——Gemini 将在 Gmail、日历、Drive 等产品中实现实时上下文感知，无需重复提示即可完成跨应用任务；⑤ Agentic AI 进展——包括 Google Cloud 企业 Agent 平台在 Next '26 之后的进一步能力演进。大会将通过直播向开发者开放，是今年下半年最值得期待的 AI 产品发布集合。
+          Google 年度最重要的开发者大会 I/O 2026 将于 5 月 19 至 20 日举行，AI 是本届压倒一切的核心主题。主要预期：① 新一代旗舰模型 Gemini 4.0 大概率亮相，具备更强的多模态能力和 Agentic 自主性；② Android XR 平台将发布两款智能眼镜——无显示屏语音交互款与带内置显示屏导航款，剑指苹果 Vision Pro 与 Meta Ray-Ban；③ 全新操作系统 Aluminum OS 首次公开，被视为 AI 原生 PC 的系统层基础；④ Google Workspace AI 深度整合——Gemini 将在 Gmail、日历、Drive 等产品中实现实时上下文感知，无需重复提示即可完成跨应用任务；⑤ Agentic AI 进展——包括 Google Cloud 企业 Agent 平台在 Next '26 之后的进一步能力演进。大会将通过直播向开发者开放，是今年下半年最値得期待的 AI 产品发布集合。
         </p>
         <div class="card-footer">
           <span class="card-source">Google I/O · Engadget · NewsBytesApp</span>
@@ -611,7 +548,6 @@
       </div>
     </article>
 
-    <!-- 07 -->
     <article class="card cat-dev">
       <div class="card-num">07</div>
       <div class="card-body">
@@ -633,7 +569,6 @@
       </div>
     </article>
 
-    <!-- 08 -->
     <article class="card cat-dev">
       <div class="card-num">08</div>
       <div class="card-body">
@@ -643,7 +578,7 @@
         </div>
         <div class="card-title">Anthropic 将 Claude Code 用量限制全面翻倍，与 SpaceX 签署算力战略合作，企业容量大幅扩容</div>
         <p class="card-summary">
-          Anthropic 宣布将 Claude Code 和 Claude API 的用量上限全面翻倍：Pro、Max、Team 及基于席位的 Enterprise 计划速率限制均提高一倍，Pro 和 Max 用户的高峰时段限速也一并取消；Opus API 的调用上限同步提升，直接回应了重度用户长期反映的容量瓶颈。这一扩容举措的背后是 Anthropic 与 SpaceX 签署的战略算力合作协议——SpaceX 将为 Anthropic 的推理集群提供大量计算资源，成为 Anthropic 继 Google Cloud 之外的第二大算力来源。对企业用户而言，这意味着在复杂的多 Agent 工作流中，Claude Code 可以更稳定地并发运行大规模任务而不触达限制。此次扩容发生在 Claude Code 年化营收突破 25 亿美元之后不久，进一步强化了 Anthropic 持续投入开发者工具基础设施建设的战略意图。
+          Anthropic 宣布将 Claude Code 和 Claude API 的用量上限全面翻倍：Pro、Max、Team 及基于席位的 Enterprise 计划速率限制均提高一倍，Pro 和 Max 用户的高峰时段限速也一并取消；Opus API 的调用上限同步提升，直接回应了重度用户长期反映的容量瓶颈。这一扩容举措的背后是 Anthropic 与 SpaceX 签署的战略算力合作协议——SpaceX 将为 Anthropic 的推理集群提供大量计算资源，成为 Anthropic 继 Google Cloud 之外的第二大算力来源。对企业用户而言，这意味着在复杂的多 Agent 工作流中，Claude Code 可以更稳定地并发运行大规模任务而不触达限制。
         </p>
         <div class="card-footer">
           <span class="card-source">Releasebot · Anthropic · Claude Code Changelog</span>
@@ -655,7 +590,6 @@
       </div>
     </article>
 
-    <!-- 09 -->
     <article class="card cat-cn">
       <div class="card-num">09</div>
       <div class="card-body">
@@ -665,7 +599,7 @@
         </div>
         <div class="card-title">中国生成式 AI 用户突破 6 亿，字节 Doubao 接入 145 款车型，AI+汽车融合成全球最大规模实验场</div>
         <p class="card-summary">
-          截至 2025 年底，中国生成式 AI 用户数量已超过 6 亿人，相比一年前增长 142%，在全球主要经济体中渗透率增速排名第一。这一数据来自巴尔的摩太阳报对中国 AI 应用爆炸式增长的深度报道，揭示了中国正在成为全球最大规模 AI 真实场景测试平台的现实。汽车是其中最具代表性的垂直场景：字节跳动旗下 Doubao 模型已被超过 50 个汽车品牌采用，集成于 145 款量产车型和逾 700 万辆在路车辆，成为车载 AI 助手领域的事实标准。此外，在中国政府将 AI 与机器人列为 "十五五" 规划核心产业后，比亚迪、吉利、华为、小米等企业已宣布将 AI Agent 能力深度嵌入汽车操作系统，覆盖驾驶辅助、座舱交互与能耗优化全链路。中国的大规模 AI 部署速度与密度正在全面重塑全球 AI 落地应用的参照系。
+          截至 2025 年底，中国生成式 AI 用户数量已超过 6 亿人，相比一年前增长 142%，在全球主要经浏体中渗透率增速排名第一。这一数据来自巴尔的摩太阳报对中国 AI 应用爆炸式增长的深度报道，揭示了中国正在成为全球最大规模 AI 真实场景测试平台的现实。汽车是其中最具代表性的垂直场景：字节跳动旗下 Doubao 模型已被超过 50 个汽车品牌采用，集成于 145 款量产车型和逾 700 万辆在路车辆，成为车载 AI 助手领域的事实标准。此外，在中国政府将 AI 与机器人列为 “十五五” 规划核心产业后，比亚迪、吉利、华为、小米等企业已宣布将 AI Agent 能力深度嵌入汽车操作系统，覆盖驾驶辅助、坐舱交互与能耗优化全链路。
         </p>
         <div class="card-footer">
           <span class="card-source">Baltimore Sun · CNBC · Global Times</span>
@@ -677,7 +611,6 @@
       </div>
     </article>
 
-    <!-- 10 -->
     <article class="card cat-ind">
       <div class="card-num">10</div>
       <div class="card-body">
@@ -687,7 +620,7 @@
         </div>
         <div class="card-title">麦肯锡 2026 AI 开发者大调研：AI 工具将重复编码时间压缩 46%，高级工程师成效能杠杆核心</div>
         <p class="card-summary">
-          麦肯锡在 2026 年 2 月发布的大规模调研覆盖全球 150 家企业的 4,500 名开发者，揭示 AI 编程工具在专业软件开发流程中的真实效能表现。核心发现：AI 编程助手平均将例行编码任务耗时压缩 46%，其中单元测试生成、代码补全、API 调用查询三类任务节省比例最高，均超过 55%。然而效果分化明显：高级工程师借助 AI Agent 栈（Cursor + Claude Code + 自定义工具）的生产力提升达到普通水平的 2 至 3 倍，成为团队整体效能的关键放大器。初级开发者则面临"辅助陷阱"——过度依赖 AI 补全会减缓调试能力和系统设计思维的培养。TypeScript、组件驱动架构与 AI 工具链三者结合成为 2026 年高效前端团队的标准配置，CI/CD 集成 Agent 用于自动识别 PR 中的根因和回归问题已从实验演进为标准工程实践。
+          麦肯锡在 2026 年 2 月发布的大规模调研覆盖全球 150 家企业的 4,500 名开发者，揭示 AI 编程工具在专业软件开发流程中的真实效能表现。核心发现：AI 编程助手平均将例行编码任务耗时压缩 46%，其中单元测试生成、代码补全、API 调用查询三类任务节省比例最高，均超过 55%。然而效果分化明显：高级工程师借助 AI Agent 栈（Cursor + Claude Code + 自定义工具）的生产力提升达到普通水平的 2 至 3 倍，成为团队整体效能的关键放大器。初级开发者则面临“辅助陷阱”——过度依赖 AI 补全会减缓调试能力和系统设计思维的培养。TypeScript、组件驱动架构与 AI 工具链三者结合成为 2026 年高效前端团队的标准配置。
         </p>
         <div class="card-footer">
           <span class="card-source">McKinsey · Tech Insider · Syncfusion Blog</span>
@@ -699,7 +632,7 @@
       </div>
     </article>
 
-  </div><!-- /cards -->
+  </div>
 </main>
 
 <footer>
