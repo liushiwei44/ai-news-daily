@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 行业快讯 · 2026-05-17 08:10</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --border: #e2e5eb;
+      --text-primary: #0d1117;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --accent: #1d4ed8;
+      --accent-dim: #3b82f6;
+      --radius: 10px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 28px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
+
+      /* category palette */
+      --c-cn:    #dc2626; --bg-cn:    #fef2f2; --bd-cn:    #fca5a5;
+      --c-model: #0891b2; --bg-model: #ecfeff; --bd-model: #67e8f9;
+      --c-dev:   #7c3aed; --bg-dev:   #f5f3ff; --bd-dev:   #c4b5fd;
+      --c-sec:   #b45309; --bg-sec:   #fffbeb; --bd-sec:   #fcd34d;
+      --c-ind:   #065f46; --bg-ind:   #ecfdf5; --bd-ind:   #6ee7b7;
+      --c-biz:   #be185d; --bg-biz:   #fdf2f8; --bd-biz:   #f9a8d4;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB",
+                   "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(140deg, #060d1f 0%, #0c1f45 38%, #0f3460 65%, #1a4fa8 88%, #1d4ed8 100%);
+      overflow: hidden;
+      padding: 56px 24px 52px;
+      text-align: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,179,237,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,179,237,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 640px;
+      height: 380px;
+      background: radial-gradient(ellipse, rgba(56,130,246,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 18px;
+    }
+    .header-eyebrow .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    header h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    header h1 em {
+      font-style: italic;
+      color: #93c5fd;
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: #93c5fd;
+      opacity: 0.8;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .header-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .header-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #bfdbfe;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 4px 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 72px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .section-count {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--card-accent, #e2e5eb);
+      border-radius: var(--radius);
+      padding: 22px 26px 20px 26px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 18px;
+      align-items: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: card-in 0.45s ease forwards;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-left-color: var(--card-accent, var(--accent-dim));
+    }
+
+    @keyframes card-in {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card:nth-child(1)  { animation-delay: 0.06s; }
+    .card:nth-child(2)  { animation-delay: 0.12s; }
+    .card:nth-child(3)  { animation-delay: 0.18s; }
+    .card:nth-child(4)  { animation-delay: 0.24s; }
+    .card:nth-child(5)  { animation-delay: 0.30s; }
+    .card:nth-child(6)  { animation-delay: 0.36s; }
+    .card:nth-child(7)  { animation-delay: 0.42s; }
+    .card:nth-child(8)  { animation-delay: 0.48s; }
+    .card:nth-child(9)  { animation-delay: 0.54s; }
+    .card:nth-child(10) { animation-delay: 0.60s; }
+
+    .card.cat-cn     { --card-accent: var(--c-cn); }
+    .card.cat-model  { --card-accent: var(--c-model); }
+    .card.cat-dev    { --card-accent: var(--c-dev); }
+    .card.cat-sec    { --card-accent: var(--c-sec); }
+    .card.cat-ind    { --card-accent: var(--c-ind); }
+    .card.cat-biz    { --card-accent: var(--c-biz); }
+
+    .card-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 22px;
+      font-weight: 600;
+      color: #d1d5db;
+      line-height: 1;
+      padding-top: 4px;
+      user-select: none;
+      transition: color 0.2s;
+      letter-spacing: -0.02em;
+    }
+    .card:hover .card-num { color: var(--card-accent, var(--accent-dim)); }
+
+    .card-body { min-width: 0; }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 9px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border: 1px solid transparent;
+      line-height: 1.6;
+    }
+    .tag-cn  { color: var(--c-cn);    background: var(--bg-cn);    border-color: var(--bd-cn); }
+    .tag-mod { color: var(--c-model); background: var(--bg-model); border-color: var(--bd-model); }
+    .tag-dev { color: var(--c-dev);   background: var(--bg-dev);   border-color: var(--bd-dev); }
+    .tag-sec { color: var(--c-sec);   background: var(--bg-sec);   border-color: var(--bd-sec); }
+    .tag-ind { color: var(--c-ind);   background: var(--bg-ind);   border-color: var(--bd-ind); }
+    .tag-biz { color: var(--c-biz);   background: var(--bg-biz);   border-color: var(--bd-biz); }
+
+    .card-title {
+      font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.38;
+      margin-bottom: 9px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-source {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 5px 13px;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      background: #eff6ff;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover {
+      background: #dbeafe;
+      border-color: #93c5fd;
+      color: #1e40af;
+    }
+    .card-link svg { transition: transform 0.15s; }
+    .card-link:hover svg { transform: translateX(2px); }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 36px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .card-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      background: #dbeafe;
+      border-color: #93c5fd;
+    }
+    footer a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { animation: none; opacity: 1; transform: none; }
+      .header-eyebrow .dot { animation: none; }
+      .card-link svg { transition: none; }
+      .card, .card-link { transition: none; }
+    }
+
+    @media (max-width: 580px) {
+      header { padding: 44px 20px 36px; }
+      .card {
+        grid-template-columns: 1fr;
+        padding: 18px 18px 16px;
+        border-left-width: 2px;
+      }
+      .card-num { display: none; }
+      .card-title { font-size: 16px; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 48px;
+      background: rgba(9, 18, 40, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .nav-back, .nav-pager-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #93c5fd;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+      touch-action: manipulation;
+    }
+    .nav-back:hover, .nav-pager-link:hover {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+    .nav-back:focus-visible, .nav-pager-link:focus-visible {
+      outline: 2px solid #60a5fa;
+      outline-offset: 2px;
+    }
+    .nav-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+    }
+    .nav-pager { display: flex; gap: 4px; }
+    .nav-pager-link.disabled {
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    body { padding-top: 48px; }
+    @media (max-width: 480px) {
+      .nav-title { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="站点导航">
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    返回列表
+  </a>
+  <span class="nav-title" aria-hidden="true">AI 行业快讯</span>
+  <div class="nav-pager">
+    <a class="nav-pager-link" href="ai-news-20260516-0811.html" aria-label="上一期">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M9 3L5 7L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      上一期
+    </a>
+    <a class="nav-pager-link disabled" aria-label="下一期（暂无）" aria-disabled="true" tabindex="-1">
+      下一期
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow" aria-hidden="true">
+      <span class="dot"></span>
+      AI Daily Briefing
+      <span class="dot"></span>
+    </div>
+    <h1>AI 行业快讯 <em>Top 10</em></h1>
+    <p class="header-subtitle">聚焦软件开发 · 模型前沿 · 中国动态</p>
+    <div class="header-pills">
+      <span class="header-pill">2026年5月17日</span>
+      <span class="header-pill">北京时间 08:10</span>
+      <span class="header-pill">权威媒体综合整理</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-header">
+    <span class="section-title">本期精选</span>
+    <span class="section-count">10 条重要消息</span>
+  </div>
+
+  <div class="cards">
+
+    <!-- 01 -->
+    <article class="card cat-dev">
+      <div class="card-num">01</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Google I/O</span>
+          <span class="tag tag-mod">Gemini 4</span>
+        </div>
+        <div class="card-title">Google I/O 2026 两天倒计时：Gemini 4 悬念揭晓在即，Googlebook 新品类、Android XR 眼镜实机、Aluminium OS 发布路线图</div>
+        <p class="card-summary">
+          Google I/O 2026 主题演讲定于北京时间5月19日（周二）凌晨1点正式开幕，距今仅剩两天。AI 社区与资本市场对本届 I/O 的期待值达到历史高点——核心悬念是旗舰模型命名：Android Authority 与多位分析师认为 Gemini 4.0 概率约六成，另一路线则指向 Gemini 3.5；两种路线均意味着推理能力与多模态融合的大幅跃升。已确认发布的内容包括：Googlebook——Google 首款以 Gemini Intelligence 为核心差异化卖点的笔记本电脑品类，内置 Magic Pointer 手势 AI 功能；Android 17 正式 Stable API 里程碑，以及面向第三方开发者的 Agentic 能力接口，允许应用直接调用系统级 Gemini 助手完成跨 App 任务；Android XR 眼镜（三星联合研发）将迎来首次公开实机演示；Aluminium OS（Android 与 ChromeOS 统一新系统）计划公布路线图。此外，TechCrunch 已报道 Android Show 先行发布的"vibe-coded widgets"（用户通过自然语言实时调整小组件样式）和 Quick Share × AirDrop 跨平台互通。业界普遍预期本届 I/O 将是 Google 史上 AI 密度最高的主题演讲，Alphabet 股价在过去一周随预热消息累计上涨超5%。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Android Authority · TechCrunch · Engadget · Tom's Guide · io.google</span>
+          <a class="card-link" href="https://www.androidauthority.com/what-to-expect-from-google-io-2026-3664979/" target="_blank" rel="noopener" aria-label="阅读原文：Google I/O 2026 期待清单">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="card cat-model">
+      <div class="card-num">02</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">Claude Opus 4.7</span>
+          <span class="tag tag-dev">软件工程</span>
+        </div>
+        <div class="card-title">Anthropic 发布 Claude Opus 4.7：产线 SWE-Bench 任务解决率是前代3倍，视觉分辨率提升至3.75 MP，新增 xhigh 推理档位</div>
+        <p class="card-summary">
+          Anthropic 于4月16日正式发布 Claude Opus 4.7，定位为其迄今最强的通用可用模型，在软件工程领域实现了跨代级跃升。核心数据：在 Rakuten-SWE-Bench 生产任务基准上，Opus 4.7 解决的真实代码库问题数量是 Opus 4.6 的3倍，且在代码质量与测试质量评分上均录得两位数增长。工程师社区的反馈印证了这一数据——此前需要密切人工监督的复杂重构、跨服务迁移、安全漏洞修复等高难度任务，现在可以放心整包交给 Opus 4.7 自主完成，并由模型自行设计输出验证机制后再汇报结果。视觉能力方面，Opus 4.7 将接受的图片最长边提升至2576像素（约3.75 MP），是前代的3倍以上，对处理 UI 截图、电路图、医学影像等细节密集型视觉任务大有裨益。此外，新模型引入了 xhigh 推理努力档位，填补了原有 high 与 maximum 之间的空白，为用户在推理深度与响应速度之间提供了更精细的控制粒度。Opus 4.7 现已上线 Claude API、Amazon Bedrock、Google Cloud Vertex AI 和 Microsoft Foundry，定价与 Opus 4.6 持平（每百万输入/输出 token $5/$25），Fast Mode 研究预览同步支持该模型。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Anthropic · 9to5Mac · Street Insider · Neowin · LLM-Stats</span>
+          <a class="card-link" href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener" aria-label="阅读原文：Claude Opus 4.7 发布公告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="card cat-dev">
+      <div class="card-num">03</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">OpenAI Codex</span>
+          <span class="tag tag-dev">计算机控制</span>
+        </div>
+        <div class="card-title">OpenAI Codex 升级为"几乎全能"Agent：后台控制整台 Mac、内置浏览器、90+ 插件，周活跃开发者突破300万</div>
+        <p class="card-summary">
+          OpenAI 于4月16日推送 Codex 重大版本更新，以"Codex for (almost) everything"为题，标志着这款 AI 编程工具正式从"代码补全助手"演进为"全能桌面 Agent"。最重磅的新能力是 Background Computer Use（后台计算机控制）：Codex 在 macOS 上拥有独立的鼠标光标，可在用户正常工作的同时，同步看屏幕、点击界面元素、在任意 App 中输入文字——无论该应用是否提供 API。多个 Codex 实例可并行运行，互不干扰。In-App Browser 新增内置浏览器，Codex 现在可以直接访问网页，用户可对页面元素加注释精确指挥 Agent 行动。插件生态方面，OpenAI 在此次更新中同步发布90余款新插件，整合 GitLab Issues、Microsoft Suite、Neon by Databricks 等主流开发工具，结合 MCP 服务器大幅扩展了 Codex 的上下文感知和行动范围。市场数据方面，截至2026年4月 Codex 的周活跃开发者已超过300万（2025年底为100万），SemiAnalysis 估算其生成代码约占 GitHub 公开提交的4%，年底预计达20%。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">OpenAI · SmartScope · Remio · Digital Applied · AI.cc</span>
+          <a class="card-link" href="https://openai.com/index/codex-for-almost-everything/" target="_blank" rel="noopener" aria-label="阅读原文：OpenAI Codex for almost everything">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="card cat-dev">
+      <div class="card-num">04</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Agent 编程</span>
+          <span class="tag tag-dev">行业报告</span>
+        </div>
+        <div class="card-title">Anthropic《2026 年 Agent 编程趋势报告》：工程师角色从"写代码"转向"协调 Agent 团队"，前端开发受冲击程度全栈最高</div>
+        <p class="card-summary">
+          Anthropic 发布《2026 Agentic Coding Trends Report》，基于 Rakuten、CRED、TELUS、Zapier、Legora 等企业的生产实践案例，系统梳理了 Agent 编程正在重塑软件工程的八大趋势，在开发者社区引发广泛讨论。报告的核心判断是：2026年软件工程的"核心工作"已从直接编写代码转变为协调 AI Agent 编写代码——工程师的价值高地迁移至系统架构设计、Agent 编排策略、任务拆解和质量管控。报告揭示了一个"委托鸿沟"（Delegation Gap）：工程师在约60%的工作中已使用 AI，但能够"完全委托"的任务比例仅为0~20%——差距在于有效的 AI 协作仍需大量人工参与（提示设计、监督、验证、上下文判断），尤其在高风险或强上下文依赖场景中。多 Agent 协作层面，领先团队已从单一编程 Agent 转向多专属 Agent 并行、由 Orchestrator 统筹分发的模式，任务时长也从数分钟扩展到数小时乃至数天的持续流程。重要发现之一：AI 编程带来的核心收益不是"做同样的事更快"，而是"做了此前根本不会做的事"——约27%的 AI 辅助工作是过去受资源限制而被搁置的功能或探索性项目。前端是受 Agent 编程冲击最深的岗位，因 React/Vue 等标准化框架为 AI 生成提供了高度可预期的结构。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Anthropic · Hivetrail · Medium · Context Studios · NYU Shanghai</span>
+          <a class="card-link" href="https://resources.anthropic.com/2026-agentic-coding-trends-report" target="_blank" rel="noopener" aria-label="阅读原文：2026 Agentic Coding Trends Report">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="card cat-cn">
+      <div class="card-num">05</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 中国战略</span>
+          <span class="tag tag-ind">AI 机器人</span>
+        </div>
+        <div class="card-title">中国将 AI 机器人列入第十五个五年规划核心产业：宇树/优必选/AgiBot 争相量产，机器人密度2030年翻番目标</div>
+        <p class="card-summary">
+          国际机器人联合会（IFR）5月初发布报告指出，中国在其2026~2030年第十五个五年规划中将 AI 赋能机器人作为现代工业体系的核心支柱，战略优先级比肩国防与经济增长，成为迄今范围最广的"具身 AI"国家战略。计划核心目标是到2030年将中国制造业机器人密度翻番，同时在全国建立人形机器人量产试点线，两大国家政策"机器人+"行动计划和"AI+制造"路线图同步推进。企业层面，宇树科技（Unitree）、优必选（UBTech）和 AgiBot 正在竞速将人形机器人推向规模化量产——宇树最新人形机器人已能完成搬运、组装和简单服务任务，月产能目标正在向千台级迈进；AgiBot 则已与多家汽车制造商签订产线试用协议。生态层面，阿里巴巴的 RynnBrain 具身 AI 大模型专门用于让机器人理解物理世界、识别物体并执行操作；百度 Apollo Go 和萝卜快跑的 Robotaxi 已在深圳、上海等城市商业化运营，同期数十款自动配送无人车活跃于社区末端配送。《Newsweek》将这一趋势定性为"中国机器人闪电战正在暴露美国 AI 战略的盲区"，警告若物理 AI 层面的部署速度差距持续扩大，其影响将远超软件领域的大模型博弈。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">IFR · AI Insider · CNBC · Newsweek · Merics</span>
+          <a class="card-link" href="https://ifr.org/ifr-press-releases/news/china-makes-ai-powered-robots-core-of-national-strategy" target="_blank" rel="noopener" aria-label="阅读原文：中国 AI 机器人国家战略报告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="card cat-model">
+      <div class="card-num">06</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">Gemini Intelligence</span>
+          <span class="tag tag-dev">Android 17</span>
+        </div>
+        <div class="card-title">Gemini Intelligence 正式成为 Android 底层：应用自动化从手机蔓延至手表/眼镜/车载，Google 与 Apple AI 的正面决战倒计时</div>
+        <p class="card-summary">
+          Google 本周在 The Android Show（I/O Edition）上披露了 Gemini Intelligence 的完整技术架构：它不再是叠加在操作系统上的 AI 应用层，而是直接融入 Android 底层——负责跨 App 理解屏幕内容、预测用户下一步操作，并在后台自主完成用户授权的任务，例如将购物清单中的商品自动加入电商购物车、在多个预订服务间协调日程冲突。这标志着 Android 正式从"操作系统"向"智能系统"转型，是十余年来最深层的架构变化。应用自动化功能将从最新款三星 Galaxy 和 Google Pixel 手机率先推出，随后扩展至 Android 手表、Android Auto 车载、Android XR 眼镜，形成全设备智能闭环。CNBC 在深度分析中指出，Google 如此激进地将 Gemini 嵌入 Android 底层，核心动机是在 Apple Intelligence 全面成熟之前建立护城河——当 iOS 26 将 AI 深度整合进 App Intents 和 Siri Extensions 时，Android 必须已有可比拟的 Agent 能力。Android 17 Stable API 已完成第一里程碑，开发者接口文档即将随 I/O 主题演讲同步公开，预计今夏向主流设备推送正式版本。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Engadget · TechCrunch · CNBC · Tom's Guide · android.com</span>
+          <a class="card-link" href="https://www.engadget.com/2171038/everything-announced-at-android-show-google-io-2026/" target="_blank" rel="noopener" aria-label="阅读原文：The Android Show I/O 2026 全公告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 -->
+    <article class="card cat-cn">
+      <div class="card-num">07</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 地缘政治</span>
+          <span class="tag tag-ind">AI 治理</span>
+        </div>
+        <div class="card-title">中美 AI 安全协议在 Trump-Xi 峰会达成：史上首个超级大国 AI 最佳实践框架，防止非国家行为者获取前沿模型</div>
+        <p class="card-summary">
+          美国财政部长 Scott Bessent 于5月14日在 CNBC 专访中确认，美中两国在 Trump-Xi 北京峰会期间就 AI 安全最佳实践签订了一份框架协议——这是全球两个最大 AI 超级大国之间首次就 AI 治理达成正式双边文件。协议核心内容是建立双边协调机制，共同防止"非国家行为者"（Non-State Actors，包括恐怖主义团体、有组织犯罪网络）获取并滥用前沿 AI 模型；双方还同意就 AI 安全标准研究进行有限度的信息共享，并建立定期会晤机制。Bessent 对 CNBC 表示，"美国能够与中国谈 AI，是因为我们仍处于领先地位"，暗示此次协议谈判是在美方技术优势框架下进行的。NPR 分析指出，Trump 选择在北京峰会上将 AI 安全列为议题，反映出华盛顿已将 AI 治理纳入大国关系的核心议程，而非仅作为技术政策附属项。协议的签订被 AI 政策界人士普遍评价为"积极但有限"——它确立了双边对话框架，但在执行机制、技术标准互认及出口管制协调层面均未有实质突破，谈判的真正难点仍在后续。在此背景下，Google、Microsoft 和 xAI 已同意向美国政府提供前沿模型的早期访问权，用于国家安全风险评估。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">CNBC · NPR · Claims Journal · Washington Post</span>
+          <a class="card-link" href="https://www.cnbc.com/2026/05/14/us-china-ai-rules-bessent-us-lead.html" target="_blank" rel="noopener" aria-label="阅读原文：中美 AI 安全协议 CNBC 报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 -->
+    <article class="card cat-cn">
+      <div class="card-num">08</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 出口经济</span>
+          <span class="tag tag-ind">AI 产业</span>
+        </div>
+        <div class="card-title">Bloomberg：中国 AI 赋能出口每小时贡献5亿美元，4月 AI 相关产品占出口增量50%，重塑全球贸易竞争格局</div>
+        <p class="card-summary">
+          Bloomberg 5月12日独家报道揭示了一个令市场震惊的数字：中国半导体、计算机及 AI 关联产品的海外销售，在4月份以平均每小时5亿美元的速度为中国创汇——以高盛和野村的模型估算，AI 相关出口约占4月中国整体出口增量的50%。这一数据将 AI 对制造业出口的拉动效应，从此前的"技术加持"升格为"核心驱动力"。斯坦福大学年度 AI 指数报告同期指出，中美两国的大模型综合能力差距已实质性收窄；但 Bloomberg 的贸易数据揭示了另一层维度：中国 AI 优势的真正体现不仅在模型排行榜，更在于 AI 技术快速渗透到制造业全链条并转化为规模化出口竞争力的能力。具体来看，获益最大的品类包括：AI 驱动的工业机器人（主要出口东南亚和中东）、搭载国产 AI 芯片的智能终端、采用 AI 优化供应链的家电与新能源汽车零部件。华盛顿政策界对这份数据的反应耐人寻味——部分议员援引报告呼吁进一步收紧出口管制，另一些人则认为这证明现行制裁政策已失效。经济学界则普遍注意到：中国 AI 出口的主要受益方恰恰是那些被美国出口限制挡在 Nvidia 先进芯片之外的国家，这正在重塑南半球的 AI 基础设施版图。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Bloomberg · Goldman Sachs · Nomura · Stanford AI Index</span>
+          <a class="card-link" href="https://www.bloomberg.com/news/articles/2026-05-12/china-earns-500-million-per-hour-from-export-supercharged-by-ai" target="_blank" rel="noopener" aria-label="阅读原文：Bloomberg 中国 AI 出口报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 09 -->
+    <article class="card cat-dev">
+      <div class="card-num">09</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">AI 编程工具</span>
+          <span class="tag tag-dev">工具生态</span>
+        </div>
+        <div class="card-title">Cursor · Claude Code · Codex 三层分工浮现："工具融合"而非"工具替代"，开发者普遍同时使用三款工具协同作战</div>
+        <p class="card-summary">
+          The New Stack 的深度分析报告《Cursor、Claude Code 和 Codex 正在合并为一个没人规划的 AI 编程栈》在开发者社区引发强烈共鸣，揭示出2026年 AI 编程工具市场的真实形态并非"三巨头相互竞争谁将胜出"，而是已经自发形成了一个三层协作架构。编排层（Orchestration）：Cursor 3 的 Agents Window 已不是传统代码编辑器，而是管理 AI Agent 舰队的控制平面，工程师在其中统一分配、监控和切换多个并发 Agent 任务。执行层（Execution）：Claude Code 和 OpenAI Codex 在此竞争——前者凭借对完整代码库上下文的深度理解占据复杂重构场景，SWE-Bench 生产任务解决率更高；后者以 Background Computer Use 和跨 App 自动化见长，更适合有界定的多步骤操作任务。审查层（Review）：两者都在向此演进，由独立评分 Agent 对输出进行质量打分并自动重试。市场调研数据印证了这一"并用而非选边"的趋势：Pragmatic Engineer 对906名软件工程师的调查（2026年2月）显示，Claude Code 以46%的"最喜爱工具"占比领先，但56%的受访高级工程师在日常工作中同时使用 Cursor 与 Claude Code。AI 编程工具整体市场规模已达128亿美元（2024年为51亿美元），预计2028年突破400亿美元。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">The New Stack · Pragmatic Engineer · SemiAnalysis · JetBrains · NxCode</span>
+          <a class="card-link" href="https://thenewstack.io/ai-coding-tool-stack/" target="_blank" rel="noopener" aria-label="阅读原文：Cursor Claude Code Codex 三层栈分析">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card cat-biz">
+      <div class="card-num">10</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-biz">企业 AI</span>
+          <span class="tag tag-dev">Microsoft Copilot</span>
+        </div>
+        <div class="card-title">Microsoft Copilot Cowork 推出移动版并开放插件生态：Agent 协调能力跨设备落地，Defender 同步接管本地 AI Agent 安全管理</div>
+        <p class="card-summary">
+          Microsoft 于5月5日宣布 Copilot Cowork 进入扩展阶段，标志着该公司将企业 AI 的重心从"智能对话"切换为"多步任务自主执行"。Cowork 移动版（iOS/Android）正式发布，员工现在可以通过手机向 Copilot 委托真实任务并异步获取结果，而非仅进行实时问答；Copilot Studio 中的 Visual Studio Code 扩展同步开放，开发者可在 IDE 内直接构建、编辑和调试自定义 Agent。插件生态方面，微软在此次更新中开放 LSEG、Miro、monday.com、S&P Global Energy 等第三方连接器，并允许企业构建对接内部系统的私有插件，将 Cowork 从通用 AI 工作流平台延伸进各行业的垂直业务流程。安全治理层面，Microsoft Defender 和 Intune 新增"本地 AI Agent 发现与管理"功能——这意味着在企业 Windows 设备上运行的 Agent（包括 GitHub Copilot CLI、Claude Code 等）将被纳入统一安全管控策略，IT 管理员可查看 Agent 访问过哪些资源、执行了哪些操作。此举被业界解读为微软正在构建"企业 AI 治理基础设施"的关键一步，与 OpenAI Deployment Company 和 Anthropic 企业部署计划形成直接竞争，共同争夺各大企业在 Agent 时代的信任锚点。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Microsoft 365 Blog · Microsoft Security Blog · MSN · eWeek</span>
+          <a class="card-link" href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/05/copilot-cowork-from-conversation-to-action-across-skills-integrations-and-devices/" target="_blank" rel="noopener" aria-label="阅读原文：Copilot Cowork 发布公告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新 · 2026-05-17 08:10 BJT
+</footer>
+
+</body>
+</html>
