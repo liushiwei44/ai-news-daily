@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 行业快讯 · 2026-05-26 08:11</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --border: #e2e5eb;
+      --text-primary: #0d1117;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --accent: #1d4ed8;
+      --accent-dim: #3b82f6;
+      --radius: 10px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 28px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
+      --c-cn:    #dc2626; --bg-cn:    #fef2f2; --bd-cn:    #fca5a5;
+      --c-model: #0891b2; --bg-model: #ecfeff; --bd-model: #67e8f9;
+      --c-dev:   #7c3aed; --bg-dev:   #f5f3ff; --bd-dev:   #c4b5fd;
+      --c-sec:   #b45309; --bg-sec:   #fffbeb; --bd-sec:   #fcd34d;
+      --c-ind:   #065f46; --bg-ind:   #ecfdf5; --bd-ind:   #6ee7b7;
+      --c-biz:   #be185d; --bg-biz:   #fdf2f8; --bd-biz:   #f9a8d4;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(140deg, #060d1f 0%, #0c1f45 38%, #0f3460 65%, #1a4fa8 88%, #1d4ed8 100%);
+      overflow: hidden;
+      padding: 56px 24px 52px;
+      text-align: center;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,179,237,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,179,237,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 640px;
+      height: 380px;
+      background: radial-gradient(ellipse, rgba(56,130,246,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner { position: relative; z-index: 1; }
+
+    .header-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 18px;
+    }
+    .header-eyebrow .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    header h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    header h1 em { font-style: italic; color: #93c5fd; }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: #93c5fd;
+      opacity: 0.8;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .header-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+    .header-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #bfdbfe;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 4px 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    main { max-width: 900px; margin: 0 auto; padding: 40px 20px 72px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .section-count {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--card-accent, #e2e5eb);
+      border-radius: var(--radius);
+      padding: 22px 26px 20px 26px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 18px;
+      align-items: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: card-in 0.45s ease forwards;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-left-color: var(--card-accent, var(--accent-dim));
+    }
+    @keyframes card-in { to { opacity: 1; transform: translateY(0); } }
+    .card:nth-child(1)  { animation-delay: 0.06s; }
+    .card:nth-child(2)  { animation-delay: 0.12s; }
+    .card:nth-child(3)  { animation-delay: 0.18s; }
+    .card:nth-child(4)  { animation-delay: 0.24s; }
+    .card:nth-child(5)  { animation-delay: 0.30s; }
+    .card:nth-child(6)  { animation-delay: 0.36s; }
+    .card:nth-child(7)  { animation-delay: 0.42s; }
+    .card:nth-child(8)  { animation-delay: 0.48s; }
+    .card:nth-child(9)  { animation-delay: 0.54s; }
+    .card:nth-child(10) { animation-delay: 0.60s; }
+
+    .card.cat-cn     { --card-accent: var(--c-cn); }
+    .card.cat-model  { --card-accent: var(--c-model); }
+    .card.cat-dev    { --card-accent: var(--c-dev); }
+    .card.cat-sec    { --card-accent: var(--c-sec); }
+    .card.cat-ind    { --card-accent: var(--c-ind); }
+    .card.cat-biz    { --card-accent: var(--c-biz); }
+
+    .card-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 22px;
+      font-weight: 600;
+      color: #d1d5db;
+      line-height: 1;
+      padding-top: 4px;
+      user-select: none;
+      transition: color 0.2s;
+      letter-spacing: -0.02em;
+    }
+    .card:hover .card-num { color: var(--card-accent, var(--accent-dim)); }
+
+    .card-body { min-width: 0; }
+
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border: 1px solid transparent;
+      line-height: 1.6;
+    }
+    .tag-cn  { color: var(--c-cn);    background: var(--bg-cn);    border-color: var(--bd-cn); }
+    .tag-mod { color: var(--c-model); background: var(--bg-model); border-color: var(--bd-model); }
+    .tag-dev { color: var(--c-dev);   background: var(--bg-dev);   border-color: var(--bd-dev); }
+    .tag-sec { color: var(--c-sec);   background: var(--bg-sec);   border-color: var(--bd-sec); }
+    .tag-ind { color: var(--c-ind);   background: var(--bg-ind);   border-color: var(--bd-ind); }
+    .tag-biz { color: var(--c-biz);   background: var(--bg-biz);   border-color: var(--bd-biz); }
+
+    .card-title {
+      font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.38;
+      margin-bottom: 9px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-source {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 5px 13px;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      background: #eff6ff;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { background: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+    .card-link svg { transition: transform 0.15s; }
+    .card-link:hover svg { transform: translateX(2px); }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 36px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; background: #dbeafe; border-color: #93c5fd; }
+    footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { animation: none; opacity: 1; transform: none; }
+      .header-eyebrow .dot { animation: none; }
+      .card-link svg { transition: none; }
+      .card, .card-link { transition: none; }
+    }
+
+    @media (max-width: 580px) {
+      header { padding: 44px 20px 36px; }
+      .card { grid-template-columns: 1fr; padding: 18px 18px 16px; border-left-width: 2px; }
+      .card-num { display: none; }
+      .card-title { font-size: 16px; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 48px;
+      background: rgba(9, 18, 40, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .nav-back, .nav-pager-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #93c5fd;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+      touch-action: manipulation;
+    }
+    .nav-back:hover, .nav-pager-link:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .nav-back:focus-visible, .nav-pager-link:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
+    .nav-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+    }
+    .nav-pager { display: flex; gap: 4px; }
+    .nav-pager-link.disabled { opacity: 0.25; pointer-events: none; }
+    body { padding-top: 48px; }
+    @media (max-width: 480px) { .nav-title { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="站点导航">
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    返回列表
+  </a>
+  <span class="nav-title" aria-hidden="true">AI 行业快讯</span>
+  <div class="nav-pager">
+    <a class="nav-pager-link" href="ai-news-20260525-0808.html" aria-label="上一期">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M9 3L5 7L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      上一期
+    </a>
+    <a class="nav-pager-link disabled" aria-label="下一期（暂无）" aria-disabled="true" tabindex="-1">
+      下一期
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow" aria-hidden="true">
+      <span class="dot"></span>
+      AI Daily Briefing
+      <span class="dot"></span>
+    </div>
+    <h1>AI 行业快讯 <em>Top 10</em></h1>
+    <p class="header-subtitle">聚焦 Glasswing 发现 10,000+ 零日漏洞 · Gemini 3.5 Flash 今日正式开放 · 百度 ERNIE 5.1 全球第 4 · Stitch 2.0 五屏 UI→代码</p>
+    <div class="header-pills">
+      <span class="header-pill">2026年5月26日</span>
+      <span class="header-pill">北京时间 08:11</span>
+      <span class="header-pill">权威媒体综合整理</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-header">
+    <span class="section-title">本期精选</span>
+    <span class="section-count">10 条重要消息</span>
+  </div>
+
+  <div class="cards">
+
+    <!-- 01 -->
+    <article class="card cat-sec">
+      <div class="card-num">01</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-sec">Anthropic · Project Glasswing</span>
+          <span class="tag tag-sec">Claude Mythos · 10,000+ 零日漏洞</span>
+        </div>
+        <div class="card-title">Anthropic Project Glasswing 披露：Claude Mythos 在一个月内协助发现全球关键软件 10,000+ 高危零日漏洞，Cloudflare、Mozilla、wolfSSL 均受影响</div>
+        <p class="card-summary">
+          5 月 24–25 日，Anthropic 发布了 Project Glasswing 阶段性成果报告：自项目启动以来，Anthropic 与约 50 家合作伙伴共同使用 Claude Mythos Preview 模型，在全球最具系统性重要性的软件中发现了超过一万个高危或严重级别的漏洞——数量级远超此前任何单一安全研究计划。核心发现包括：Cloudflare 在关键路径系统中发现超过 2,000 个漏洞（其中 400 个为高危或严重级），误报率优于人工测试员；Mozilla 在 Firefox 150 中发现 271 个漏洞，比使用 Claude Opus 4.6 测试 Firefox 148 时的发现数量高出 10 倍以上；wolfSSL（一款被数十亿设备使用的开源密码学库）中，Mythos Preview 构造出可伪造银行或邮件服务商 TLS 证书的漏洞利用链，属于极高危发现。同期，Palo Alto Networks 发布的补丁数量超过平时 5 倍，微软表示补丁量将"持续增大"，Oracle 称漏洞修复速度提升了数倍。与此同时，Anthropic 宣布 Claude Security 工具正式进入企业公测阶段——这是面向 Claude Enterprise 客户的代码库扫描与漏洞修复工具，可直接集成到 CI/CD 流水线。Project Glasswing 的战略意义在于：在 Claude Mythos（高能力网络安全专项模型）完整公开之前，先以"防御性优先"原则对全球关键基础设施完成一轮预防性漏洞清扫——这是 AI 安全能力负责任发布的新范式。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Interesting Engineering · CyberSecurity News · Anthropic Blog · TechTimes</span>
+          <a class="card-link" href="https://interestingengineering.com/ai-robotics/anthropic-project-glasswing-10000-software-vulnerabilities" target="_blank" rel="noopener" aria-label="阅读原文：Project Glasswing 10,000+ 漏洞报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="card cat-model">
+      <div class="card-num">02</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">Google · Gemini 3.5 Flash</span>
+          <span class="tag tag-mod">今日正式开放 · 4× 速度 · Agent 优先</span>
+        </div>
+        <div class="card-title">Gemini 3.5 Flash 今日正式开放：速度 4 倍领先前沿模型，代理任务基准全面超越 Gemini 3.1 Pro，$1.50 / 百万 token 定价</div>
+        <p class="card-summary">
+          5 月 26 日，Google 将 Gemini 3.5 Flash 推向正式开放（GA）状态，完成了从 Google I/O 2026 预发布（5 月 19 日）到全量上线的最后一公里。Gemini 3.5 Flash 是 Google 迄今为止专为"代理任务优先"设计的旗舰模型：在 Terminal-Bench 2.1 代理基准上达到 76.2%、MCP Atlas 达到 83.6%、多模态理解 CharXiv Reasoning 达到 84.2%，全面超越 Gemini 3.1 Pro 同类得分，而推理速度是同级别前沿模型的 4 倍。核心规格：输入上下文 1,048,576 token（1M），输出最高 65,536 token；支持文本、图像、音频、视频多模态输入；动态思维（Dynamic Thinking）默认开启，原生支持函数调用、结构化输出、Search as a Tool 和代码执行；知识截止日期为 2026 年 1 月。定价方面，$1.50 / 百万输入 token、$9.00 / 百万输出 token、$0.15 缓存输入——在同等性能区间内是目前市场上性价比最高的前沿模型之一。今日起通过 Gemini API、Google AI Studio、Antigravity IDE、Gemini App 及 Google Search AI Mode 全面上线。TechCrunch 分析认为，此次发布标志着 Google 将战略重心从"更聪明的聊天模型"彻底转向"更快的行动模型"，剑指 OpenAI Codex 和 Claude Code 所主导的 Agentic AI 开发市场。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch · Google Blog · MarkTechPost · LLM-Stats · Magicshot</span>
+          <a class="card-link" href="https://techcrunch.com/2026/05/19/with-gemini-3-5-flash-google-bets-its-next-ai-wave-on-agents-not-chatbots/" target="_blank" rel="noopener" aria-label="阅读原文：Gemini 3.5 Flash 报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="card cat-cn">
+      <div class="card-num">03</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 百度 · 文心 ERNIE 5.1</span>
+          <span class="tag tag-cn">LMArena 全球第 4 · 训练成本仅 6%</span>
+        </div>
+        <div class="card-title">百度文心 ERNIE 5.1 发布：LMArena 搜索榜全球第 4，首个闯入全球前 5 的中国模型，训练成本仅同行的 6%</div>
+        <p class="card-summary">
+          5 月 8 日，百度正式发布文心大模型 ERNIE 5.1，并迅速在多项国际权威榜单上创下中国模型的历史最好成绩：在 LMArena 搜索竞技场（Search Arena）以 1,223 分位居全球第 4，仅次于两个 Claude Opus 4.7 变体和 GPT-5.5 Search；在 LMArena 文本综合榜上排名全球第 14，是中国大模型在该榜单上的最高位次。技术架构上，ERNIE 5.1 采用稀疏混合专家（Sparse MoE）结构，将参数总量压缩至 ERNIE 5.0 的约三分之一，激活参数削减约一半，同时将上下文窗口保持在 128K token、最大输出 65,536 token。最令业界震动的指标是其训练效率：ERNIE 5.1 的预训练计算量约为同量级前沿模型行业均值的 6%——用极低的训练成本实现了接近顶级的模型性能，直接挑战了"更大算力投入才能获得更强模型"的传统认知。百度 ERNIE 团队在技术报告中将这一效率突破归因于对训练数据的极致精炼（Extreme Data Curation）和对 MoE 路由策略的创新性改进。这一结果也引发外界重新审视中国大模型在计算效率领域的领先潜力，有分析师认为，继 DeepSeek 以 MoE 低成本策略震撼行业后，百度再次用数据说明中国 AI 企业正在将"效率即创新"打造为核心竞争壁垒。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">ERNIE Blog · CnTechPost · NewsBreak · CodersEra · Let's Data Science</span>
+          <a class="card-link" href="https://ernie.baidu.com/blog/posts/ernie-5.1-0508-release/" target="_blank" rel="noopener" aria-label="阅读原文：ERNIE 5.1 发布报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="card cat-dev">
+      <div class="card-num">04</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Google Stitch 2.0 · 前端开发</span>
+          <span class="tag tag-dev">5 屏 UI 生成 · 7 种框架代码 · MCP</span>
+        </div>
+        <div class="card-title">Google Stitch 2.0 多屏生成：单次生成 5 个联动界面 + 导出 7 种前端框架代码 + MCP 直连 Claude Code / Cursor，AI 设计到编码全链路打通</div>
+        <p class="card-summary">
+          3 月 19 日更新、持续至今成为前端开发者口中最热门工具的 Google Stitch 2.0，已在 5 月开发者社区中形成广泛的讨论热潮。Stitch 2.0 的核心突破在于"多屏联动生成"：用户输入一段自然语言描述或上传截图后，系统可在 AI 原生无限画布（Infinite Canvas）上同时生成最多 5 个相互关联的界面，自动推断并标注用户旅程流转逻辑，大幅减少设计师手动拼接交互流的工时。代码导出能力覆盖 7 种前端框架/语言：HTML/CSS 原生、Tailwind CSS、Vue.js 组件、Angular 模板、Flutter Widget、SwiftUI 视图——几乎涵盖主流前端开发栈的全部场景。更关键的是 Stitch 同步推出的 SDK 与 MCP Server：它允许 Gemini CLI、Claude Code、Cursor、Antigravity IDE 等 AI 编码工具直接读取设计文件，形成从"设计描述 → Stitch 生成 UI + DESIGN.md → AI 编码 Agent 按规格实现"的完整工作流，完全打通了"Vibe Design"与"Vibe Coding"的最后一道壁垒。Stitch 目前仍完全免费（需 Google 账号），标准模式每月 350 次生成额度，实验模式 50 次。eesel AI 和 Syncfusion 的开发者博客均将其列为 2026 年前端 AI 工具必学榜首。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Google Developers Blog · Tech Insider · Toolworthy · Index.dev · Syncfusion</span>
+          <a class="card-link" href="https://developers.googleblog.com/stitch-a-new-way-to-design-uis/" target="_blank" rel="noopener" aria-label="阅读原文：Google Stitch 2.0 前端设计工具报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="card cat-dev">
+      <div class="card-num">05</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Claude Code · #1 AI 编程工具</span>
+          <span class="tag tag-dev">SWE-bench 87.6% · $128 亿市场</span>
+        </div>
+        <div class="card-title">Claude Code 问鼎全球 AI 编程工具榜：发布仅 8 个月超越 GitHub Copilot，Opus 4.7 SWE-bench 87.6%，AI 编程市场规模达 128 亿美元</div>
+        <p class="card-summary">
+          Anthropic 2026 年 Agentic 编程趋势报告（5 月发布）和多项第三方调查共同确认：Claude Code 自 2025 年 5 月发布以来，仅用 8 个月时间便成为全球使用最广泛的 AI 编程工具，超越拥有多年先发优势的 GitHub Copilot 和 Cursor。性能层面，Claude Opus 4.7 在 SWE-bench Verified（最权威的软件工程基准）上达到 87.6%，跃居所有模型厂商已公开结果中的全球第一；Claude Code 自身在 SWE-bench 上也达到 80.9%，在 LMSYS Arena 思维模式排行榜居首。市场层面，AI 编程工具市场规模在 2026 年达到约 128 亿美元（较 2024 年的 51 亿美元翻倍），四项主流开发者调查综合显示 84–91% 的软件工程师已在日常工作中使用至少一种 AI 编程工具，但与此同时，Stack Overflow 调查中对 AI 输出准确性持信任态度的受访者仅占 29%——暗示工具普及率与信任度之间仍有巨大鸿沟。对开发组织而言，Claude Code 的胜出路径在于其彻底的"Agentic"架构：同一 Agent 可运行于 Shell 终端、VS Code/JetBrains 插件、GitHub Action 和 claude.ai 网页/移动端，无需切换场景即可完成从 issue 到 PR 合并的全自动化循环。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Anthropic Agentic Coding Trends Report · NxCode · Digital Applied · Zapier</span>
+          <a class="card-link" href="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf" target="_blank" rel="noopener" aria-label="阅读原文：Agentic 编程趋势报告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="card cat-cn">
+      <div class="card-num">06</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 字节跳动 · 豆包</span>
+          <span class="tag tag-cn">Doubao-Seed-1.6 · Seedance 1.0</span>
+        </div>
+        <div class="card-title">字节跳动豆包全家桶更新：Doubao-Seed-1.6-Thinking 推理模型、Seedance 1.0 视频生成、Seedream 3.0 图像生成四模型同步发布</div>
+        <p class="card-summary">
+          5 月，字节跳动旗下豆包（Doubao）AI 平台宣布密集的多模态模型更新，一次性发布四个新版本：① Doubao-Seed-1.6（通用模型）：在长文本理解、多轮对话和指令遵循上显著提升，延续豆包面向 C 端的高性价比策略；② Doubao-Seed-1.6-Thinking（推理模型）：引入显式思维链（Chain-of-Thought）推理机制，针对数学、代码和逻辑推理类任务深度优化，与 DeepSeek-R2 和 Qwen3.6-Thinking 展开直接竞争；③ doubao-seedance 1.0（视频生成）：豆包迄今最强视频生成模型，支持文本/图像双模态输入驱动视频合成，在国内开发者测评中因运动流畅度和语义一致性获得广泛好评；④ doubao-seedream 3.0（图像生成）：升级后的图像生成模型，支持更高分辨率和更精细的风格控制。字节跳动豆包日活在 2026 年 5 月已突破 1.2 亿，成为仅次于 ChatGPT 的全球第二大 AI 助手应用。此次集中发布被业界解读为字节跳动在 Google I/O、Code with Claude 之后快速响应竞争压力的战略动作，也印证了国内大厂"多模态全栈 AI"的军备竞赛已全面加速。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">量子位 · 新浪科技 · VolcEngine Blog · TechCrunch China</span>
+          <a class="card-link" href="https://k.sina.com.cn/article_7857201856_1d45362c001905sav6.html" target="_blank" rel="noopener" aria-label="阅读原文：字节豆包多模型更新报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 -->
+    <article class="card cat-model">
+      <div class="card-num">07</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">Google · Gemini Omni</span>
+          <span class="tag tag-mod">视频输入生成万物 · Neural Expressive</span>
+        </div>
+        <div class="card-title">Google 发布 Gemini Omni：以视频为起点生成任意内容，Neural Expressive 设计语言重塑 AI App 交互范式，Daily Brief 个性化助手</div>
+        <p class="card-summary">
+          与 Gemini 3.5 Flash 同期在 Google I/O 2026 上亮相的 Gemini Omni，代表了 Google 对"多模态创作引擎"的最新定义：它能够以视频输入为起点，输出文本、图像、音频、视频等任意模态内容，官方将其描述为"世界理解能力的量级跃升"。在演示中，Gemini Omni 展示了从一段用户拍摄的室内视频中自动分析空间布局并生成室内设计改造方案（含效果图）的能力，以及实时将直播视频转化为结构化文字摘要并驱动后续任务的 Pipeline。伴随 Gemini Omni 一同发布的 Gemini App 重大更新，引入了全新的设计语言"Neural Expressive"：流体动画、鲜活色彩、全新排版和触觉反馈共同构建了区别于现有所有 AI 助手的视觉体验；同步上线的"Daily Brief"功能则将 Gemini 定位为随时了解用户日程、邮件、新闻偏好并在早晨主动推送定制早报的个人 AI 秘书。TechCrunch 认为，Gemini Omni + Neural Expressive 组合是 Google 在 Chat UI 疲态已显的当下，用"会看视频的行动 AI"向 ChatGPT 和 Claude.ai 发起的最具差异化挑战——也是一次将 Gemini 从"搜索配件"重新定义为"人生管家"的品牌重建。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch · Google Blog · Google I/O 2026 Announcements · Build Fast with AI</span>
+          <a class="card-link" href="https://techcrunch.com/2026/05/19/google-updates-its-gemini-app-to-take-on-chatgpt-and-claude-at-io-2026/" target="_blank" rel="noopener" aria-label="阅读原文：Gemini Omni 与 Neural Expressive 报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 -->
+    <article class="card cat-dev">
+      <div class="card-num">08</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Google · Gemini API</span>
+          <span class="tag tag-dev">Interactions API 破坏性变更 · 今日生效</span>
+        </div>
+        <div class="card-title">Gemini Interactions API v1beta 破坏性变更今日（5 月 26 日）正式生效：新架构成默认，异步工具调用开放，6 月 8 日彻底移除旧 Schema</div>
+        <p class="card-summary">
+          对所有使用 Gemini API 的开发者而言，今天（5 月 26 日）是一个需要关注的节点：Gemini API v1beta Interactions API 的破坏性变更（Breaking Changes）自今日起正式将新架构切换为默认行为。此次变更重构了 API 的请求/响应 Schema，以支持未来的关键新能力：mid-flight steering（中途修正正在执行的任务）和异步工具调用（Asynchronous Tool Calls，允许多个工具并行执行而不阻塞主流程）。开发者可在 6 月 8 日前通过请求头字段临时选择退出（opt-out）旧 Schema，但 6 月 8 日之后旧 Schema 将被永久移除，届时所有未完成迁移的应用将出现兼容性错误。主要迁移点包括：`contents` 字段结构调整；`tool_calls` 由同步响应改为 `pending_tool_calls` + `tool_results` 异步回调模型；`finish_reason` 枚举值新增 `TOOL_AWAITING` 状态。Google 为此在官方文档中提供了完整的迁移指南和 Colab Notebook 示例。对于在 Anthropic MCP 或 OpenAI Function Calling 下已采用异步工具调用模式的开发者，这次迁移实际上是向行业最佳实践的靠拢，迁移后的 Gemini API 与其他前沿 LLM 提供商的架构一致性将显著提升。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Google AI for Developers · Gemini API Changelog · Google Developers Blog</span>
+          <a class="card-link" href="https://ai.google.dev/gemini-api/docs/interactions-breaking-changes-may-2026" target="_blank" rel="noopener" aria-label="阅读原文：Gemini Interactions API 变更文档">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 09 -->
+    <article class="card cat-biz">
+      <div class="card-num">09</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-biz">May 19–23 AI 压缩周</span>
+          <span class="tag tag-biz">Google I/O · Code with Claude · Cursor 2.5</span>
+        </div>
+        <div class="card-title">May 19–23 AI "压缩周"复盘：Google I/O + Code with Claude London + Cursor Composer 2.5 + EY×Microsoft + 主流媒体爆发，五天宣告 Agentic AI 主流化</div>
+        <p class="card-summary">
+          Digital Applied 的周度复盘将 5 月 19–23 日定义为"AI 编程正式进入工程纪律时代"的历史节点：这一周内，Google I/O 2026（发布 Gemini 3.5 Flash / Omni / Stitch / Spark）、Anthropic Code with Claude London（公布 80 倍营收增长、Managed Agents 三大能力）、Cursor Composer 2.5（多 Agent 并行编排更新）、EY × Microsoft 深度 AI 战略协议，以及《纽约时报》《华盛顿邮报》等主流媒体关于"AI 正在取代初级程序员"的封面报道，几乎同时密集落地——这在 AI 行业史上前所未有。业界分析归纳出三个核心信号：① "Vibe Coding"已完成历史使命，系统化的 Agentic Engineering（具备规划、测试、迭代、自我纠错的完整工程循环）正在取而代之；② AI 编程工具从"辅助加速"升级为"基础设施"——不使用 AI Agent 的团队正在面临 10× 效率差距，而非此前的 1.5×；③ 企业采购决策已从"是否引入 AI"转向"选择哪个 AI Agent 平台"，Anthropic（Claude Code）、Google（Gemini 3.5 Flash + Antigravity）和 OpenAI（Codex + o4-mini）的三方角力格局正式成型。这一周之后，"AI 编程是未来"的论断在硅谷已成历史语境，"AI 编程就是当下"才是从业者的共识。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Digital Applied · Simon Willison · The New Stack · MIT Technology Review</span>
+          <a class="card-link" href="https://www.digitalapplied.com/blog/agentic-ai-week-in-review-may-19-23-2026" target="_blank" rel="noopener" aria-label="阅读原文：May 19-23 Agentic AI 周报">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card cat-ind">
+      <div class="card-num">10</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-ind">Anthropic · Claude for Small Business</span>
+          <span class="tag tag-ind">SMB 套件 · 400 万企业工具用户</span>
+        </div>
+        <div class="card-title">Anthropic 推出 Claude for Small Business：预建连接器 + 开箱即用工作流，覆盖 400 万家小微企业常用工具生态</div>
+        <p class="card-summary">
+          在"Code with Claude"大会之后，Anthropic 在 5 月推出面向中小企业（SMB）市场的专项产品包——Claude for Small Business。这是 Anthropic 首次针对非技术型企业用户推出的一站式 AI 自动化套件，核心价值主张是"无需工程师即可部署 AI Agent"：产品内置了与 Google Workspace、Notion、Slack、HubSpot、QuickBooks、Shopify、Zapier 等主流 SMB 工具的预建连接器（Connectors），并提供客服回复、销售邮件起草、财务报表分析、库存管理、合同摘要等常见业务场景的开箱即用工作流模板。定价层面，Claude for Small Business 设有专属的低门槛 Team 计划，月费明显低于 Claude Enterprise，支持按席位购买并允许自定义工作流。Anthropic 的战略意图清晰：通过 SMB 套件将 Claude 的商业渗透从科技大客户（KPMG、SAP、PwC）向长尾中小企业延伸，填补 Microsoft Copilot for Business 和 Google Workspace AI 之间的竞争空白，同时积累海量真实的 SMB 业务数据以强化 Claude 在垂直场景下的专业能力。行业分析师估计，全球约有 400 万家企业正在使用上述第三方工具生态，这一市场将是 Anthropic 2026–2027 年商业化的关键增量战场。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Anthropic News · Releasebot · TechCrunch · InfoQ</span>
+          <a class="card-link" href="https://www.anthropic.com/news/claude-for-small-business" target="_blank" rel="noopener" aria-label="阅读原文：Claude for Small Business 发布报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新 · 2026-05-26 08:11 BJT
+</footer>
+
+</body>
+</html>
