@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 行业快讯 · 2026-05-29 08:04</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --border: #e2e5eb;
+      --text-primary: #0d1117;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --accent: #1d4ed8;
+      --accent-dim: #3b82f6;
+      --radius: 10px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 28px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
+      --c-cn:    #dc2626; --bg-cn:    #fef2f2; --bd-cn:    #fca5a5;
+      --c-model: #0891b2; --bg-model: #ecfeff; --bd-model: #67e8f9;
+      --c-dev:   #7c3aed; --bg-dev:   #f5f3ff; --bd-dev:   #c4b5fd;
+      --c-sec:   #b45309; --bg-sec:   #fffbeb; --bd-sec:   #fcd34d;
+      --c-ind:   #065f46; --bg-ind:   #ecfdf5; --bd-ind:   #6ee7b7;
+      --c-biz:   #be185d; --bg-biz:   #fdf2f8; --bd-biz:   #f9a8d4;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(140deg, #060d1f 0%, #0c1f45 38%, #0f3460 65%, #1a4fa8 88%, #1d4ed8 100%);
+      overflow: hidden;
+      padding: 56px 24px 52px;
+      text-align: center;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,179,237,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,179,237,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 640px;
+      height: 380px;
+      background: radial-gradient(ellipse, rgba(56,130,246,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner { position: relative; z-index: 1; }
+
+    .header-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 18px;
+    }
+    .header-eyebrow .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    header h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    header h1 em { font-style: italic; color: #93c5fd; }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: #93c5fd;
+      opacity: 0.8;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .header-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+    .header-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #bfdbfe;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 4px 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    main { max-width: 900px; margin: 0 auto; padding: 40px 20px 72px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .section-count {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--card-accent, #e2e5eb);
+      border-radius: var(--radius);
+      padding: 22px 26px 20px 26px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 18px;
+      align-items: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: card-in 0.45s ease forwards;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-left-color: var(--card-accent, var(--accent-dim));
+    }
+    @keyframes card-in { to { opacity: 1; transform: translateY(0); } }
+    .card:nth-child(1)  { animation-delay: 0.06s; }
+    .card:nth-child(2)  { animation-delay: 0.12s; }
+    .card:nth-child(3)  { animation-delay: 0.18s; }
+    .card:nth-child(4)  { animation-delay: 0.24s; }
+    .card:nth-child(5)  { animation-delay: 0.30s; }
+    .card:nth-child(6)  { animation-delay: 0.36s; }
+    .card:nth-child(7)  { animation-delay: 0.42s; }
+    .card:nth-child(8)  { animation-delay: 0.48s; }
+    .card:nth-child(9)  { animation-delay: 0.54s; }
+    .card:nth-child(10) { animation-delay: 0.60s; }
+
+    .card.cat-cn     { --card-accent: var(--c-cn); }
+    .card.cat-model  { --card-accent: var(--c-model); }
+    .card.cat-dev    { --card-accent: var(--c-dev); }
+    .card.cat-sec    { --card-accent: var(--c-sec); }
+    .card.cat-ind    { --card-accent: var(--c-ind); }
+    .card.cat-biz    { --card-accent: var(--c-biz); }
+
+    .card-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 22px;
+      font-weight: 600;
+      color: #d1d5db;
+      line-height: 1;
+      padding-top: 4px;
+      user-select: none;
+      transition: color 0.2s;
+      letter-spacing: -0.02em;
+    }
+    .card:hover .card-num { color: var(--card-accent, var(--accent-dim)); }
+
+    .card-body { min-width: 0; }
+
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border: 1px solid transparent;
+      line-height: 1.6;
+    }
+    .tag-cn  { color: var(--c-cn);    background: var(--bg-cn);    border-color: var(--bd-cn); }
+    .tag-mod { color: var(--c-model); background: var(--bg-model); border-color: var(--bd-model); }
+    .tag-dev { color: var(--c-dev);   background: var(--bg-dev);   border-color: var(--bd-dev); }
+    .tag-sec { color: var(--c-sec);   background: var(--bg-sec);   border-color: var(--bd-sec); }
+    .tag-ind { color: var(--c-ind);   background: var(--bg-ind);   border-color: var(--bd-ind); }
+    .tag-biz { color: var(--c-biz);   background: var(--bg-biz);   border-color: var(--bd-biz); }
+
+    .card-title {
+      font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.38;
+      margin-bottom: 9px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-source {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 5px 13px;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      background: #eff6ff;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { background: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+    .card-link svg { transition: transform 0.15s; }
+    .card-link:hover svg { transform: translateX(2px); }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 36px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; background: #dbeafe; border-color: #93c5fd; }
+    footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { animation: none; opacity: 1; transform: none; }
+      .header-eyebrow .dot { animation: none; }
+      .card-link svg { transition: none; }
+      .card, .card-link { transition: none; }
+    }
+
+    @media (max-width: 580px) {
+      header { padding: 44px 20px 36px; }
+      .card { grid-template-columns: 1fr; padding: 18px 18px 16px; border-left-width: 2px; }
+      .card-num { display: none; }
+      .card-title { font-size: 16px; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 48px;
+      background: rgba(9, 18, 40, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .nav-back, .nav-pager-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #93c5fd;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+      touch-action: manipulation;
+    }
+    .nav-back:hover, .nav-pager-link:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .nav-back:focus-visible, .nav-pager-link:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
+    .nav-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+    }
+    .nav-pager { display: flex; gap: 4px; }
+    .nav-pager-link.disabled { opacity: 0.25; pointer-events: none; }
+    body { padding-top: 48px; }
+    @media (max-width: 480px) { .nav-title { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="站点导航">
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    返回列表
+  </a>
+  <span class="nav-title" aria-hidden="true">AI 行业快讯</span>
+  <div class="nav-pager">
+    <a class="nav-pager-link" href="ai-news-20260527-0804.html" aria-label="上一期">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M9 3L5 7L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      上一期
+    </a>
+    <a class="nav-pager-link disabled" aria-label="下一期（暂无）" aria-disabled="true" tabindex="-1">
+      下一期
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow" aria-hidden="true">
+      <span class="dot"></span>
+      AI Daily Briefing
+      <span class="dot"></span>
+    </div>
+    <h1>AI 行业快讯 <em>Top 10</em></h1>
+    <p class="header-subtitle">聚焦 Anthropic $650亿 Series H 逼近万亿估值 · Claude Opus 4.8 Dynamic Workflows · 中国锁定 AI 人才出境 · Apple iOS 27 Siri 史上最大重构</p>
+    <div class="header-pills">
+      <span class="header-pill">2026年5月29日</span>
+      <span class="header-pill">北京时间 08:04</span>
+      <span class="header-pill">权威媒体综合整理</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-header">
+    <span class="section-title">本期精选</span>
+    <span class="section-count">10 条重要消息</span>
+  </div>
+
+  <div class="cards">
+
+    <!-- 01 -->
+    <article class="card cat-biz">
+      <div class="card-num">01</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-biz">Anthropic · Series H $650 亿</span>
+          <span class="tag tag-biz">估值 $9650 亿 · 逼近万亿俱乐部</span>
+        </div>
+        <div class="card-title">Anthropic 完成 $650 亿 Series H 融资，post-money 估值 $9650 亿超越 OpenAI：IPO 前最后一轮私募，月收入运行率已破 $47 亿</div>
+        <p class="card-summary">
+          5 月 28 日，Anthropic 正式宣布完成 $650 亿 Series H 融资，post-money 估值 $9650 亿，正式超越 OpenAI（3 月估值约 $8520 亿）成为全球市值最高的私募 AI 公司，距离万亿美元门槛仅一步之遥。本轮由 Altimeter Capital、Dragoneer、Greenoaks、Sequoia Capital、Capital Group、Coatue、D1 Capital Partners 联合领投，GIC（新加坡主权财富基金）等多家机构跟投。公司同期披露：过去一个月内月收入运行率已突破 $47 亿（年化约 $564 亿），并预测 Q2 2026 将实现成立以来首次季度经营性盈利。TechCrunch 援引消息人士称，本轮被定性为 Anthropic IPO 前的最后一次大规模私募融资——公司正在与投行讨论上市时间表，最快 2026 年底至 2027 年初完成上市，届时目标估值将触及 $1 万亿。融资所得将用于"推进安全与可解释性研究、扩展算力满足 Claude 增长需求，以及扩大产品和合作规模"。Fortune 将此次融资称作"历史上离成为首家破万亿私人公司最近的一刻"，分析师指出此轮将重新定义整个私募 AI 生态的估值锚点。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch · CNBC · GIC Newsroom · Fortune · Shacknews</span>
+          <a class="card-link" href="https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/" target="_blank" rel="noopener" aria-label="阅读原文：Anthropic $650 亿 Series H 报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="card cat-dev">
+      <div class="card-num">02</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Claude Opus 4.8 · Dynamic Workflows</span>
+          <span class="tag tag-dev">1000 子智能体 · Fast Mode 降价 3×</span>
+        </div>
+        <div class="card-title">Anthropic 发布 Claude Opus 4.8 + Dynamic Workflows：单次调度最多 1,000 个并行子智能体，Agentic 编码评分跃升 69.2%，最诚实旗舰模型上线</div>
+        <p class="card-summary">
+          5 月 28 日，Anthropic 发布旗舰新模型 Claude Opus 4.8，同步为 Claude Code 推出 Dynamic Workflows（研究预览版）。核心升级：Agentic 编码评分从 64.3% 提升至 69.2%（+4.9 pp），多学科推理从 54.7% 升至 57.9%，计算机使用从 82.8% 升至 83.4%；Anthropic 将其定义为迄今最诚实的 Claude 模型——相较前代在高风险提示上幻觉性声明显著减少，且会主动标注自身不确定性。最重要的开发者特性 Dynamic Workflows：允许 Claude 编写自己的编排脚本，动态启动数十至数百个并行子智能体（单次最大 16 并发、总量 1,000 个），让子智能体从独立角度攻击同一问题，再部署对抗性智能体验证结论直到结果收敛——支撑跨越数十万行代码的全代码库迁移任务，从启动到合并均由 Claude 自主驱动，现有测试套件作为通过基准。Fast Mode（2.5× 速度）定价较 Opus 4.7 降低 3 倍。模型 ID 为 claude-opus-4-8，已在 Claude API、Amazon Bedrock、Google Cloud Vertex AI、Microsoft Foundry 同步上线，Dynamic Workflows 限 Max/Team/Enterprise 计划。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch · The New Stack · MarkTechPost · 9to5Mac · Digital Applied</span>
+          <a class="card-link" href="https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/" target="_blank" rel="noopener" aria-label="阅读原文：Claude Opus 4.8 发布报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="card cat-cn">
+      <div class="card-num">03</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 中国 · AI 人才出境管制</span>
+          <span class="tag tag-cn">阿里巴巴 · DeepSeek · 预审批制</span>
+        </div>
+        <div class="card-title">中国将 AI 人才出境管制扩大至私营企业：阿里巴巴、DeepSeek 研究人员出国须获政府事先审批，从"指导意见"升级为正式强制要求</div>
+        <p class="card-summary">
+          5 月 26 日，Bloomberg 报道，中国政府已开始对阿里巴巴、DeepSeek 等私营科技公司的顶尖 AI 专业人员实施出境限制——研究人员、高管在赴海外前须获得相关政府机构的事先审批，这标志着中国 AI 人才管理政策的重大升级。政策演变脉络：2025 年 3 月，中国当局以"指导意见"形式建议顶尖 AI 创始人和研究者避免前往美国，属非强制性；2025 年 12 月，DeepSeek 部分高管被报告受到类似限制；到 2026 年 5 月，该"建议"已正式升级为预审批要求，对象从国家附属人员（国有企业高管、核科学家）扩展至私营科技领域。战略逻辑是：在斯坦福 AI Index 指出"中美 AI 模型性能差距已实质消除"的时间节点，通过强化管控防止技术外流和人才被挖角，将已获得的 AI 平价视为核心战略资产保护。分析人士指出，此举将进一步加剧 AI 领域的"知识闭环"：中国 AI 生态与国际社区的双向交流受到严格限制，但同时也向外界传递出明确信号——中国 AI 实力已强至被政府视为需要国家级保护的战略资产。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Bloomberg · Seeking Alpha · TechTimes · RT News · Plataforma Media</span>
+          <a class="card-link" href="https://www.bloomberg.com/news/articles/2026-05-26/china-expands-travel-curbs-to-top-ai-talent-at-private-firms" target="_blank" rel="noopener" aria-label="阅读原文：中国 AI 人才出境管制报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="card cat-model">
+      <div class="card-num">04</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">Apple · iOS 27 · Siri 重构</span>
+          <span class="tag tag-mod">WWDC 6 月 8 日 · Gemini 底层 · Liquid Glass</span>
+        </div>
+        <div class="card-title">Apple iOS 27 曝光史上最大 Siri 重构：独立 App + Gemini 底层 + 可选 Claude/ChatGPT，WWDC 6 月 8 日正式揭幕，AI 手机时代进入苹果主场</div>
+        <p class="card-summary">
+          5 月 26–28 日，Bloomberg、MacRumors 等媒体密集曝光 Apple iOS 27 对 Siri 进行史上规模最大的重构，全部特性将于 6 月 8 日 WWDC 2026 主旁开幕当天正式发布。核心变化：① Siri 首次获得专属 App，支持持久对话历史、连续多轮对话和多步推理，彻底告别当前单次指令交互模式；② Siri 底层切换至以 Google Gemini 技术为基础的定制模型，通过 Apple Private Cloud Compute 基础设施处理查询；③ 第三方 AI 模型开放接入——用户将可在系统级别选择 Claude（Anthropic）或 ChatGPT（OpenAI）作为 AI 后端，通过扩展机制与 Writing Tools、Image Playground 等 Apple Intelligence 功能深度集成；④ Siri 主要入口迁至动态岛（Dynamic Island），配合 Liquid Glass 半透明 UI 和富动画效果，交互风格向主流 AI 聊天产品靠拢；⑤ 新增"会话式快捷指令"（Conversational Shortcuts），支持用自然语言创建自动化流程，如"设置晨间例程：开灯、启动咖啡机、播放新闻"。Bloomberg 援引 Mark Gurman 透露，苹果在 AI 重构上已投入超过两年，此次 WWDC 是苹果"将 AI 能力真正融入消费者体验"的历史性节点。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Bloomberg · MacRumors · TechRepublic · Yahoo Tech · TechTimes</span>
+          <a class="card-link" href="https://www.bloomberg.com/news/features/2026-05-28/apple-ios-27-photos-screenshots-revamped-siri-pro-camera-app-new-ai-features" target="_blank" rel="noopener" aria-label="阅读原文：Apple iOS 27 Siri 重构报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="card cat-ind">
+      <div class="card-num">05</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-ind">OpenAI · DeployCo · $40 亿</span>
+          <span class="tag tag-ind">并购 Tomoro · 进攻 $3750 亿 IT 咨询市场</span>
+        </div>
+        <div class="card-title">OpenAI 成立 $40 亿 AI 咨询子公司 DeployCo：并购英国应用 AI 公司 Tomoro，19 家顶级投资伙伴加持，正面冲击 Accenture / IBM 等传统 IT 巨头</div>
+        <p class="card-summary">
+          5 月 11 日，OpenAI 宣布成立 OpenAI Deployment Company（内部代号"DeployCo"），这是一家以 $40 亿初始资本支撑、专门帮助大型企业将前沿 AI 嵌入核心业务流程的多数控股子公司，$100 亿 pre-money 估值起步，并同步完成对伦敦应用 AI 公司 Tomoro 的收购——后者带来约 150 名驻场工程师（Forward Deployed Engineers）和 AI 实施专家。本轮由 TPG 牵头，Advent、Bain Capital、Brookfield 联合领投，Goldman Sachs、SoftBank Corp.、Warburg Pincus 等共 19 家全球顶尖投资机构和咨询公司参与。DeployCo 的商业模式：将 AI 工程师直接"嵌入"客户组织，从初始诊断到工作流设计、构建、测试直至运营生产 AI 系统，提供端到端交付——瞄准的是目前年规模 $3750 亿的 IT 咨询市场，分析师认为此举将直接威胁 Accenture、IBM Consulting、Deloitte 等传统 IT 巨头核心业务。值得注意的是，Bain & Company 作为投资伙伴加入，标志着顶级战略咨询公司选择与 OpenAI 合作而非对抗，显示 AI 原生咨询能力对传统咨询体系构成的冲击已无法回避。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Axios · OpenAI Blog · Yahoo Finance · Kingy AI · Bain & Company</span>
+          <a class="card-link" href="https://www.axios.com/2026/05/11/openai-deployco-private-equity" target="_blank" rel="noopener" aria-label="阅读原文：OpenAI DeployCo 报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="card cat-biz">
+      <div class="card-num">06</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-biz">KPMG · 27.6 万员工全接入</span>
+          <span class="tag tag-biz">四大三家押注 Claude · 企业 AI 落地潮</span>
+        </div>
+        <div class="card-title">四大会计师事务所三家全押 Claude：KPMG 将 Claude 部署至全球 27.6 万员工，PwC 3 万席位在先，专业服务行业 AI 落地进入全面规模化阶段</div>
+        <p class="card-summary">
+          一周之内，全球四大会计师事务所中三家（KPMG、PwC、EY）相继宣布将 Claude 或 Microsoft 365 AI 大规模嵌入核心业务，构成 2026 年迄今最壮观的企业 AI 集体落地浪潮。5 月 19 日，Anthropic 宣布与 KPMG 达成战略联盟：Claude 将被集成至 KPMG Digital Gateway 平台——该平台是 KPMG 员工和客户实际开展业务的核心软件入口，覆盖全球 138 个国家和地区的 27.6 万余名专业人员；Anthropic 同步任命 KPMG 为私募股权领域"优选合作伙伴"，双方将联合为 PE 被投组合公司构建 Claude 驱动的产品。此前，PwC 于 5 月 14 日扩大与 Anthropic 的合作，采购 3 万个 Claude Enterprise 席位；EY 则于 5 月 21 日公布与微软的 $10 亿直接交易（基于 Azure AI + Microsoft 365 Copilot 体系）。分析师指出：三大事务所并非"试点"而是"全员铺开"，意味着专业服务行业已从"是否引入 AI"进入"规模落地、深度定制"阶段。Claude Enterprise 对 Anthropic 营收的长期价值——"固定席位 × 长期合同 × 深度工作流集成"——将显著优于消费级订阅，是 Claude 商业化飞轮的核心驱动力。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Anthropic Blog · Digital Applied · PwC Blog · Agentic AI Week Review</span>
+          <a class="card-link" href="https://www.anthropic.com/news/anthropic-kpmg" target="_blank" rel="noopener" aria-label="阅读原文：KPMG 全员部署 Claude 报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 -->
+    <article class="card cat-dev">
+      <div class="card-num">07</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Google · Antigravity 2.0</span>
+          <span class="tag tag-dev">I/O 2026 · 五平台战略 · 正面挑战 Claude Code</span>
+        </div>
+        <div class="card-title">Google Antigravity 2.0 亮相 I/O 2026：桌面 App / CLI / SDK / 托管 API / 企业平台五覆盖，并行子智能体 + 后台调度 + 跨平台沙箱，全面挑战 Claude Code</div>
+        <p class="card-summary">
+          5 月 19 日，Google 在 I/O 2026 上正式发布 Antigravity 2.0，将其早期的 Agent Development Kit（ADK）扩展为完整的代理开发平台，以"五平台"战略全面进入 AI 辅助开发竞争。核心特性：① 新桌面 App 原生支持多智能体并行运行，侧边栏实时追踪每个子智能体状态；② agy CLI 将相同智能体执行框架带入终端，实现与 Claude Code 相似的命令行开发工作流；③ Antigravity SDK 跨多语言暴露统一 API，可在自研后端编排多智能体；④ 通过 Gemini API 暴露 Managed Agents 服务，企业无需维护基础设施即可运行；⑤ Enterprise Agent Platform 针对大型企业安全和合规需求，内置跨平台终端沙箱、凭据遮蔽和强化 Git 策略。Gemini 3.5 Flash 作为 Antigravity 默认底层模型，已于 5 月 27 日在 Gemini API 正式 GA。对前端开发者而言，Antigravity 2.0 与 AG-UI 协议的结合意味着：在多智能体协作的 UI 构建场景中，Google 正提供一个完整的全栈工具链——从代理逻辑到最终渲染组件，无需跨越多个厂商边界。分析师指出，这是 Google 在开发者工具领域向 Claude Code 发起的最正面竞争挑战。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">MarkTechPost · APIdog · BrightCoding · DEV Community · Google Cloud Blog</span>
+          <a class="card-link" href="https://www.marktechpost.com/2026/05/19/google-launches-antigravity-2-0-at-i-o-2026-a-standalone-agent-first-platform-with-cli-sdk-managed-execution-and-enterprise-support/" target="_blank" rel="noopener" aria-label="阅读原文：Google Antigravity 2.0 报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 -->
+    <article class="card cat-dev">
+      <div class="card-num">08</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">AG-UI 协议 · 前端智能体标准</span>
+          <span class="tag tag-dev">CopilotKit · Google/AWS/微软采纳</span>
+        </div>
+        <div class="card-title">AG-UI 协议成为前端智能体行业标准：Google / AWS / Microsoft / LangChain 集体采纳，CopilotKit 31,500 星登顶前端 AI 框架，前端开发范式加速重构</div>
+        <p class="card-summary">
+          随着 AG-UI（Agent-User Interaction 协议）被 Google、AWS、Microsoft、LangChain 等主流平台集体采纳，前端 AI 智能体开发正式进入标准化时代。AG-UI 是由 CopilotKit 主导提出的开放事件协议，定义了 AI 智能体与前端用户界面之间的标准化通信模式：不同厂商的智能体后端可通过统一接口与前端框架交互，从根本上解决"每个智能体框架都要写一套前端适配器"的碎片化问题。CopilotKit 本身凭借 31,500+ GitHub Stars 成为 2026 年最热前端 AI 开发框架，提供完整的智能体前端构建积木：聊天组件、React Hooks、无头 UI（Headless UI，用于完全自定义智能体界面）、持久对话线程、Human-in-the-Loop 机制、共享状态，以及内置调试检查器（Inspector）。对前端工程师而言，AG-UI 的普及意味着可以直接复用现有技术栈（React/Vue/原生 JS）与后端任意主流智能体框架——LangGraph、AutoGen、CrewAI、OpenAI Agents SDK、Claude Agent SDK 等——无缝对接。开发者社区将 AG-UI 比作"智能体时代的 REST API"：一旦协议标准被锁定，生态将围绕它快速爆发。Vercel v0 用于 UI 原型、Kombai 用于 Figma 交付、CopilotKit+AG-UI 用于智能体前端，三者正形成 2026 年前端 AI 开发的黄金工具链组合。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">eesel AI · agensi.io · DataCamp · StartupHub.ai · DEV Community</span>
+          <a class="card-link" href="https://www.eesel.ai/blog/best-ai-for-front" target="_blank" rel="noopener" aria-label="阅读原文：AG-UI 协议与 CopilotKit 报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 09 -->
+    <article class="card cat-sec">
+      <div class="card-num">09</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-sec">AI 安全研究 · 迭代攻击漏洞</span>
+          <span class="tag tag-sec">企业 AI 部署 · 对抗测试新标准</span>
+        </div>
+        <div class="card-title">研究揭示：AI 模型面对迭代攻击远比官方宣称脆弱，5–15 轮对话后多数模型被突破，企业 AI 部署须重新审视对抗测试标准</div>
+        <p class="card-summary">
+          5 月 28 日，CSO Online 发布研究报告，揭示 AI 大语言模型在迭代（Iterative）攻击场景下的实际安全性，远低于厂商公开宣传或红队测试中呈现的水平。核心发现：大多数 AI 模型的安全评估基于单次提示（single-shot）测试——用一次攻击性提示测试模型是否拒绝；但现实场景中攻击者会通过多轮对话、逐步软化措辞、渐进引导或角色扮演手法在最初拒绝后持续尝试，大多数模型在 5–15 轮迭代内被突破。三个关键弱点：① 上下文漂移（Context Drift）——随对话轮次增加，模型对敏感话题的警惕性降低；② 角色入侵（Persona Persistence）——一旦接受某个角色设定，模型难以从该角色视角拒绝后续请求；③ 语义稀释（Semantic Dilution）——将有害请求分散于多个无害子请求中，逐步拼合达成目标。报告建议企业在 AI 部署时，要求供应商提供迭代攻击场景下的安全评分而非单次测试成绩；NIST AI 风险管理框架（AI RMF）正在更新相关测试指南，以反映迭代攻击场景。此报告与 OpenAI 同期公布的 C2PA + SynthID 内容溯源系统形成呼应，显示业界在 AI 安全合规上的系统性投入正深度推进。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">CSO Online · CIO · NIST · OpenAI</span>
+          <a class="card-link" href="https://www.csoonline.com/article/4177903/ai-models-more-vulnerable-than-claimed-when-faced-with-iterative-attacks.html" target="_blank" rel="noopener" aria-label="阅读原文：AI 模型迭代攻击漏洞研究报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card cat-biz">
+      <div class="card-num">10</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-biz">Meta · Meta One 订阅全球上线</span>
+          <span class="tag tag-biz">Instagram / Facebook / WhatsApp · AI 货币化</span>
+        </div>
+        <div class="card-title">Meta 正式全球推出 Meta One 订阅服务：Instagram / Facebook / WhatsApp 三平台付费会员，AI 个性化与创作者工具为核心卖点，社交 AI 货币化新时代开启</div>
+        <p class="card-summary">
+          5 月 27 日，Meta 正式向全球用户开放 Meta One 订阅服务，面向 Instagram、Facebook 和 WhatsApp 三大平台推出付费会员计划，不仅是对此前欧洲测试版本的全球扩展，更是 Meta 首次将 AI 功能系统性纳入订阅价值主张的大规模尝试。付费权益核心：更个性化的 Meta AI 助手体验（为付费会员记忆更多偏好和情境）、独家 AI 辅助内容生成和变现工具、WhatsApp 高级 AI 通话和消息增强功能。分析师预测，若全球用户付费渗透率达到 3–5%，年贡献收入将超过 $100 亿，成为 Meta 除广告外的第二大营收来源。此次发布恰逢 Meta 同期宣布裁员 8,000 人（全员 10%）、聚焦 AI 投资，显示 Meta 正将人力成本节约系统性地转化为 AI 产品和基础设施投入。对行业的参考意义：在 X Premium 和 Snapchat+ 已验证用户付费意愿的基础上，Meta 以其数十亿月活用户规模入局订阅模式，将为整个社交媒体行业的"AI 功能货币化"路径提供最大规模的实证数据——成功则将重塑社交平台的商业模式核心逻辑，失败则证明免费用户对付费 AI 增值的抵触依然强烈。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch · Bloomberg · Meta Newsroom</span>
+          <a class="card-link" href="https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/" target="_blank" rel="noopener" aria-label="阅读原文：Meta One 订阅全球上线报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新 · 2026-05-29 08:04 BJT
+</footer>
+
+</body>
+</html>
