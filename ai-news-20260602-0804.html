@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 行业快讯 · 2026-06-02 08:04</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --border: #e2e5eb;
+      --text-primary: #0d1117;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --accent: #1d4ed8;
+      --accent-dim: #3b82f6;
+      --radius: 10px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 28px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
+      --c-cn:    #dc2626; --bg-cn:    #fef2f2; --bd-cn:    #fca5a5;
+      --c-model: #0891b2; --bg-model: #ecfeff; --bd-model: #67e8f9;
+      --c-dev:   #7c3aed; --bg-dev:   #f5f3ff; --bd-dev:   #c4b5fd;
+      --c-sec:   #b45309; --bg-sec:   #fffbeb; --bd-sec:   #fcd34d;
+      --c-ind:   #065f46; --bg-ind:   #ecfdf5; --bd-ind:   #6ee7b7;
+      --c-biz:   #be185d; --bg-biz:   #fdf2f8; --bd-biz:   #f9a8d4;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(140deg, #060d1f 0%, #0c1f45 38%, #0f3460 65%, #1a4fa8 88%, #1d4ed8 100%);
+      overflow: hidden;
+      padding: 56px 24px 52px;
+      text-align: center;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,179,237,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,179,237,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 640px;
+      height: 380px;
+      background: radial-gradient(ellipse, rgba(56,130,246,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner { position: relative; z-index: 1; }
+
+    .header-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 18px;
+    }
+    .header-eyebrow .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    header h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    header h1 em { font-style: italic; color: #93c5fd; }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: #93c5fd;
+      opacity: 0.8;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .header-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+    .header-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #bfdbfe;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 4px 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    main { max-width: 900px; margin: 0 auto; padding: 40px 20px 72px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .section-count {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--card-accent, #e2e5eb);
+      border-radius: var(--radius);
+      padding: 22px 26px 20px 26px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 18px;
+      align-items: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: card-in 0.45s ease forwards;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-left-color: var(--card-accent, var(--accent-dim));
+    }
+    @keyframes card-in { to { opacity: 1; transform: translateY(0); } }
+    .card:nth-child(1)  { animation-delay: 0.06s; }
+    .card:nth-child(2)  { animation-delay: 0.12s; }
+    .card:nth-child(3)  { animation-delay: 0.18s; }
+    .card:nth-child(4)  { animation-delay: 0.24s; }
+    .card:nth-child(5)  { animation-delay: 0.30s; }
+    .card:nth-child(6)  { animation-delay: 0.36s; }
+    .card:nth-child(7)  { animation-delay: 0.42s; }
+    .card:nth-child(8)  { animation-delay: 0.48s; }
+    .card:nth-child(9)  { animation-delay: 0.54s; }
+    .card:nth-child(10) { animation-delay: 0.60s; }
+
+    .card.cat-cn     { --card-accent: var(--c-cn); }
+    .card.cat-model  { --card-accent: var(--c-model); }
+    .card.cat-dev    { --card-accent: var(--c-dev); }
+    .card.cat-sec    { --card-accent: var(--c-sec); }
+    .card.cat-ind    { --card-accent: var(--c-ind); }
+    .card.cat-biz    { --card-accent: var(--c-biz); }
+
+    .card-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 22px;
+      font-weight: 600;
+      color: #d1d5db;
+      line-height: 1;
+      padding-top: 4px;
+      user-select: none;
+      transition: color 0.2s;
+      letter-spacing: -0.02em;
+    }
+    .card:hover .card-num { color: var(--card-accent, var(--accent-dim)); }
+
+    .card-body { min-width: 0; }
+
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border: 1px solid transparent;
+      line-height: 1.6;
+    }
+    .tag-cn  { color: var(--c-cn);    background: var(--bg-cn);    border-color: var(--bd-cn); }
+    .tag-mod { color: var(--c-model); background: var(--bg-model); border-color: var(--bd-model); }
+    .tag-dev { color: var(--c-dev);   background: var(--bg-dev);   border-color: var(--bd-dev); }
+    .tag-sec { color: var(--c-sec);   background: var(--bg-sec);   border-color: var(--bd-sec); }
+    .tag-ind { color: var(--c-ind);   background: var(--bg-ind);   border-color: var(--bd-ind); }
+    .tag-biz { color: var(--c-biz);   background: var(--bg-biz);   border-color: var(--bd-biz); }
+
+    .card-title {
+      font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.38;
+      margin-bottom: 9px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-source {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 5px 13px;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      background: #eff6ff;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { background: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+    .card-link svg { transition: transform 0.15s; }
+    .card-link:hover svg { transform: translateX(2px); }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 36px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; background: #dbeafe; border-color: #93c5fd; }
+    footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { animation: none; opacity: 1; transform: none; }
+      .header-eyebrow .dot { animation: none; }
+      .card-link svg { transition: none; }
+      .card, .card-link { transition: none; }
+    }
+
+    @media (max-width: 580px) {
+      header { padding: 44px 20px 36px; }
+      .card { grid-template-columns: 1fr; padding: 18px 18px 16px; border-left-width: 2px; }
+      .card-num { display: none; }
+      .card-title { font-size: 16px; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 48px;
+      background: rgba(9, 18, 40, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .nav-back, .nav-pager-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #93c5fd;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+      touch-action: manipulation;
+    }
+    .nav-back:hover, .nav-pager-link:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .nav-back:focus-visible, .nav-pager-link:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
+    .nav-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+    }
+    .nav-pager { display: flex; gap: 4px; }
+    .nav-pager-link.disabled { opacity: 0.25; pointer-events: none; }
+    body { padding-top: 48px; }
+    @media (max-width: 480px) { .nav-title { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="站点导航">
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    返回列表
+  </a>
+  <span class="nav-title" aria-hidden="true">AI 行业快讯</span>
+  <div class="nav-pager">
+    <a class="nav-pager-link" href="ai-news-20260601-0804.html" aria-label="上一期">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M9 3L5 7L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      上一期
+    </a>
+    <a class="nav-pager-link disabled" aria-label="下一期（暂无）" aria-disabled="true" tabindex="-1">
+      下一期
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow" aria-hidden="true">
+      <span class="dot"></span>
+      AI Daily Briefing
+      <span class="dot"></span>
+    </div>
+    <h1>AI 行业快讯 <em>Top 10</em></h1>
+    <p class="header-subtitle">英伟达RTX Spark超芯片Computex 2026震撼亮相 · Microsoft Build揭晓Project Polaris脱钩OpenAI · 中国AI预测政治异见者引爆国际争议 · Claude Opus 4.8动态工作流落地</p>
+    <div class="header-pills">
+      <span class="header-pill">2026年6月2日</span>
+      <span class="header-pill">北京时间 08:04</span>
+      <span class="header-pill">权威媒体综合整理</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-header">
+    <span class="section-title">本期精选</span>
+    <span class="section-count">10 条重要消息</span>
+  </div>
+
+  <div class="cards">
+
+    <!-- 01 -->
+    <article class="card cat-dev">
+      <div class="card-num">01</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">英伟达RTX Spark超芯片 · Computex 2026全球首发</span>
+          <span class="tag tag-dev">ARM架构 · Blackwell GPU · 128GB统一内存 · 1PFLOP AI算力 · 对标苹果M5</span>
+        </div>
+        <div class="card-title">英伟达Computex 2026发布RTX Spark超芯片：ARM架构 + Blackwell GPU + 128GB统一内存实现1 PFLOP本地AI算力，微软Surface Laptop Ultra同步首发，正面迎战苹果M5系列</div>
+        <p class="card-summary">
+          6月1日，英伟达CEO黄仁勋在台北Computex 2026主题演讲中正式发布RTX Spark超芯片——这是英伟达首次进军个人电脑处理器市场，以直接挑战苹果M系列和高通骁龙X的姿态登场。核心规格：① 20核ARM CPU + Blackwell架构GPU（6,144 CUDA核心），两者通过NVLink C2C芯片间互联共享内存空间，实现128GB LPDDR5X统一内存、300 GB/s内存带宽；② AI算力达1 PFLOP，可在本地离线运行700亿参数级别大模型，完全不依赖云端，这是消费级平台史无前例的本地推理能力；③ 工艺节点：TSMC 3nm，70亿晶体管；④ 形态：首发笔记本机身仅14mm厚，同时支持台式机配置；⑤ 生态合作：戴尔、惠普、联想、华硕、微星——以及本届Computex最受瞩目的微软Surface Laptop Ultra，微软将其定位为"为AI开发者和创作者打造的旗舰设备"。RTX Spark笔记本预计2026年秋季正式上市。战略意义：黄仁勋明确将RTX Spark定位为"将Windows变成代理AI操作系统"的核心硬件基础——本地1 PFLOP算力使无需网络连接的实时代理工作流、大规模多模型并发推理在消费端成为可能，这是继苹果硅芯片以来最重大的PC架构级颠覆。市场反应：英伟达股价单日飙升6%，微软涨2.2%，戴尔大涨10%；AMD和英特尔应声下跌——市场给出了清晰判断：这场"芯片格局重塑"是真实的，而非营销噱头。对前端和AI开发者的直接影响：RTX Spark意味着在本地运行用于代码补全、UI生成和多模态输入处理的中大型模型成本趋近于零，本地AI开发工作流将迎来质的飞跃。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Tom's Hardware · TechRadar · Al Jazeera · NVIDIA Newsroom · Analytics Insight</span>
+          <a class="card-link" href="https://www.tomshardware.com/laptops/nvidia-unveils-rtx-spark-superchip-at-computex-2026-new-platform-promises-to-turn-windows-into-an-agentic-ai-os-with-arm-cpu-blackwell-gpu-and-128gb-unified-memory" target="_blank" rel="noopener" aria-label="阅读原文：英伟达RTX Spark超芯片详细报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="card cat-dev">
+      <div class="card-num">02</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Microsoft Build 2026完整回顾</span>
+          <span class="tag tag-dev">Project Polaris自研AI · Windows Agent Framework开源 · Azure Agent Mesh · Copilot Workspace GA</span>
+        </div>
+        <div class="card-title">Microsoft Build 2026正式闭幕：Project Polaris自研AI编程模型8月替换Copilot中的GPT-4、Windows Agent Framework开源、Azure Agent Mesh全面GA——微软宣告彻底告别单一OpenAI依赖</div>
+        <p class="card-summary">
+          Microsoft Build 2026于旧金山Fort Mason Center落幕，CEO Satya Nadella在开幕主旨演讲中明确宣告："Windows不再是一个专属于人类用户的平台——代理已成为操作系统运行时、工具链和分发模型中的一等公民。"本届Build最震撼的发布矩阵：① Project Polaris——微软首款完全自研的AI编程模型，将于2026年8月起作为GitHub Copilot的默认推理引擎，替换现有的GPT-4 Turbo；Polaris采用混合专家（MoE）架构，针对不同编程语言和框架部署独立专业化子模块；在HumanEval和MBPP基准上超越GPT-4 Turbo，在Rust、Haskell等低资源语言上提升尤为显著；运行于微软自研Maia AI加速器，每次推理延迟和成本均优于外采方案；订阅用户将于8月自动迁移，设三个月可选回退期；② Windows Agent Framework开源——原生代理运行时、工具注册表和跨代理协同通信协议全部开放；③ Azure Agent Mesh正式发布——统一的跨Azure、M365和第三方服务代理编排层，内置数据治理、访问控制和代理生命周期管理；④ Copilot Workspace正式GA——脱离Beta进入生产可用状态，代理可独立完成Bug修复、测试撰写和PR提交；⑤ 企业级新SKU：M365 E5 + Copilot + Entra Suite + Agent 365捆绑套餐，$99/用户/月，内含Defender SPM + Purview分类器 + Entra条件访问。分析师将Project Polaris定性为微软"切断OpenAI脐带"的历史节点——此前微软AI核心产品几乎完全依赖OpenAI模型；Polaris的推出意味着微软在AI基础设施上的战略独立迈出了决定性一步，对GitHub生态的数百万开发者影响深远。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">ChatForest · aipilotdaily · Microsoft News · Tom's Guide · EPC Group</span>
+          <a class="card-link" href="https://chatforest.com/builders-log/microsoft-build-2026-recap-windows-agent-platform-project-polaris-copilot-workspace/" target="_blank" rel="noopener" aria-label="阅读原文：Microsoft Build 2026完整回顾">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="card cat-cn">
+      <div class="card-num">03</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 中国 · AI预测政治异见者</span>
+          <span class="tag tag-cn">Geedge Networks · DeepSeek驱动 · 行为画像 · 全球威权输出</span>
+        </div>
+        <div class="card-title">彭博社揭露：中国企业Geedge Networks开发AI系统，从电信、社交、位置数据构建公民行为画像，用AI预测"潜在政治风险人士"——这不是监控，是在异见发生之前将其扼杀</div>
+        <p class="card-summary">
+          6月1日，彭博社、Newsmax、Business Standard等主流媒体同步曝光了一项令国际人权机构高度警戒的技术开发计划：中国企业Geedge Networks（负责向其他威权政府销售防火长城商业版本）旗下研究机构Mesa Lab，正在研发AI系统，整合公民电信数据、社交媒体行为和地理位置轨迹，构建综合行为画像，并通过AI模型将人员分类，识别"有害信息"传播者和"潜在政治风险人士"。与传统监控系统最本质的差异在于：这不仅是在监控已知异见者，而是在异见行为真正发生之前，基于行为模式预测谁可能成为下一个异见者。范德比尔特大学研究人员对Geedge内部技术文件进行了深度分析并公开结论，确认该系统的设计目标明确包含"政治风险预测"功能。技术细节：① Geedge系统已整合DeepSeek系列模型用于文本分类和异常行为识别，使其在算力受限情况下仍可实现大规模城市级部署；② 据相关文件，该系统计划整合的数据维度超过200项，涵盖通话频率、App使用时长、支付行为异常、出行轨迹与已知"敏感人士"的接触频次等；③ 中国各地公安局同步部署基于DeepSeek的预测性警务系统，技术链条已延伸至新疆、西藏等高敏感地区。国际扩散风险：Geedge同时向中东、东南亚多国威权政府销售该平台的商业版本，意味着这套"AI预测性镇压"基础设施正在从中国向全球威权生态系统系统性扩散。此曝光也令国际社会再次聚焦于AI治理政策缺口——现行出口管制框架针对芯片实体，而非以SaaS形式输出的AI能力，监管套利空间巨大。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Bloomberg · Business Standard · Newsmax · Political Wire · Vanderbilt University Research</span>
+          <a class="card-link" href="https://www.business-standard.com/amp/world-news/china-developing-ai-tool-to-predict-who-could-pose-political-risk-126060102065_1.html" target="_blank" rel="noopener" aria-label="阅读原文：中国AI预测政治异见报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="card cat-sec">
+      <div class="card-num">04</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-sec">🇨🇳 中国 · 7所国防院校抢购英伟达H200</span>
+          <span class="tag tag-sec">北航 · 西工大 · 国防七子 · 出口管制漏洞 · 军民两用</span>
+        </div>
+        <div class="card-title">彭博社独家：中国至少7所军事关联高校积极寻购英伟达H200 AI芯片——北航、西工大等"国防七子"在美对华芯片管制收紧背景下仍在多路寻路，出口管制执法面临严峻挑战</div>
+        <p class="card-summary">
+          彭博社6月1日独家报道：至少7所与中国人民解放军存在直接关联的高校，正在积极寻求采购英伟达H200芯片——这是美国现行出口许可框架下允许对华销售的最高性能AI芯片。其中包括两所"国防七子"成员院校：北京航空航天大学（北航）和西北工业大学（西工大），两校均有明确的PLA合作项目、定向科研委托和军工输送渠道。H200的实际能力：相比被全面禁售的H100，H200在AI推理任务上性能提升高达4倍，HBM3e显存带宽达3.35 TB/s，足以驱动千亿参数级别大模型的大规模推理和前沿模型微调训练；一旦流入军事研究体系，其战略价值远超此前管控的A100/A800等芯片。执法困境：① 与过去针对商业企业的采购不同，此次是学术机构——具有"非商业研究"豁免身份——直接发出采购意向，BIS（美国商务部工业和安全局）的实体清单机制难以有效覆盖"采购意向"阶段；② 多级中间商采购路径使真正最终用户审查极难落实；③ 中国高校向军工企业定向输送研究成果和人才的"旋转门"机制，导致民用芯片流向军事用途在法律层面难以清晰界定。地缘政治影响：美国商务部尚未公开回应是否将对涉事院校启动实体清单审查；英伟达暂无置评。分析师普遍认为这将成为下一轮AI出口管制升级的关键触发点之一，并可能促使美国将采购意向阶段纳入管控范围——这将是有史以来管控力度最强的AI芯片出口限制。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Bloomberg · South China Morning Post · Tech War Analysis</span>
+          <a class="card-link" href="https://www.bloomberg.com/news/articles/2026-06-01/nvidia-s-ai-chips-sought-by-chinese-labs-with-ties-to-military" target="_blank" rel="noopener" aria-label="阅读原文：中国国防院校购买英伟达H200报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="card cat-model">
+      <div class="card-num">05</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">Anthropic Claude Opus 4.8 · 5月28日正式发布</span>
+          <span class="tag tag-mod">动态工作流 · 努力控制 · 2.5× 快速模式3倍提速 · 超大规模任务</span>
+        </div>
+        <div class="card-title">Anthropic发布Claude Opus 4.8：动态工作流突破超大规模任务上限、努力控制精细调节推理深度、2.5倍快速模式成本降低3倍——代理式AI的能力边界再次后退</div>
+        <p class="card-summary">
+          5月28日，Anthropic正式发布Claude Opus 4.8，定位为"判断力更敏锐、对自身进展更诚实、能够独立工作更长时间的前沿模型"。Opus 4.8在Opus 4.7的基础上完成了三项关键升级，并同步推出多项平台级新功能：① 动态工作流（Dynamic Workflows）——Claude Code迎来架构级升级，允许模型在执行超大规模任务时动态分解子任务、调用外部工具链、跨会话保持状态连贯性，突破了此前单次Context Window对大型工程项目的限制；实测显示Opus 4.8在"将整个遗留代码库迁移至现代框架"类任务上的完整完成率提升显著；② 努力控制（Effort Control）——claude.ai用户现在可以明确指定模型在任务上投入的推理深度（轻量模式用于快速草稿、标准模式用于常规任务、深度模式用于需要长链推理的复杂问题），让用户在速度、成本和质量之间做出精细取舍；③ 快速模式成本大幅下降——Opus 4.8的2.5倍速快速模式（Fast Mode）每次调用成本比Opus 4.7同等模式低3倍，这是Anthropic第一次将旗舰模型的高速模式带入接近可负担的价位；④ Claude Managed Agents强化——代理现在可以运行在用户自控沙箱内并连接私有MCP服务器，企业级数据隔离和定制化工具调用能力大幅提升；⑤ API和定价：Opus 4.8与Opus 4.7保持相同定价结构，现已开放API访问。开发者社区反应热烈，多位前端工程师在测试中确认Opus 4.8对"生成完整可运行React应用"类任务的质量和稳定性均优于前代，动态工作流模式下可自主完成逾千行代码的多文件协同修改。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">9to5Mac · Anthropic Newsroom · Releasebot · Gate News · Claude Platform Docs</span>
+          <a class="card-link" href="https://9to5mac.com/2026/05/28/anthropic-upgrades-claude-with-new-opus-4-8-model-heres-whats-new/" target="_blank" rel="noopener" aria-label="阅读原文：Claude Opus 4.8发布详解">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="card cat-biz">
+      <div class="card-num">06</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-biz">Anthropic 6月15日计费重组 · 开发者必读</span>
+          <span class="tag tag-biz">程序化用量独立信用池 · $20–$200/月 · Agent SDK · Claude Code Actions</span>
+        </div>
+        <div class="card-title">Anthropic 6月15日计费架构重大变革：程序化API用量从订阅配额剥离，进入独立信用池按API定价结算——Pro/Max订阅者$20至$200不等，重度代理工作流成本将大幅上升</div>
+        <p class="card-summary">
+          6月15日起，Anthropic将对Claude订阅计费结构实施有史以来最大规模重构——将"程序化/代理式用量"从用户订阅配额中完全剥离，引入独立的"Agent信用池"。此次变革影响范围：Claude Agent SDK（含-p模式）、Claude Code GitHub Actions自动化工作流、通过Anthropic API驱动的第三方代理，以及所有非交互式批量处理场景。不受影响范围：claude.ai网页/桌面/移动端交互聊天、Claude Code在终端内的交互式会话、Claude Cowork协作模式——上述场景继续使用原有订阅配额，无需额外操作。信用池月度额度：Pro订阅$20；Max 5x订阅$100；Max 20x订阅$200——均按API标准列表定价计量，无余额滚存至下月。成本影响评估：过去Claude订阅将代理用量的实际API成本补贴约15–30倍；新方案移除补贴后，重度程序化用户的月度成本将出现数量级级别的上升。关键操作节点：用户必须在6月15日前完成"领取信用"操作，并决定是否开启"用量溢出"选项（溢出按API定价继续扣费，否则请求被静默拒绝）。开发者社区：大量indie hacker和企业开发者已开始重新评估代理工作流的运营成本模型；Zed、Cursor等IDE集成商发布专项说明；部分用户转向直接API调用或自托管方案优化成本。分析师指出，此举标志着"AI代理基础设施"的定价模式正式告别消费者订阅的交叉补贴时代——这是Anthropic在冲击IPO前提升商业可预测性的关键信号。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">DevToolPicks · Digital Applied · Codersera · The New Stack · Zed Blog</span>
+          <a class="card-link" href="https://devtoolpicks.com/blog/anthropic-splits-claude-subscriptions-agent-sdk-credit-june-2026" target="_blank" rel="noopener" aria-label="阅读原文：Anthropic 6月计费重组详解">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 -->
+    <article class="card cat-model">
+      <div class="card-num">07</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">英伟达Vera Rubin平台 · 六款新芯片</span>
+          <span class="tag tag-mod">AI超算 · 推理成本降10x · H2 2026量产 · AWS/Google/Microsoft首批部署</span>
+        </div>
+        <div class="card-title">英伟达Vera Rubin平台六芯片AI超算体系正式进入量产：推理Token成本降低10倍、MoE模型训练GPU需求减少4倍，AWS、Google Cloud、Microsoft Azure H2 2026首批部署</div>
+        <p class="card-summary">
+          英伟达Rubin平台于CES 2026首次亮相，此后持续推进，目前已正式进入量产阶段。作为Computex 2026周期的重要背景，黄仁勋在本次发布会期间同步确认了Rubin平台各芯片的量产时间表和主要云合作伙伴部署进展。Rubin平台采用六芯片极致协同设计：① NVIDIA Vera CPU——高性能ARM架构处理器，现已进入全面量产，OpenAI、Anthropic和SpaceX已率先采用；② NVIDIA Rubin GPU——面向大型AI训练和推理的数据中心GPU旗舰，继承Blackwell架构并全面升级；③ NVIDIA NVLink 6 Switch——芯片间高速互联，支持数千GPU节点的无缝协同；④ NVIDIA ConnectX-9 SuperNIC——针对AI工作负载优化的高性能网络接口卡；⑤ NVIDIA BlueField-4 DPU——数据处理单元，负责存储和网络卸载；⑥ NVIDIA Spectrum-6 Ethernet Switch——AI集群专用以太网交换架构。性能飞跃：与上一代Blackwell平台相比，Rubin平台在推理场景下Token生成成本降低10倍；在训练混合专家（MoE）模型时所需GPU数量减少4倍——这意味着同等算力预算下，企业可以训练规模大4倍的模型，或将现有规模的训练成本压缩至四分之一。部署路线图：搭载Rubin的产品将于2026年下半年由AWS、Google Cloud、Microsoft Azure、Oracle Cloud Infrastructure和NVIDIA Cloud Partners首批提供商用访问。分析师预测，Rubin平台将成为2026–2027年AI推理基础设施的核心支柱，其大幅降低的推理成本将直接影响AI API的市场定价，进而推动AI应用的普及速度超越此前所有模型。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">NVIDIA Newsroom · NVIDIA Developer Blog · HPCwire AIwire · Yahoo Finance · NVIDIA Investor Relations</span>
+          <a class="card-link" href="https://nvidianews.nvidia.com/news/rubin-platform-ai-supercomputer" target="_blank" rel="noopener" aria-label="阅读原文：英伟达Rubin平台官方发布">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 -->
+    <article class="card cat-biz">
+      <div class="card-num">08</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-biz">OpenAI模型生命周期更新</span>
+          <span class="tag tag-biz">GPT-4.5退役6月27日 · o3退役8月26日 · GPT-5.5 Instant默认 · Rosalind生物防御</span>
+        </div>
+        <div class="card-title">OpenAI密集发布模型生命周期公告：GPT-4.5将于6月27日从ChatGPT退役、o3将于8月26日退役，Rosalind Biodefense受信访问已开放，GPT-5.5 Instant确立为新默认模型</div>
+        <p class="card-summary">
+          OpenAI近期密集更新模型发布说明，形成了迄今为止最复杂的多代模型并行生命周期管理矩阵。重要时间节点：① GPT-4.5退役——将于2026年6月27日从ChatGPT正式下线，遵循30天日落期；开发者和研究人员须在此日期前完成迁移至GPT-5.5或GPT-5.5 Instant；② OpenAI o3退役——将于2026年8月26日从ChatGPT下线，遵循90天日落期；o3的主要能力在GPT-5.5系列中已全面覆盖并超越；③ GPT-5.5 Instant确立为ChatGPT新默认模型——于5月5日全面替换此前默认模型，Anthropic内部数据称其在多数日常任务上响应质量高于GPT-4.5且速度提升显著；④ Rosalind Biodefense开放受信访问——5月29日正式发布，面向经审查的开发者、美国政府合作机构和公共卫生研究机构，基于GPT-Rosalind模型（以DNA双螺旋发现中的关键科学家Rosalind Franklin命名），专为生物安全应用场景定制：基因组序列分析、大流行病传播建模、医学对策研发支持、生物安全文件解析；访问机构须通过受信合作伙伴审查流程，包括机构背景核实和数据安全协议签署。当前ChatGPT模型架构：GPT-5.5 Instant（默认）、GPT-5.5 Pro（高性能）、GPT-5.3-Codex（编程旗舰）、GPT-5.4 mini（轻量，含Thinking功能）。整体信号：OpenAI正以约每6周一次重大迭代的节奏加速模型演进，快速退役旧模型以降低维护成本和用户分裂度，将资源集中在GPT-5.x系列旗舰和垂直专业化方向，这是应对Anthropic Opus 4.8和Google Gemini Intelligence的战略必要动作。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">OpenAI Help Center · OpenAI Newsroom · Releasebot · OpenAI Research Index</span>
+          <a class="card-link" href="https://help.openai.com/en/articles/9624314-model-release-notes" target="_blank" rel="noopener" aria-label="阅读原文：OpenAI模型发布说明">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 09 -->
+    <article class="card cat-ind">
+      <div class="card-num">09</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-ind">AI编程工具2026格局报告</span>
+          <span class="tag tag-ind">Claude Code CSAT 91% · NPS 54领跑 · GitHub Copilot 37%市占遭侵蚀 · 84%开发者采用</span>
+        </div>
+        <div class="card-title">JetBrains年度AI编程工具调研：Claude Code以91% CSAT、NPS 54称霸满意度榜首，84%开发者已采用AI工具——GitHub Copilot虽保持37%市占率但多面受敌，行业格局加速分化</div>
+        <p class="card-summary">
+          JetBrains 2026年第一季度开发者AI工具使用状况调研报告揭示了软件开发领域有史以来最深刻的工具使用习惯变革。核心数据：① 整体采用率——84%的开发者现已在工作中使用AI编程工具（2025年底为76%），其中90%每周至少使用一次，75%将AI用于超过一半的日常软件工程任务；② Claude Code——2026年1月57%的开发者已知晓（较2025年9月的49%持续增长），目前18%在工作中使用；客户满意度CSAT 91%、净推荐分NPS 54，两项指标均领跑所有AI编程工具，自2025年5月发布至今已成为增速最快的编程AI；③ GitHub Copilot——约37%整体市场份额保持规模领先，但面临Cursor、Codeium（Windsurf）、Amazon Q Developer和Google Gemini Code Assist的显著侵蚀；④ Cursor——在需要深度代码库理解的"仓库级"任务中表现突出，已建立明确的差异化定位；⑤ V0（Vercel）——在前端组件生成和"Prompt到UI"场景持续领跑，6M+开发者，80K+ 活跃团队，$42M ARR。AI代码生成分布：前端（React/Vue组件、CSS布局）> 测试用例生成 > API集成样板 > 数据库查询——与前端代码的高度标准化和视觉可验证性密切相关。深层趋势：专业团队的AI使用率高于个人开发者；企业级用户中有65%在同一工作流内混用多种AI工具而非依赖单一产品；51%以上的GitHub代码提交已由AI生成或在AI实质性协助下完成，首次超越纯人工代码占比。分析师预测，到2026年底AI代码比例将突破70%，"人类编写代码"将日益集中于架构决策、产品判断和AI生成代码的质量监督层面。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">JetBrains Research · Faros.ai · Builder.io · GitHub Reports · Tech Insider</span>
+          <a class="card-link" href="https://blog.jetbrains.com/research/2026/04/which-ai-coding-tools-do-developers-actually-use-at-work/" target="_blank" rel="noopener" aria-label="阅读原文：JetBrains AI编程工具调研报告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card cat-dev">
+      <div class="card-num">10</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">V0 by Vercel · 前端AI开发栈2026</span>
+          <span class="tag tag-dev">Claude驱动 · 6M+开发者 · Figma Make · Replay视频转React · 全栈代理工作流</span>
+        </div>
+        <div class="card-title">2026前端AI开发栈全景：V0达600万开发者$42M ARR稳居"最佳React UI生成器"、Figma Make + Claude Code成为独立开发者新工作流、Replay视频转React组件打通设计-开发最后一公里</div>
+        <p class="card-summary">
+          2026年AI前端开发工具生态已从实验性辅助进化为生产级核心基础设施，以V0 by Vercel为核心的工具矩阵正在重塑从设计到代码的完整工作流。V0现状：6M+ 开发者、80K+ 活跃团队、$42M ARR；2026年2月更新后引入Git集成、VS Code风格编辑器、数据库连接（Snowflake、AWS）和全栈代理工作流，从"UI生成器"演进为完整的"全栈生产就绪平台"；底层推理引擎已全面切换至Anthropic Claude，为代码生成质量和多轮对话稳定性提供保障；V0还引入视觉设计模式，用户可直接在预览中点击元素并通过属性面板调整——实质是"输出真实代码的Figma"。Figma Make + Claude Code：这一工作流正在成为独立开发者和小型团队的MVP标准工作流——在Figma中完成UI设计后，通过Figma Make直接生成React/Next.js代码骨架，再由Claude Code在终端内进行逻辑填充、API集成和多文件一致性维护，整个"设计→可部署应用"周期已从数周压缩至数天甚至数小时。Replay视频转React：Replay工具通过分析录屏视频提取过渡动画、悬停状态和复杂UI交互逻辑，将其转换为与原始设计视觉1:1的生产级React组件——这直接解决了过去"AI生成的UI看起来不像设计稿"的核心痛点。行业深远影响：①  AI驱动设计到代码的成本将进一步压缩，独立开发者可独立完成过去需要设计师+前端工程师协作的项目；② 前端代码的标准化程度和AI生成质量正在相互强化，加速50%+代码AI生成比例进一步走高；③ "Prompt到生产级UI"的能力正在从专业工具向每个开发者的标准能力演进，这将深刻改变前端工程师的价值定位与日常工作内容。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Builder.io · NxCode · WeavAI · Automation Atlas · BuildMVPFast · Replay Blog</span>
+          <a class="card-link" href="https://www.builder.io/blog/react-ai-stack-2026" target="_blank" rel="noopener" aria-label="阅读原文：2026 React + AI开发栈全景">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新 · 2026-06-02 08:04 BJT
+</footer>
+
+</body>
+</html>
