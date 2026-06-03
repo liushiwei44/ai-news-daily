@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 行业快讯 · 2026-06-03 08:04</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --border: #e2e5eb;
+      --text-primary: #0d1117;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --accent: #1d4ed8;
+      --accent-dim: #3b82f6;
+      --radius: 10px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 28px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
+      --c-cn:    #dc2626; --bg-cn:    #fef2f2; --bd-cn:    #fca5a5;
+      --c-model: #0891b2; --bg-model: #ecfeff; --bd-model: #67e8f9;
+      --c-dev:   #7c3aed; --bg-dev:   #f5f3ff; --bd-dev:   #c4b5fd;
+      --c-sec:   #b45309; --bg-sec:   #fffbeb; --bd-sec:   #fcd34d;
+      --c-ind:   #065f46; --bg-ind:   #ecfdf5; --bd-ind:   #6ee7b7;
+      --c-biz:   #be185d; --bg-biz:   #fdf2f8; --bd-biz:   #f9a8d4;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(140deg, #060d1f 0%, #0c1f45 38%, #0f3460 65%, #1a4fa8 88%, #1d4ed8 100%);
+      overflow: hidden;
+      padding: 56px 24px 52px;
+      text-align: center;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,179,237,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,179,237,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 640px;
+      height: 380px;
+      background: radial-gradient(ellipse, rgba(56,130,246,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner { position: relative; z-index: 1; }
+
+    .header-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 18px;
+    }
+    .header-eyebrow .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    header h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    header h1 em { font-style: italic; color: #93c5fd; }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: #93c5fd;
+      opacity: 0.8;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .header-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+    .header-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #bfdbfe;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 4px 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    main { max-width: 900px; margin: 0 auto; padding: 40px 20px 72px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .section-count {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--card-accent, #e2e5eb);
+      border-radius: var(--radius);
+      padding: 22px 26px 20px 26px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 18px;
+      align-items: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: card-in 0.45s ease forwards;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-left-color: var(--card-accent, var(--accent-dim));
+    }
+    @keyframes card-in { to { opacity: 1; transform: translateY(0); } }
+    .card:nth-child(1)  { animation-delay: 0.06s; }
+    .card:nth-child(2)  { animation-delay: 0.12s; }
+    .card:nth-child(3)  { animation-delay: 0.18s; }
+    .card:nth-child(4)  { animation-delay: 0.24s; }
+    .card:nth-child(5)  { animation-delay: 0.30s; }
+    .card:nth-child(6)  { animation-delay: 0.36s; }
+    .card:nth-child(7)  { animation-delay: 0.42s; }
+    .card:nth-child(8)  { animation-delay: 0.48s; }
+    .card:nth-child(9)  { animation-delay: 0.54s; }
+    .card:nth-child(10) { animation-delay: 0.60s; }
+
+    .card.cat-cn     { --card-accent: var(--c-cn); }
+    .card.cat-model  { --card-accent: var(--c-model); }
+    .card.cat-dev    { --card-accent: var(--c-dev); }
+    .card.cat-sec    { --card-accent: var(--c-sec); }
+    .card.cat-ind    { --card-accent: var(--c-ind); }
+    .card.cat-biz    { --card-accent: var(--c-biz); }
+
+    .card-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 22px;
+      font-weight: 600;
+      color: #d1d5db;
+      line-height: 1;
+      padding-top: 4px;
+      user-select: none;
+      transition: color 0.2s;
+      letter-spacing: -0.02em;
+    }
+    .card:hover .card-num { color: var(--card-accent, var(--accent-dim)); }
+
+    .card-body { min-width: 0; }
+
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border: 1px solid transparent;
+      line-height: 1.6;
+    }
+    .tag-cn  { color: var(--c-cn);    background: var(--bg-cn);    border-color: var(--bd-cn); }
+    .tag-mod { color: var(--c-model); background: var(--bg-model); border-color: var(--bd-model); }
+    .tag-dev { color: var(--c-dev);   background: var(--bg-dev);   border-color: var(--bd-dev); }
+    .tag-sec { color: var(--c-sec);   background: var(--bg-sec);   border-color: var(--bd-sec); }
+    .tag-ind { color: var(--c-ind);   background: var(--bg-ind);   border-color: var(--bd-ind); }
+    .tag-biz { color: var(--c-biz);   background: var(--bg-biz);   border-color: var(--bd-biz); }
+
+    .card-title {
+      font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.38;
+      margin-bottom: 9px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-source {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 5px 13px;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      background: #eff6ff;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { background: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+    .card-link svg { transition: transform 0.15s; }
+    .card-link:hover svg { transform: translateX(2px); }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 36px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; background: #dbeafe; border-color: #93c5fd; }
+    footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { animation: none; opacity: 1; transform: none; }
+      .header-eyebrow .dot { animation: none; }
+      .card-link svg { transition: none; }
+      .card, .card-link { transition: none; }
+    }
+
+    @media (max-width: 580px) {
+      header { padding: 44px 20px 36px; }
+      .card { grid-template-columns: 1fr; padding: 18px 18px 16px; border-left-width: 2px; }
+      .card-num { display: none; }
+      .card-title { font-size: 16px; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 48px;
+      background: rgba(9, 18, 40, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .nav-back, .nav-pager-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #93c5fd;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+      touch-action: manipulation;
+    }
+    .nav-back:hover, .nav-pager-link:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .nav-back:focus-visible, .nav-pager-link:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
+    .nav-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+    }
+    .nav-pager { display: flex; gap: 4px; }
+    .nav-pager-link.disabled { opacity: 0.25; pointer-events: none; }
+    body { padding-top: 48px; }
+    @media (max-width: 480px) { .nav-title { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="站点导航">
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    返回列表
+  </a>
+  <span class="nav-title" aria-hidden="true">AI 行业快讯</span>
+  <div class="nav-pager">
+    <a class="nav-pager-link" href="ai-news-20260602-0804.html" aria-label="上一期">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M9 3L5 7L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      上一期
+    </a>
+    <a class="nav-pager-link disabled" aria-label="下一期（暂无）" aria-disabled="true" tabindex="-1">
+      下一期
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow" aria-hidden="true">
+      <span class="dot"></span>
+      AI Daily Briefing
+      <span class="dot"></span>
+    </div>
+    <h1>AI 行业快讯 <em>Top 10</em></h1>
+    <p class="header-subtitle">Microsoft Build 2026闭幕七大MAI自研模型宣告长期自足 · Google Gemini 3.5 Flash月活九亿正式GA · 阿里Qwen开源生态全球登顶 · Anthropic Dreaming代理跨会话自主学习</p>
+    <div class="header-pills">
+      <span class="header-pill">2026年6月3日</span>
+      <span class="header-pill">北京时间 08:04</span>
+      <span class="header-pill">权威媒体综合整理</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-header">
+    <span class="section-title">本期精选</span>
+    <span class="section-count">10 条重要消息</span>
+  </div>
+
+  <div class="cards">
+
+    <!-- 01 -->
+    <article class="card cat-dev">
+      <div class="card-num">01</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Microsoft Build 2026 闭幕全回顾</span>
+          <span class="tag tag-dev">Windows AI代理OS · Project Solara · Azure Agent Mesh GA · Copilot Workspace GA · WAF开源</span>
+        </div>
+        <div class="card-title">Microsoft Build 2026正式闭幕：Windows宣告AI代理进入"一等公民"时代，Project Polaris 8月替换Copilot中的GPT-4、Azure Agent Mesh全面GA、Windows Agent Framework 1.0开源——微软操作系统级AI代理转型完成关键里程碑</div>
+        <p class="card-summary">
+          Microsoft Build 2026于旧金山Fort Mason Center（6月2—3日）落幕，CEO Satya Nadella在开幕主旨演讲中宣告："Windows不再是专属于人类用户的平台——代理已成为操作系统运行时、工具链和分发模型中的一等公民。"本届Build最完整的发布矩阵：① Project Polaris——微软首款完全自研的AI编程模型，将于2026年8月起作为GitHub Copilot的默认推理引擎，替换现有的GPT-4 Turbo；采用混合专家（MoE）架构，在HumanEval和MBPP基准上全面超越GPT-4 Turbo；② Windows Agent Framework 1.0——MIT许可证开源发布，原生代理运行时、工具注册表和跨代理协同通信协议全部放开，开发者可零成本接入；③ Azure Agent Mesh正式GA——统一的跨Azure、M365和第三方服务代理编排层，内置数据治理、访问控制和代理生命周期管理；④ Copilot Workspace正式GA——脱离Beta进入生产可用状态，代理可独立完成Bug修复、测试撰写和PR提交；⑤ GitHub Copilot独立应用——首次作为独立App面向C端开发者发布，不再绑定VS Code或GitHub订阅；⑥ Project Solara——面向企业的芯片到云代理平台，涵盖设备管理、身份合规和工作流编排，首批形态类似工卡和智能时钟的边缘代理硬件；⑦ 微软与梅奥诊所合作开发医疗前沿AI模型，将梅奥专业医学知识与前沿模型深度融合，扩大精准诊疗可及范围；⑧ 美国国防部宣布与微软签署价值96.9亿美元的企业AI合同，覆盖M365、Azure和Copilot服务，为美国政府史上最大单笔AI采购。分析师评价：Build 2026是微软有史以来最系统性的"代理操作系统"发布——从内置推理模型、开源代理框架、云端代理编排到应用层代理，微软正在构建完整的垂直AI代理技术栈，且在每一层都已有可部署产品落地，而非停留于PPT演示。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Tom's Guide · Engadget · Microsoft Build 2026 Live · Visual Studio Magazine · Azure Blog</span>
+          <a class="card-link" href="https://www.tomsguide.com/news/live/microsoft-build-2026" target="_blank" rel="noopener" aria-label="阅读原文：Microsoft Build 2026 最大发布全总结">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="card cat-dev">
+      <div class="card-num">02</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">微软7大MAI自研模型 · "长期自足"战略宣言</span>
+          <span class="tag tag-dev">MAI-Thinking-1 · MAI-Code-1-Flash · MAI-Image-2.5 · 对标Claude / GPT-4</span>
+        </div>
+        <div class="card-title">微软AI超级智能团队发布7大从零训练MAI模型，Mustafa Suleiman宣告"长期自足"：MAI-Thinking-1推理能力对标Claude Opus 4.6、MAI-Code-1-Flash 5B嵌入VS Code和GitHub Copilot、MAI-Image-2.5图片编辑全球排名第二</div>
+        <p class="card-summary">
+          微软AI超级智能团队（Microsoft AI Superintelligence Team）在Build 2026大会上发布了一整套从零训练、零蒸馏的自研MAI模型家族，共七款，覆盖推理、编程、图像、语音、转录五大能力维度。微软AI CEO Mustafa Suleiman在发布演讲中明确宣告："这关乎微软和我们的合作伙伴的长期自足。这些是你可以信赖的模型。"——官方首次以"自足"定性对OpenAI和Anthropic模型依赖的系统性替代策略。七大模型详情：① MAI-Thinking-1——旗舰推理模型，完全从零训练，使用商业授权的高质量数据，在SWE-Bench Pro编程评测上与Claude Opus 4.6持平，在HumanEval上超越GPT-4 Turbo；② MAI-Code-1-Flash——50亿参数轻量编程模型，已开始在Visual Studio Code和GitHub Copilot中滚动推出，覆盖代码补全、测试生成和PR描述；③ MAI-Image-2.5——文本到图像+图像编辑双模型，在主流图片编辑排行榜排名第二，超越Google Nano Banana Pro；④ MAI-Transcribe-1.5——支持43种语言的专业转录模型，内置领域术语自适应；⑤ MAI-Voice-2——多语言文本转语音模型，支持15种以上语言，配备语音适配安全保护机制；⑥、⑦ 另有两款图像和多模态专项模型，细节随后披露。战略意义：微软此前几乎完全依赖OpenAI提供核心AI推理能力，近期扩展到Anthropic；MAI家族正式标志着微软从"AI能力购买者"向"AI能力自建者"的历史性战略转型，这将对OpenAI和Anthropic的商业模式产生深远影响，也标志着大科技公司AI自主竞争进入新阶段。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">GeekWire · AI Weekly · Microsoft AI Blog · Tom's Guide</span>
+          <a class="card-link" href="https://www.geekwire.com/2026/microsoft-unveils-seven-homegrown-ai-models-in-bid-for-long-term-self-sufficiency/" target="_blank" rel="noopener" aria-label="阅读原文：微软7大MAI自研模型详解">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="card cat-cn">
+      <div class="card-num">03</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 中国 · 阿里Qwen开源生态全球登顶</span>
+          <span class="tag tag-cn">Hugging Face 10万+衍生模型 · 超越Meta Llama · OpenRouter中国份额45%+</span>
+        </div>
+        <div class="card-title">阿里巴巴Qwen开源生态登顶全球：Hugging Face衍生模型突破10万个超越Meta Llama，中国AI模型在OpenRouter周用量占比超45%——开源AI格局重心正在向中国倾斜</div>
+        <p class="card-summary">
+          据TokenMix等数据机构最新Q2 2026报告，阿里巴巴Qwen模型家族已在Hugging Face平台上积累超过10万个衍生模型（fine-tuned、量化、蒸馏版本之和），成为全球开源权重AI生态中衍生规模最大的模型系列，正式超越Meta的Llama——这是全球开源AI生态历史上首次由非西方模型系列占据衍生量第一位置。Qwen生态崛起的核心驱动因素：① 持续开放策略——阿里巴巴在DeepSeek R1开源震撼市场后加速了Qwen系列的开放节奏，在参数量（0.5B到72B全系列覆盖）、许可证（商用友好的Apache 2.0）和语言支持（中英日韩等50+语言）上构建了最低门槛的开源体验；② 性能竞争力——Qwen3系列在多项公开基准上进入全球前5，在数学和代码任务上对标GPT-4级别能力；③ 本地化生态——中国独立开发者、初创公司和高校以Qwen为底座的部署量远超其他任何外国开源模型。更广泛的中国AI格局：据OpenRouter统计，2026年4月，小米、阿里、MiniMax、智谱AI、DeepSeek和StepFun合计周用量已超过平台总量的45%，这在18个月前是难以想象的——这一数字在2025年初仅有约12%。百度在DeepSeek R1发布后迫于竞争压力将其主力模型开源，CEO李彦宏此前坚持闭源路线，此次转向标志着中国AI行业整体加速向开放生态演进。分析师指出：Qwen生态的10万衍生模型数字背后，是中国AI能力的全球可及性真正达到临界规模——任何开发者无需中国区账号即可免费使用和部署与顶级闭源模型竞争的模型，这对AI行业的竞争格局有深远战略含义。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">TokenMix · Stanford HAI · DigitalAsia · OpenRouter Analytics · Build AIQ</span>
+          <a class="card-link" href="https://tokenmix.ai/blog/best-chinese-ai-models-2026-comparison-guide" target="_blank" rel="noopener" aria-label="阅读原文：2026中国AI模型全景报告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="card cat-model">
+      <div class="card-num">04</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">Google Gemini 3.5 Flash 正式GA</span>
+          <span class="tag tag-mod">月活9亿 · 最强代理&编程模型 · Ultra降价$200 · DeepMind扩军Contextual AI</span>
+        </div>
+        <div class="card-title">Google Gemini 3.5 Flash正式发布GA：月活突破9亿成全球最广泛AI平台、超越Gemini 3.1 Pro的最强代理和编程能力、Ultra订阅从$250降至$200并新推$100开发者档位——DeepMind同期斥资$8500万收购Contextual AI团队</div>
+        <p class="card-summary">
+          Google在I/O 2026之后的持续落地阶段，将Gemini 3.5 Flash推进到正式GA（Generally Available）状态，并同步发布了一系列商业和生态扩张动作，形成了"模型能力+定价降维+人才扩张"的三重攻势。Gemini 3.5 Flash核心数据：① 能力定位——Google官方将其定性为"持续前沿性能的最智能代理和编程模型"，在主要基准上全面超越Gemini 3.1 Pro；②代理能力——在多步工具调用、长程任务规划和自主代码执行方面表现领先；③ 月活用户——Gemini平台月活已突破9亿（DeepMind CEO Demis Hassabis披露），Google在6月处理的Token总量接近1千万亿（1 quadrillion）次；④ 定价重构——Gemini Ultra订阅从$250/月降至$200/月，同时新推出$100/月的开发者专属档位（Developer Tier），内含更高速率限制和优先访问权；⑤ 代码执行——Gemini 3.5 Flash支持沙箱内Python代码执行，模型可自主验证生成代码的正确性再返回结果，显著提升编程类任务可靠性。DeepMind Contextual AI动作：Google DeepMind通过价值约8000万至9000万美元的许可协议，从AI初创公司Contextual AI整建制引入20余名顶级研究员——Contextual AI专注于RAG（检索增强生成）和企业级私有数据问答系统，此次招募将直接强化Gemini在企业文档理解和长文档推理方向的能力。竞争态势：Gemini 3.5 Flash的GA发布时间点精确卡在Microsoft Build 2026期间，被普遍解读为Google对微软MAI模型发布的正面响应——两大科技巨头的AI能力竞争正进入周级迭代的白热化阶段。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Hey Go Trade · Google DeepMind Blog · Google Cloud · Data Center Dynamics · AI Weekly</span>
+          <a class="card-link" href="https://www.heygotrade.com/en/news/google-io-2026-gemini-deepmind-contextual-ai/" target="_blank" rel="noopener" aria-label="阅读原文：Google Gemini 3.5 Flash GA详解">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="card cat-model">
+      <div class="card-num">05</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">Anthropic "Dreaming" · 代理跨会话自主学习</span>
+          <span class="tag tag-mod">Harvey任务完成率6倍 · Wisedocs文档审核50%提效 · 研究预览阶段</span>
+        </div>
+        <div class="card-title">Anthropic发布"Dreaming"功能：代理AI历史性突破——Claude代理可在会话间隙异步学习，自动提炼过往任务经验并写入持久记忆，法律AI公司Harvey任务完成率6倍跃升、医疗文档公司Wisedocs效率提升50%</div>
+        <p class="card-summary">
+          Anthropic在Code with Claude开发者活动系列中发布了Claude Managed Agents平台的重大新功能"Dreaming"，这是代理AI领域的范式级突破——此前所有代理系统均在单次Context Window内完成任务，而无法在会话之间积累改进；Dreaming首次让代理能够跨会话自主学习，突破了这一根本性局限。Dreaming机制详解：① 触发时机——Dreaming是一个在代理会话结束后到下一次会话开始前自动运行的计划性进程，不需要用户干预；② 工作内容——系统回顾代理在上一次任务中的全部操作轨迹，从中提取可重用的经验模式、错误归因和效率路径，生成新的记忆条目（Memory Entries）；③ 记忆注入——下一次会话启动时，相关记忆条目自动加载入代理上下文，代理从一开始就具备从过往经验中积累的知识，而无需重复摸索；④ 隐私与隔离——记忆条目在用户授权的沙箱内生成，企业客户可完全控制记忆的保留策略和访问范围。真实案例数据：① Harvey（法律AI）——引入Dreaming后，代理在复杂法律合同分析任务上的完整完成率提升约6倍，此前代理在长链多步骤任务中的"中途放弃率"是主要痛点；② Wisedocs（医疗文档审核）——文档批量审核时间减少50%，代理在重复类型医疗报告上的处理速度随会话积累而持续加快。Dreaming目前在Claude Platform上以研究预览（Research Preview）形式开放，所有企业用户可通过候补名单申请早期访问。分析师将Dreaming定位为"代理AI的长期记忆层"的第一个生产级实现，认为这将引发整个行业对"代理状态持久化"问题的新一轮投资。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">VentureBeat · MindStudio · The New Stack · Anthropic Platform Docs · Let's Data Science</span>
+          <a class="card-link" href="https://venturebeat.com/technology/anthropic-introduces-dreaming-a-system-that-lets-ai-agents-learn-from-their-own-mistakes" target="_blank" rel="noopener" aria-label="阅读原文：Anthropic Dreaming功能详解">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="card cat-dev">
+      <div class="card-num">06</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">GitHub Copilot全面转用量计费 · 6月1日生效</span>
+          <span class="tag tag-dev">AI Credits体系 · Copilot Max新档位 · 用户级预算 · Actions分钟联动</span>
+        </div>
+        <div class="card-title">GitHub Copilot 6月1日起全面切换AI Credits用量计费体系：企业端所有套餐统一按GitHub AI Credits结算、推出Copilot Max高性能档位、用户级月度预算管控上线——开发者AI工具史上最大计费架构重构</div>
+        <p class="card-summary">
+          2026年6月1日，GitHub正式完成了Copilot计费体系的历史性重构——所有Copilot订阅套餐（Individual、Business、Enterprise）统一切换至基于GitHub AI Credits的用量计费模式，彻底告别原来"固定座位数×月费"的订阅定价逻辑。核心变化详解：① AI Credits统一计量——AI Credits成为Copilot生态内所有AI能力的统一消耗单位，涵盖代码补全、Chat、代码审查、PR描述生成等全部功能；② 使用量关联——Copilot代码审查功能现在消耗GitHub Actions分钟，将AI推理成本与CI/CD基础设施成本统一管理，使真实AI使用成本从账单中可见；③ Copilot Max新档位——面向重度AI使用者推出更高速率限制、优先推理队列和提前访问新模型能力，定价较标准Business档位溢价约40%；④ 用户级预算管控——企业管理员首次可以在团队或个人层面设置AI Credits月度上限，防止失控的代理工作流导致账单暴增；⑤ 升级迁移路径——现有订阅者将在6月15日前收到迁移通知，原积累的AI Credits余额保留不过期，超出额度后系统静默停止而非自动扣费（默认设置）。开发者影响分析：对个人和小团队而言，新体系在轻度使用场景下整体成本与原定价相当；对重度依赖Copilot进行代理工作流的企业用户，透明化的用量追踪将首次让AI开发成本在财务报表中清晰量化，有助于AI ROI分析，但也可能触发部分企业的使用量审计。整体信号：这是GitHub在冲击商业可持续性目标前提下，向AI基础设施定价体系全面对齐的里程碑——代理AI的使用成本正从"包月无限"走向"按真实用量精确计费"。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">StartupHub.ai · GitHub Blog · AI Agent Store · GitHub Changelog</span>
+          <a class="card-link" href="https://www.startuphub.ai/ai-news/insights/2026/best-agentic-coding-tools-2026" target="_blank" rel="noopener" aria-label="阅读原文：GitHub Copilot AI Credits计费体系详解">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 -->
+    <article class="card cat-biz">
+      <div class="card-num">07</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-biz">Anthropic Claude Finance · 10大金融代理模板</span>
+          <span class="tag tag-biz">招股书制作 · KYC审查 · 月末结账 · Claude Cowork插件 · 垂直企业AI</span>
+        </div>
+        <div class="card-title">Anthropic发布Claude Finance：10大开箱即用金融代理模板全面覆盖投行招股书制作/合规KYC审查/月末结账三大核心场景，以Claude Cowork插件形式一键接入，宣告AI深度进军企业核心业务流程</div>
+        <p class="card-summary">
+          Anthropic在Code with Claude旧金山开发者活动中正式发布Claude Finance，这是其首个面向特定垂直行业的代理套件——10个开箱即用的金融服务专用代理模板，直接针对金融机构中最耗时、最高风险的核心业务流程。Claude Finance 10大代理模板（分三类）：投行/资本市场类——① 招股书自动生成代理（整合SEC EDGAR、Refinitiv数据）；② 行业比较分析代理（自动抓取竞对财务数据构建对标表格）；③ 管理层说明书草稿代理（基于历史文件风格生成初稿）；合规/风控类——④ KYC文件筛查代理（自动识别高风险指标并生成合规报告）；⑤ 制裁名单交叉比对代理；⑥ 可疑交易模式识别代理；财务运营类——⑦ 月末会计结算代理（对接ERP系统自动发起期末分录）；⑧ 应收应付自动核销代理；⑨ 管理报告叙述自动生成代理；⑩ 财务异常预警代理（实时监控账户活动触发阈值通知）。集成方式：每个模板以插件形式集成至Claude Cowork（企业协作平台）和Claude Code，同时以Cookbook方式开放给Claude Managed Agents的API用户自行扩展；所有金融代理均可连接私有MCP服务器，确保敏感数据不离开企业受控环境。战略意义：Claude Finance是Anthropic第一次以"行业套件"姿态直接挑战传统金融中间件和RPA供应商的领地——过去需要企业自行定制的AI金融工作流，现在以零代码插件形式即可部署。Anthropic表示已与多家顶级投行和资管机构建立企业级合作，早期用户招股书准备时间平均缩短约60%。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Anthropic Newsroom · The Register · MindStudio · Blake Crosley · 9to5Mac</span>
+          <a class="card-link" href="https://www.anthropic.com/news/finance-agents" target="_blank" rel="noopener" aria-label="阅读原文：Anthropic Claude Finance官方发布">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 -->
+    <article class="card cat-dev">
+      <div class="card-num">08</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">微软Aion 1.0 · Windows预装14B本地代理推理模型</span>
+          <span class="tag tag-dev">完全离线 · 意图推理 · 子代理编排 · 无需云端</span>
+        </div>
+        <div class="card-title">微软Aion 1.0随Windows正式预装：140亿参数本地推理和工具调用模型实现完全离线代理能力，可在无网络环境下推理用户意图、调用系统工具、管理文件并编排子代理——Windows首次内置AI代理推理引擎</div>
+        <p class="card-summary">
+          微软在Build 2026上宣布Aion 1.0系列将随Windows系统在支持设备上预装，这是Windows操作系统历史上首次内置代理级AI推理模型。Aion 1.0系列两款模型：① Aion 1.0 Instruct——轻量快速版，专为日常对话和简单任务补全优化，低功耗设备可流畅运行；② Aion 1.0 Plan——本次最重磅发布，140亿参数的推理和工具调用专用模型，32K上下文长度，具备完整的代理规划能力。Aion 1.0 Plan核心能力四项：① 意图推理——深度理解用户自然语言意图，将模糊指令转化为清晰可执行的任务序列；② 工具调用——原生调用Windows系统工具、Office应用API和注册的第三方工具，无需云端中转；③ 文件管理——自主完成跨应用文件搜索、重命名、整合和格式转换；④ 子代理编排——作为主代理（Orchestrator）分解复杂任务并委派给专业子代理，协调多步骤工作流完成更大型任务。运行要求：Aion 1.0 Plan要求设备搭载NPU（神经处理单元），支持Snapdragon X Elite/Plus或Intel Core Ultra 200系列以上，英伟达RTX Spark搭载设备也将原生支持。开发者接口：微软同步开放Aion Local API，允许第三方应用调用Aion模型的本地推理能力，无需Internet连接也无需Azure账户，打开了本地代理应用的全新开发空间。隐私优势：所有推理完全在设备本地完成，用户数据不上传任何服务器，这对企业敏感场景（律所、医院、政府部门）具有决定性合规意义。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Visual Studio Magazine · Windows Forum · Windows Developer Blog · Engadget Live · Microsoft Build 2026</span>
+          <a class="card-link" href="https://visualstudiomagazine.com/articles/2026/06/02/at-build-2026-microsoft-sets-up-windows-as-an-os-for-ai-agents.aspx" target="_blank" rel="noopener" aria-label="阅读原文：微软Aion 1.0 Windows代理OS详解">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 09 -->
+    <article class="card cat-ind">
+      <div class="card-num">09</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-ind">SAP Joule Studio 2.0 · 200+专业企业代理</span>
+          <span class="tag tag-ind">LangGraph · AutoGen · 实时SAP数据 · 财务/供应链/HCM/CX全覆盖</span>
+        </div>
+        <div class="card-title">SAP Joule Studio 2.0 + Autonomous Suite 6月推出：200+覆盖财务/供应链/人力资源/客户体验的专业AI代理，支持LangGraph/AutoGen框架实时对接SAP业务数据——企业AI进入"垂直深度专业化"阶段</div>
+        <p class="card-summary">
+          SAP宣布Joule Studio 2.0将于2026年6月面向企业客户滚动上线，同步发布配套的Autonomous Suite，这是迄今为止规模最大、领域覆盖最全的企业AI代理部署包，标志着企业AI从"通用平台+定制插件"模式正式进入"行业专家代理现成可用"的新阶段。Joule Studio 2.0核心升级：① 开发框架支持——首次全面支持LangGraph和AutoGen风格的多代理编排框架，允许企业技术团队使用主流开源工具构建自定义代理，同时直接访问SAP实时业务数据（S/4HANA Cloud、SuccessFactors、Ariba等），无需ETL抽取；② 代理市场——Studio内置代理市场，SAP官方代理、合作伙伴代理和客户自建代理均可在同一环境中发现、测试和部署；③ 治理层——内置代理活动审计日志、访问控制和合规检查，满足SOX、GDPR和行业监管要求。Autonomous Suite 200+代理覆盖五大领域：财务（60+代理）——自动关账、应付/应收账款、预算偏差分析、税务合规检查；供应链（45+代理）——需求预测、库存优化、供应商绩效监控、采购合同异常预警；人力资源（40+代理）——招聘简历筛选、员工绩效摘要、薪酬分析、人员留存风险预测；采购（30+代理）——询价自动化、合同条款比对、供应商资质核查；客户体验（25+代理）——工单自动分类和路由、客户反馈情感分析、SLA合规监控。市场信号：SAP在企业市场覆盖超过40万家客户，Joule Studio 2.0的落地将是AI代理技术进入传统大型企业ERP核心流程的最大规模渗透——这比任何AI原生初创公司的市场渗透速度都要快得多。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">AI Agent Store · StartupHub.ai · SAP News Center · n8n Blog</span>
+          <a class="card-link" href="https://aiagentstore.ai/ai-agent-news/this-week" target="_blank" rel="noopener" aria-label="阅读原文：SAP Joule Studio 2.0企业AI代理详解">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card cat-dev">
+      <div class="card-num">10</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Anthropic《2026代理编程趋势报告》 · 开发者必读</span>
+          <span class="tag tag-dev">60%工作AI辅助 · 仅0-20%可完全委托 · 8大趋势 · Rakuten/Zapier案例</span>
+        </div>
+        <div class="card-title">Anthropic发布《2026代理编程趋势报告》：60%软件工程工作已引入AI但仅0–20%可完全委托、8大趋势重塑开发生命周期、"代理驱动实现+自动化测试+内联文档"将交付周期从数周压缩至数小时</div>
+        <p class="card-summary">
+          Anthropic正式发布《2026代理编程趋势报告》（2026 Agentic Coding Trends Report），这是迄今为止最具权威性的AI编程代理行业研究，涵盖真实企业部署数据和来自Rakuten、CRED、TELUS、Zapier等跨国企业的深度案例。报告三大核心发现：① 现阶段AI使用率与委托率的深层矛盾——工程师平均在约60%的工程工作中使用AI辅助，但"完全委托给AI自主完成"的任务比例仅在0–20%之间，报告将这一差距定性为"代理能力信任赤字"——开发者高频使用AI但仍习惯性地在每一步验证AI的输出，这是AI协作模式尚未成熟的关键信号；② 三大效率飞轮——代理驱动实现（Agentic Implementation）、自动化测试生成和内联文档协同运作时，可将整个需求到部署的交付周期从数周压缩至数小时；案例：Zapier的工程团队引入Claude Code代理工作流后，中等复杂度功能的PR从起草到通过代码审查的中位时间从11天缩短至1.4天；③ 八大重塑趋势——软件工程角色向"代理编排者"转变、多代理协作已进入主流（约42%团队在用）、AI在跨语言重构和技术债清理上效率最显著、"Prompt工程"正成为高级工程师必备基础技能、AI驱动的测试覆盖率中位数提升37%、代理工具选择多元化（多工具混用超过单一工具依赖）、非技术角色（产品经理/设计师）开始直接使用低门槛代理工具参与代码生成、安全和合规需求正驱动"代理沙箱"成为企业标配。报告结论：2026年是代理编程从"效率辅助工具"转型为"软件工程核心基础设施"的拐点年——不采纳代理编程的工程团队，其速度劣势将在未来12个月内从战术层面扩大为战略层面的可见差距。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Anthropic Resources · Pathmode · Libertify · Hugging Face Blog · LinkedIn Pulse</span>
+          <a class="card-link" href="https://resources.anthropic.com/2026-agentic-coding-trends-report" target="_blank" rel="noopener" aria-label="阅读原文：Anthropic 2026代理编程趋势报告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新 · 2026-06-03 08:04 BJT
+</footer>
+
+</body>
+</html>
