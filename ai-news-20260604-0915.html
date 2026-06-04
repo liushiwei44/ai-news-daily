@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 行业快讯 · 2026-06-04 09:15</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --border: #e2e5eb;
+      --text-primary: #0d1117;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --accent: #1d4ed8;
+      --accent-dim: #3b82f6;
+      --radius: 10px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 28px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
+      --c-cn:    #dc2626; --bg-cn:    #fef2f2; --bd-cn:    #fca5a5;
+      --c-model: #0891b2; --bg-model: #ecfeff; --bd-model: #67e8f9;
+      --c-dev:   #7c3aed; --bg-dev:   #f5f3ff; --bd-dev:   #c4b5fd;
+      --c-sec:   #b45309; --bg-sec:   #fffbeb; --bd-sec:   #fcd34d;
+      --c-ind:   #065f46; --bg-ind:   #ecfdf5; --bd-ind:   #6ee7b7;
+      --c-biz:   #be185d; --bg-biz:   #fdf2f8; --bd-biz:   #f9a8d4;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(140deg, #060d1f 0%, #0c1f45 38%, #0f3460 65%, #1a4fa8 88%, #1d4ed8 100%);
+      overflow: hidden;
+      padding: 56px 24px 52px;
+      text-align: center;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,179,237,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,179,237,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 640px;
+      height: 380px;
+      background: radial-gradient(ellipse, rgba(56,130,246,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner { position: relative; z-index: 1; }
+
+    .header-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 18px;
+    }
+    .header-eyebrow .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    header h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    header h1 em { font-style: italic; color: #93c5fd; }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: #93c5fd;
+      opacity: 0.8;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .header-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+    .header-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #bfdbfe;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 4px 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    main { max-width: 900px; margin: 0 auto; padding: 40px 20px 72px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .section-count {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--card-accent, #e2e5eb);
+      border-radius: var(--radius);
+      padding: 22px 26px 20px 26px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 18px;
+      align-items: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: card-in 0.45s ease forwards;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-left-color: var(--card-accent, var(--accent-dim));
+    }
+    @keyframes card-in { to { opacity: 1; transform: translateY(0); } }
+    .card:nth-child(1)  { animation-delay: 0.06s; }
+    .card:nth-child(2)  { animation-delay: 0.12s; }
+    .card:nth-child(3)  { animation-delay: 0.18s; }
+    .card:nth-child(4)  { animation-delay: 0.24s; }
+    .card:nth-child(5)  { animation-delay: 0.30s; }
+    .card:nth-child(6)  { animation-delay: 0.36s; }
+    .card:nth-child(7)  { animation-delay: 0.42s; }
+    .card:nth-child(8)  { animation-delay: 0.48s; }
+    .card:nth-child(9)  { animation-delay: 0.54s; }
+    .card:nth-child(10) { animation-delay: 0.60s; }
+
+    .card.cat-cn     { --card-accent: var(--c-cn); }
+    .card.cat-model  { --card-accent: var(--c-model); }
+    .card.cat-dev    { --card-accent: var(--c-dev); }
+    .card.cat-sec    { --card-accent: var(--c-sec); }
+    .card.cat-ind    { --card-accent: var(--c-ind); }
+    .card.cat-biz    { --card-accent: var(--c-biz); }
+
+    .card-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 22px;
+      font-weight: 600;
+      color: #d1d5db;
+      line-height: 1;
+      padding-top: 4px;
+      user-select: none;
+      transition: color 0.2s;
+      letter-spacing: -0.02em;
+    }
+    .card:hover .card-num { color: var(--card-accent, var(--accent-dim)); }
+
+    .card-body { min-width: 0; }
+
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border: 1px solid transparent;
+      line-height: 1.6;
+    }
+    .tag-cn  { color: var(--c-cn);    background: var(--bg-cn);    border-color: var(--bd-cn); }
+    .tag-mod { color: var(--c-model); background: var(--bg-model); border-color: var(--bd-model); }
+    .tag-dev { color: var(--c-dev);   background: var(--bg-dev);   border-color: var(--bd-dev); }
+    .tag-sec { color: var(--c-sec);   background: var(--bg-sec);   border-color: var(--bd-sec); }
+    .tag-ind { color: var(--c-ind);   background: var(--bg-ind);   border-color: var(--bd-ind); }
+    .tag-biz { color: var(--c-biz);   background: var(--bg-biz);   border-color: var(--bd-biz); }
+
+    .card-title {
+      font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.38;
+      margin-bottom: 9px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-source {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 5px 13px;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      background: #eff6ff;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { background: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+    .card-link svg { transition: transform 0.15s; }
+    .card-link:hover svg { transform: translateX(2px); }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 36px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; background: #dbeafe; border-color: #93c5fd; }
+    footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { animation: none; opacity: 1; transform: none; }
+      .header-eyebrow .dot { animation: none; }
+      .card-link svg { transition: none; }
+      .card, .card-link { transition: none; }
+    }
+
+    @media (max-width: 580px) {
+      header { padding: 44px 20px 36px; }
+      .card { grid-template-columns: 1fr; padding: 18px 18px 16px; border-left-width: 2px; }
+      .card-num { display: none; }
+      .card-title { font-size: 16px; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 48px;
+      background: rgba(9, 18, 40, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .nav-back, .nav-pager-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #93c5fd;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+      touch-action: manipulation;
+    }
+    .nav-back:hover, .nav-pager-link:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .nav-back:focus-visible, .nav-pager-link:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
+    .nav-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+    }
+    .nav-pager { display: flex; gap: 4px; }
+    .nav-pager-link.disabled { opacity: 0.25; pointer-events: none; }
+    body { padding-top: 48px; }
+    @media (max-width: 480px) { .nav-title { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="站点导航">
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    返回列表
+  </a>
+  <span class="nav-title" aria-hidden="true">AI 行业快讯</span>
+  <div class="nav-pager">
+    <a class="nav-pager-link" href="ai-news-20260603-0804.html" aria-label="上一期">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M9 3L5 7L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      上一期
+    </a>
+    <a class="nav-pager-link disabled" aria-label="下一期（暂无）" aria-disabled="true" tabindex="-1">
+      下一期
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow" aria-hidden="true">
+      <span class="dot"></span>
+      AI Daily Briefing
+      <span class="dot"></span>
+    </div>
+    <h1>AI 行业快讯 <em>Top 10</em></h1>
+    <p class="header-subtitle">特朗普AI行政令30天预审框架正式生效 · 英伟达Cosmos 3开源物理AI基础模型GTC台北发布 · 软银€750亿押注法国AI数据中心 · 中国Vast$2亿3D生成独角兽Project Eden</p>
+    <div class="header-pills">
+      <span class="header-pill">2026年6月4日</span>
+      <span class="header-pill">北京时间 09:15</span>
+      <span class="header-pill">权威媒体综合整理</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-header">
+    <span class="section-title">本期精选</span>
+    <span class="section-count">10 条重要消息</span>
+  </div>
+
+  <div class="cards">
+
+    <!-- 01 -->
+    <article class="card cat-sec">
+      <div class="card-num">01</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-sec">政策·监管 · 特朗普AI行政令</span>
+          <span class="tag tag-sec">前沿模型30天自愿预审 · AI网络安全交流中心 · 治理框架转向</span>
+        </div>
+        <div class="card-title">特朗普签署AI安全行政令：要求科技公司在发布前沿模型前自愿提交政府30天预审，设立AI网络安全信息交流中心——美国AI治理框架历史性转向"安全与创新并重"</div>
+        <p class="card-summary">
+          2026年6月2日，特朗普总统签署题为《推动先进人工智能创新与安全》（Promoting Advanced Artificial Intelligence Innovation and Security）的行政令，标志着美国AI治理从"完全放手"向"自愿安全预审"的重要转变。行政令核心内容：① 前沿模型自愿预审框架——科技公司可选择在向公众发布"前沿AI模型"之前，向联邦政府提供最长30天的早期访问窗口；政府将在此期间评估模型的网络安全能力、潜在风险和滥用可能性；早于计划发布的版本签署不授予任何额外法律免责、贸易秘密保护或资源，完全出于自愿；② 框架定义——行政令明确了"前沿模型"的认定流程：由相关机构建立基准测试，评估AI模型在网络安全能力上是否达到"覆盖"标准，只有满足该标准的模型才被要求参与自愿框架；③ AI网络安全信息交流中心——联邦机构将建立专用的AI漏洞信息共享平台，供政府和经审查的私营合作伙伴交流AI安全漏洞、攻击模式和防御策略；④ 政府自身AI防御——联邦系统将强化抵御AI辅助网络攻击的能力，同时利用AI提升自身的网络安全响应速度。背景与争议：该行政令最初计划于5月签署，但白宫因内部担忧30天预审窗口可能阻碍AI创新，将评审期从90天大幅缩减至30天，并将整个框架改为自愿参与。法律分析机构指出：行政令明确表示自愿框架"不赋予企业任何特定权利或免责保护"，这意味着企业参与的动机主要来自与政府建立信任关系的战略考量，而非合规压力。科学美国人评价此次政策转向："这是特朗普政府对AI治理立场的根本性修正——从'监管即阻碍'到承认前沿AI能力确实需要安全审视。"行业反应：Google、微软、Anthropic和OpenAI等主要AI公司均表示愿意参与自愿框架；部分安全研究人员则批评30天窗口过短，无法进行深度安全评估。总体而言，这是美国联邦政府首次正式建立针对前沿AI模型发布的审查机制，其后续落地执行将是未来数月的重要观察点。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">CNBC · NPR · White House · Scientific American · Axios · A&O Shearman</span>
+          <a class="card-link" href="https://www.cnbc.com/2026/06/02/trump-executive-order-ai.html" target="_blank" rel="noopener" aria-label="阅读原文：特朗普AI行政令CNBC报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="card cat-model">
+      <div class="card-num">02</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">英伟达 Cosmos 3 · 物理AI开源基础模型</span>
+          <span class="tag tag-mod">GTC台北 · 混合专家变换器 · 16B Nano · 64B Super · Isaac GR00T</span>
+        </div>
+        <div class="card-title">英伟达GTC台北发布Cosmos 3开源物理AI全模态基础模型：混合变换器架构统一视觉推理+世界生成+动作预测，Nano（16B）和Super（64B）即刻可用，配套Isaac GR00T人形机器人开放研究平台——机器人训练周期从数月压缩至数日</div>
+        <p class="card-summary">
+          在GTC台北2026大会（6月1—4日）上，英伟达CEO黄仁勋发布Cosmos 3，这是迄今为止物理AI领域能力最全面的开源基础模型，标志着机器人和自动驾驶的AI开发范式发生根本转变。Cosmos 3技术架构：Cosmos 3采用混合专家变换器（Mixture-of-Transformers）架构，将一个推理变换器和一个专家生成变换器配对运行，使模型在生成视频和动作轨迹之前，能够深度理解物体交互、运动规律和时空关系——这是第一个原生统一"理解"与"生成"两种能力的物理AI模型，结束了此前需要分别训练感知模型和生成模型的双轨开发模式。三大核心能力：① 视觉推理——在给定场景图像或视频输入后，Cosmos 3能理解物理约束、预测物体运动轨迹和潜在交互结果；② 世界生成——基于文本或动作指令，生成具有真实物理准确度的视频序列，可作为机器人训练的合成数据源；③ 动作预测——将感知输入映射为可执行的机器人动作序列，支持闭环控制。即刻可用版本：Cosmos 3 Nano（160亿参数，适合边缘推理设备）和Cosmos 3 Super（640亿参数，服务器端高精度版本）即日起开源可用；Cosmos 3 Edge（20亿参数，嵌入式设备专用）预计数周内发布。Cosmos联盟：英伟达同步宣布成立Cosmos Coalition，首批成员包括Agile Robots、Black Forest Labs、Generalist、LTX、Runway和Skild AI，联盟目标是推动世界模型的标准化和互操作性。Isaac GR00T参考人形机器人：英伟达发布基于Cosmos 3和Jetson Thor计算单元的完整人形机器人开放参考设计，配备Unitree H2 Plus躯体和Sharpa五指手，向全球学术机构和研究团队免费提供技术规范，显著降低人形机器人研究门槛。产业影响：在Cosmos 3之前，训练一个新的机器人任务通常需要数周到数月的真实数据采集；Cosmos 3的高质量合成数据生成能力，理论上可将特定场景的机器人训练周期从数月压缩至数日，预期为特斯拉Optimus、Figure 01等商业人形机器人的开发周期带来数量级的改善。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">NVIDIA Investor · GlobeNewswire · HPCWire · WinBuzzer · BuildFastWithAI</span>
+          <a class="card-link" href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Cosmos-3-the-Open-Frontier-Foundation-Model-for-Physical-AI/default.aspx" target="_blank" rel="noopener" aria-label="阅读原文：NVIDIA Cosmos 3官方发布">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="card cat-dev">
+      <div class="card-num">03</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">英伟达RTX Spark超芯片 · 微软个人AI PC</span>
+          <span class="tag tag-dev">1 PFLOP AI算力 · 128GB统一内存 · 本地代理运行 · 黄仁勋"个人AI超算"</span>
+        </div>
+        <div class="card-title">英伟达RTX Spark联合微软重塑Windows PC为个人AI代理平台：1 PFLOP本地AI算力+128GB统一内存使代理完全离线运行，黄仁勋宣告"每个人的桌面都将拥有个人AI超算"——边缘端推理能力首次达到代理级别</div>
+        <p class="card-summary">
+          英伟达在GTC台北宣布RTX Spark超芯片并联合微软发布"为个人AI时代重构Windows PC"，这是消费级计算硬件史上AI能力最激进的飞跃。RTX Spark规格详解：RTX Spark是英伟达专为下一代AI PC设计的笔记本超芯片，核心参数包括：① 1 PFLOP（1000 TFLOP）AI算力——这是目前消费级芯片中前所未有的AI推理性能，可实时运行百亿参数规模的语言模型；② 128GB统一内存——突破了此前笔记本设备在运行大模型时的内存瓶颈，使完整的代理上下文和工具调用记录可全部驻留内存；③ 高效能架构——采用台积电3nm工艺，在低TDP下实现峰值AI性能，适配超薄本设计。与微软的深度联动：RTX Spark发布与微软Build 2026期间宣布的Aion 1.0本地代理模型（140亿参数）形成完整技术栈——RTX Spark提供硬件算力底座，Aion 1.0负责代理推理，Windows Agent Framework 1.0提供应用层接口。黄仁勋在主旨演讲中表示："AI代理不一定要跑在云端——在RTX Spark上，它们将以远低于云端的成本，在你的桌面上实时运行。"本地代理的战略意义：① 成本优势——本地推理无需API调用费用，重度用户的月均AI使用成本可下降90%以上；② 隐私优势——数据不离开设备，对律所、医院、金融机构等敏感场景具有决定性吸引力；③ 延迟优势——本地推理响应时间通常低于100ms，远优于云端平均500ms以上的延迟，对实时代理交互体验至关重要。首批搭载RTX Spark的设备将于2026年Q3开始发货，售价区间预计从$1,299起。分析师指出：RTX Spark的发布标志着AI从"云端服务"到"个人基础设施"的临界点正式到来。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">CNBC · NVIDIA Investor · Engadget · Microsoft Build · WCCFTech</span>
+          <a class="card-link" href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Microsoft-Reinvent-Windows-PCs-for-the-Age-of-Personal-AI/default.aspx" target="_blank" rel="noopener" aria-label="阅读原文：NVIDIA+微软个人AI PC重构官方发布">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="card cat-biz">
+      <div class="card-num">04</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-biz">软银€750亿投资法国AI数据中心</span>
+          <span class="tag tag-biz">5GW容量 · 欧洲最大AI基础设施 · EDF · 施耐德电气 · 选择法国峰会</span>
+        </div>
+        <div class="card-title">软银宣布向法国投资最高€750亿建设5GW AI数据中心群：首期€450亿交付3.1GW于北法区，与EDF和施耐德电气战略合作——欧洲史上最大单笔AI基础设施投资在马克龙"选择法国"峰会上签署</div>
+        <p class="card-summary">
+          软银集团宣布承诺在法国开发和运营高达5吉瓦（GW）AI数据中心容量，总投资额高达€750亿（约合870亿美元），这是迄今欧洲史上最大的单笔AI基础设施投资，也是软银集团历史上规模最大的海外AI投资承诺。投资规模与分期：第一阶段承诺€450亿，目标是到2031年在法国北部大区（Hauts-de-France）交付3.1GW数据中心容量；选址分布于敦刻尔克（Loon-Plage）、Bosquel和布尚（Bouchain）三地；第二阶段至本世纪三十年代中期，累计容量扩展至5GW。战略合作网络：① 与法国电力集团EDF在布尚数据中心项目展开合作，由EDF提供清洁电力供应并参与设施建设；② 与施耐德电气合作在敦刻尔克港开发工业枢纽，包括一个软银数据中心机柜制造厂和一个施耐德电气电源模块组装工厂，形成本土化AI基础设施供应链。政治背景：软银CEO孙正义在马克龙总统主持的"选择法国"（Choose France）峰会上现场签署承诺，马克龙出席见证并将其定性为"法国历史上吸引的最大单笔外资"。软银动机分析：软银此前以Arm持股为核心AI布局，近期通过Stargate项目（联合OpenAI、甲骨文、日本政府）向AI基础设施大规模投资；法国具备廉价清洁电力（核电占比约75%）、成熟数据中心生态和欧盟隐私合规优势，是欧洲AI数据中心最佳选址之一。欧洲AI格局：本次投资是欧洲在与美中两极竞争中争夺AI基础设施主权的重要信号，法国正以"核电优势+主权AI战略"吸引全球AI计算资本，预计将创造数千个高技能就业岗位并带动本土AI生态繁荣。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">SoftBank官方 · CNBC · Euronews · Bloomberg · QZ · Fortune</span>
+          <a class="card-link" href="https://group.softbank/en/news/press/20260531_0" target="_blank" rel="noopener" aria-label="阅读原文：软银法国AI投资官方声明">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="card cat-cn">
+      <div class="card-num">05</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 中国 · Vast融资$2亿成AI独角兽</span>
+          <span class="tag tag-cn">3D生成AI · Tripo Studio · Project Eden世界模型 · 29岁创始人 · 2000万用户</span>
+        </div>
+        <div class="card-title">中国3D生成AI初创公司Vast融资近$2亿成最新AI独角兽：29岁游戏玩家宋西蒙打造Tripo Studio平台全球用户2000万，本月发布Project Eden完整3D世界生成模型——中国垂直生成AI持续攻占全球市场</div>
+        <p class="card-summary">
+          成立于2023年的北京初创公司Vast完成近2亿美元融资，估值突破10亿美元大关，成为中国最新的AI独角兽企业，再次证明中国在垂直生成AI赛道的全球竞争力。Vast公司概况：创始人宋西蒙今年29岁，游戏玩家出身，2023年创立Vast并推出核心产品Tripo Studio——一个允许用户通过文本描述或图片上传，一键生成可用于游戏开发、电影制作、工业设计和数字内容创作的生产级3D模型的AI平台。融资详情：本轮融资由英诺资本（Ince Capital）和中国人寿保险支持的风险基金领投，参与方还包括Genesis Capital以及现有股东Eminence Ventures和Primavera Venture Partners；此次融资将用于扩展模型能力和全球市场扩张。用户与商业模式：Tripo Studio全球注册用户已达2000万，其中最大用户群来自美国，其次是欧洲、日本和韩国——这是罕见的以欧美用户为主要市场的中国AI产品。平台采用订阅制（起步$20/月）加按Token消费计费的混合模式。即将发布：Project Eden——Vast将于本月（6月2026）发布"世界模型"Project Eden，该模型不同于现有的3D资产生成（只生成单个物体），而是能够生成完整的可探索3D环境——即"互动世界"，标志着生成AI从"资产生成"向"世界生成"的重大跨越。商业合作：Vast已与网易游戏旗下角色扮演游戏《燕云十六声》（Where Winds Meet）建立合作，玩家可上传照片即时生成交互式3D头像，在商业落地上走在同类产品前列。行业意义：继Qwen开源生态全球登顶后，Vast的崛起进一步表明中国AI创业公司在全球市场的竞争已从"国内内卷"演变为"全球输出"，垂直生成AI（3D、视频、音频）正成为中国AI新一代出海的主力方向。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Bloomberg · Business Standard · CryptoBriefing · aibucket.io · The Star</span>
+          <a class="card-link" href="https://www.bloomberg.com/news/articles/2026-06-01/gen-z-gamer-s-3d-model-startup-becomes-china-s-latest-ai-unicorn" target="_blank" rel="noopener" aria-label="阅读原文：Bloomberg - Vast中国AI独角兽报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="card cat-model">
+      <div class="card-num">06</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">OpenAI GPT-5.6 · 本月发布概率超80%</span>
+          <span class="tag tag-mod">1.5M token上下文 · 代理工作流升级 · GPT-4.5 6月27日退役</span>
+        </div>
+        <div class="card-title">OpenAI GPT-5.6本月发布概率超80%：ChatGPT Pro用户已观测到1.5M token上下文行为（较GPT-5.5提升43%），代理工作流和多步执行能力大幅升级，GPT-4.5将于6月27日退役——大模型迭代进入"周级竞争"白热化阶段</div>
+        <p class="card-summary">
+          尽管OpenAI尚未正式宣布GPT-5.6，但来自用户行为数据、预测市场和内部泄露信息的多重信号高度一致地显示，新模型将在6月2026年内发布，行业预期其将是过去12个月OpenAI最重要的单次能力跃升。证据汇总：① 预测市场信号——Polymarket和Manifold Markets对GPT-5.6在6月30日前公开发布的概率预测均在80%—89%区间，为今年OpenAI发布预测中最高确信度；② 用户观测——ChatGPT Pro订阅用户报告了与GPT-5.5文档显著不同的上下文窗口行为，实际可用有效上下文推断约为1.5M token，比GPT-5.5的约1.05M提升43%；③ 36氪英文频道披露内部代号泄露：GPT-5.6在OpenAI内部以"Meridian"为代号，被定位为"面向代理工作流的旗舰推理模型"。预期核心能力升级：① 超长上下文推理——有效使用1.5M token上下文（接近整个代码库或完整书籍）进行深度推理，而不仅是形式上支持；② 代理工作流——改善多步规划、错误恢复、工具调用序列和真实计算机环境中的自主执行能力；③ Token效率——相同性能下Token消耗预计降低约20%，对API高频调用场景的运营成本具有重要意义；④ 前端生成——更符合人体工学的用户交互界面自动生成能力。退役计划：GPT-4.5将于2026年6月27日从ChatGPT退役（30天通知期），OpenAI o3将于8月26日退役（90天通知期）——这一连串退役节奏表明OpenAI正在加速收拢产品线，为GPT-5.6腾出主要位置。竞争态势：GPT-5.6的发布将直接与英伟达Cosmos 3、微软MAI模型家族和Gemini 3.5 Flash在代理能力上展开正面竞争。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Geeky-Gadgets · CometAPI · Perplexity AI Magazine · 36Kr · TechnoSports</span>
+          <a class="card-link" href="https://www.geeky-gadgets.com/gpt-5-6-june-2026-release/" target="_blank" rel="noopener" aria-label="阅读原文：GPT-5.6发布预期分析">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 -->
+    <article class="card cat-dev">
+      <div class="card-num">07</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">CVPR 2026 Denver · 6月3—7日</span>
+          <span class="tag tag-dev">ManipArena真实机器人挑战赛 · 20项现实任务 · 物理推理评测</span>
+        </div>
+        <div class="card-title">全球最大计算机视觉大会CVPR 2026丹佛正式开幕（6月3—7日）：ManipArena真实机器人操控挑战赛同步启动，20项现实世界任务全面评测AI物理推理与泛化能力——英伟达Cosmos 3、谷歌DeepMind、微软三足鼎立主导物理AI研究前沿</div>
+        <p class="card-summary">
+          2026年计算机视觉与模式识别大会（CVPR 2026）于6月3日在美国科罗拉多州丹佛会议中心正式开幕，为期5天，这是全球最大、最具影响力的计算机视觉和AI研究年度盛会，也是今年物理AI研究成果最集中的展示舞台。大会规模与背景：CVPR 2026录取率创历史新低，论文竞争异常激烈；今年共有超过1.2万名研究员参会，主题聚焦于"AI赋能机器人操控、自动驾驶和具身智能"。ManipArena挑战赛：CVPR 2026同步启动ManipArena真实机器人操控挑战赛，这是今年最受关注的竞赛项目——① 评测方式——参赛团队需使用真实物理机器人（非仿真）完成20项涵盖日常场景的操控任务，包括：精细抓取（葡萄、鸡蛋等易损物体）、多步骤工具使用（拧螺丝、倒水）、跨场景物体转移和非结构化环境导航；② 评判标准——物理推理准确性、任务完成率、零样本泛化能力（新场景适应）和安全性；③ 参赛阵容——来自斯坦福、MIT、CMU、ETH Zurich、清华、北大的顶尖机器人学团队，以及谷歌DeepMind、英伟达Isaac Lab和微软Research的产业团队。重要论文预览：CVPR 2026收录的主题论文中，物理AI方向论文数量同比增长近3倍，重点包括：基于Cosmos类世界模型的机器人预训练、从人类视频中进行数百万级行为模仿学习、跨形态机器人策略迁移（四足→双足→手臂的能力共享）。行业意义：CVPR不仅是学术研究的橱窗，更是产业落地的风向标。今年大会的物理AI研究密度表明，机器人操控的AI能力正在从"受控环境演示"走向"非结构化现实部署"——2026年CVPR的论文集将成为此后两年机器人产品迭代的技术蓝图。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">CVPR 2026 · Robotics and Automation News · BCG Physical AI Report · NVIDIA Blog</span>
+          <a class="card-link" href="https://cvpr.thecvf.com/Conferences/2026/News/Robotics" target="_blank" rel="noopener" aria-label="阅读原文：CVPR 2026机器人专题">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 -->
+    <article class="card cat-sec">
+      <div class="card-num">08</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-sec">美国扩大AI芯片出口管制</span>
+          <span class="tag tag-sec">中国境外子公司·H200军用大学·实体清单·第三国漏洞</span>
+        </div>
+        <div class="card-title">美国商务部宣布AI芯片出口禁令正式延伸至中国企业境外子公司：同期披露中国7所国防高校寻购英伟达H200——北航、西北工大已在实体清单，新规正式堵死"第三国中转"漏洞</div>
+        <p class="card-summary">
+          美国商务部于6月1日发布政策指引，明确出口管制条例（EAR）中先进AI芯片的出口许可要求，适用于所有母公司或总部位于中国的企业——不论其子公司注册地在哪个国家。这一政策澄清正式堵死了此前存在的"通过在第三国（如新加坡、荷兰、墨西哥）注册的中国企业子公司绕道采购"的漏洞。政策细节：① 覆盖范围——新指引将H100、H200以及其他受管制先进AI芯片的出口许可要求，延伸至所有在中国有实质性控制关系的海外实体，"实质性控制"包括控股超过25%、关键管理人员为中国国籍等多种情形；② 许可豁免取消——此前部分第三国实体可通过"最终用途声明"获得简化许可，新规要求这些企业提交与直接向中国出口相同级别的最终用途证明；③ 执法强化——商务部表示将加大对转口贸易和代理采购的实地核查力度。军用高校H200采购风波：彭博社同期报道，至少7所与中国人民解放军有关联的高校（包括北京航空航天大学、西北工业大学）通过采购记录系统寻购英伟达H200芯片——其中北航和西工大已被美国商务部列入实体清单；该事件提示现行监管仍存在执行层面的漏洞，进一步推动了新指引的出台。中国产业影响：美国芯片出口管制持续收紧，被认为是华为昇腾系列芯片近期在中国AI市场加速渗透的核心推力之一。据业内人士透露，部分中国AI训练集群已将英伟达GPU占比从90%以上降至65%以下，华为昇腾和寒武纪MLU系列的补位速度明显加快。分析师指出：本次政策澄清虽不是新立法，但其实质效果等同于显著缩小了中国企业合规采购先进AI芯片的可行路径，预计将对香港、新加坡等中转枢纽的AI芯片贸易产生直接冲击。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Al Jazeera · Bloomberg · 美国商务部 · France24 · AI Weekly</span>
+          <a class="card-link" href="https://www.aljazeera.com/economy/2026/6/1/us-says-ban-on-ai-chip-shipments-applies-to-chinese-firms-outside-china" target="_blank" rel="noopener" aria-label="阅读原文：Al Jazeera - 美国芯片出口管制延伸报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 09 -->
+    <article class="card cat-ind">
+      <div class="card-num">09</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-ind">Amazon仓库机器人突破百万台</span>
+          <span class="tag tag-ind">Sequoia系统+75%效率 · DeepFleet AI路径优化 · 物理AI商业里程碑</span>
+        </div>
+        <div class="card-title">Amazon仓储机器人机队突破百万台：Sequoia系统提升75%库存识别速度、DeepFleet AI优化运输路径效率10%——物理AI"百万级商业部署"历史里程碑正式开启</div>
+        <p class="card-summary">
+          据英伟达《2026年AI现状报告》等多方数据综合，Amazon的仓储机器人机队规模在6月2026年正式突破百万台，成为全球历史上首家在单一业务场景中部署超过百万台AI驱动机器人的商业企业——这一里程碑被业界普遍视为物理AI从"实验室走向大规模商业化"的分水岭。Sequoia系统：Amazon的Sequoia仓储自动化系统是此次效率突破的核心驱动力。Sequoia通过高密度储位设计+机器人协同识别，将货品从入库到拣选全流程的处理速度提升75%，同时将员工操作伤害风险降低15%。相比Amazon早期的Kiva机器人系统，Sequoia的AI感知和路径规划能力有质的飞跃：机器人可在毫秒级内识别任意角度、包装状态的SKU，并自主规划最优存储位。DeepFleet AI：DeepFleet是Amazon自研的多机器人协同调度AI系统，负责在百万台机器人之间进行实时路径规划和任务分配。据Amazon工程团队披露，DeepFleet将机器人在仓库内的无效行驶（空载移动）减少约10%，在数百个仓库加总后相当于每天节省数百万英里的无效行程，直接降低运营成本并延长设备使用寿命。行业意义：① 验证规模可行性——百万台规模的稳定运行证明物理AI系统可在高频、复杂、动态的真实工业环境中持续可靠工作，消除了此前业界对大规模机器人部署可靠性的顾虑；② 推动成本下行——随着部署规模增大，机器人单位成本持续下降，Amazon目前的机器人部署成本已低于2020年的40%；③ 劳动力结构转变——Amazon在仓储岗位的总员工数并未显著下降，但岗位结构已从"人工搬运"转向"人机协同监管"，AI系统的运维和调度需要新型技术工人。物理AI前景：Amazon的百万台里程碑将成为吸引全球制造商、物流企业和零售商加速引入机器人的强力示范——预计未来18个月内，全球仓储机器人总部署量将突破200万台。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">NVIDIA State of AI 2026 · Amazon官方 · BCG Physical AI · Robotics Center</span>
+          <a class="card-link" href="https://blogs.nvidia.com/blog/state-of-ai-report-2026/" target="_blank" rel="noopener" aria-label="阅读原文：NVIDIA 2026年AI现状报告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card cat-dev">
+      <div class="card-num">10</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">JetBrains 2026开发者调查 · 前端AI工具格局</span>
+          <span class="tag tag-dev">Claude Code职场18%·CSAT 91% · Cursor前端领跑 · 90%开发者在用AI</span>
+        </div>
+        <div class="card-title">JetBrains 2026开发者调查：90%开发者在用AI编程工具、Claude Code半年职场采用率6倍跃升至18%满意度91%位居榜首，前端AI开发Cursor领跑组件生成——"Agent-First"开发模式正式取代"AI辅助"成行业主流</div>
+        <p class="card-summary">
+          JetBrains Research于2026年4月发布《开发者AI工具使用现状》年度报告（数据来自全球2.6万名专业开发者），是目前样本量最大、覆盖最全面的AI编程工具使用调查，揭示了前端开发领域的AI工具格局与行业演进趋势。核心数据：① AI工具普及率——90%的受访开发者在2026年1月已在日常工作中定期使用至少一种AI编程工具，相比2025年同期的71%大幅跃升；② Claude Code的逆袭——Claude Code的职场采用率从2025年4—6月的约3%跃升至2026年1月的18%，半年内增长约6倍，在产品满意度（CSAT 91%）和净推荐分（NPS 54）上均居所有主流AI编程工具榜首；③ Cursor追平GitHub Copilot——Cursor与Claude Code并列职场采用率18%，同期GitHub Copilot仍以约28%的整体覆盖率领先，但在满意度指标上落后于前两者。前端AI开发专项发现：报告专门分析了前端开发场景（React、Vue、Angular、Svelte），结论显示：① 组件生成与UI原型——Cursor因深度集成VS Code前端生态，在JSX/TSX组件生成、样式重构和前端框架迁移场景中表现最强，开发者满意度最高；② 端到端功能开发——Claude Code因其出色的大型代码库理解能力（可跨多个文件追踪组件依赖），在全栈功能开发和前后端联动调试场景中占优；③ 快速原型——v0.dev（Vercel）在从设计稿到落地页的快速原型场景中表现突出，适合营销页面等轻量需求。行业趋势：报告将2026年定性为AI编程从"辅助提效"转向"Agent-First"的元年——越来越多的团队开始将AI代理直接嵌入开发流程，而非仅作为智能补全工具。Claude Code作为最典型的代理编程工具，其满意度领先标志着市场对"代理能力"的偏好正在超越"代码补全速度"。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">JetBrains Research · Replay Blog · Scrimba · DEV Community · Antigravity Lab</span>
+          <a class="card-link" href="https://blog.jetbrains.com/research/2026/04/which-ai-coding-tools-do-developers-actually-use-at-work/" target="_blank" rel="noopener" aria-label="阅读原文：JetBrains 2026 AI工具调查报告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新 · 2026-06-04 09:15 BJT
+</footer>
+
+</body>
+</html>
