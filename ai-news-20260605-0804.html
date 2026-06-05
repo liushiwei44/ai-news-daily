@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 行业快讯 · 2026-06-05 08:04</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f5f7;
+      --surface: #ffffff;
+      --border: #e2e5eb;
+      --text-primary: #0d1117;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --accent: #1d4ed8;
+      --accent-dim: #3b82f6;
+      --radius: 10px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 28px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.06);
+      --c-cn:    #dc2626; --bg-cn:    #fef2f2; --bd-cn:    #fca5a5;
+      --c-model: #0891b2; --bg-model: #ecfeff; --bd-model: #67e8f9;
+      --c-dev:   #7c3aed; --bg-dev:   #f5f3ff; --bd-dev:   #c4b5fd;
+      --c-sec:   #b45309; --bg-sec:   #fffbeb; --bd-sec:   #fcd34d;
+      --c-ind:   #065f46; --bg-ind:   #ecfdf5; --bd-ind:   #6ee7b7;
+      --c-biz:   #be185d; --bg-biz:   #fdf2f8; --bd-biz:   #f9a8d4;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      font-family: "IBM Plex Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(140deg, #060d1f 0%, #0c1f45 38%, #0f3460 65%, #1a4fa8 88%, #1d4ed8 100%);
+      overflow: hidden;
+      padding: 56px 24px 52px;
+      text-align: center;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,179,237,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,179,237,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 640px;
+      height: 380px;
+      background: radial-gradient(ellipse, rgba(56,130,246,0.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-inner { position: relative; z-index: 1; }
+
+    .header-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 18px;
+    }
+    .header-eyebrow .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    header h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    header h1 em { font-style: italic; color: #93c5fd; }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: #93c5fd;
+      opacity: 0.8;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    .header-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; }
+    .header-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #bfdbfe;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 4px 14px;
+      backdrop-filter: blur(4px);
+    }
+
+    main { max-width: 900px; margin: 0 auto; padding: 40px 20px 72px; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .section-count {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--card-accent, #e2e5eb);
+      border-radius: var(--radius);
+      padding: 22px 26px 20px 26px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 18px;
+      align-items: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: card-in 0.45s ease forwards;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-left-color: var(--card-accent, var(--accent-dim));
+    }
+    @keyframes card-in { to { opacity: 1; transform: translateY(0); } }
+    .card:nth-child(1)  { animation-delay: 0.06s; }
+    .card:nth-child(2)  { animation-delay: 0.12s; }
+    .card:nth-child(3)  { animation-delay: 0.18s; }
+    .card:nth-child(4)  { animation-delay: 0.24s; }
+    .card:nth-child(5)  { animation-delay: 0.30s; }
+    .card:nth-child(6)  { animation-delay: 0.36s; }
+    .card:nth-child(7)  { animation-delay: 0.42s; }
+    .card:nth-child(8)  { animation-delay: 0.48s; }
+    .card:nth-child(9)  { animation-delay: 0.54s; }
+    .card:nth-child(10) { animation-delay: 0.60s; }
+
+    .card.cat-cn     { --card-accent: var(--c-cn); }
+    .card.cat-model  { --card-accent: var(--c-model); }
+    .card.cat-dev    { --card-accent: var(--c-dev); }
+    .card.cat-sec    { --card-accent: var(--c-sec); }
+    .card.cat-ind    { --card-accent: var(--c-ind); }
+    .card.cat-biz    { --card-accent: var(--c-biz); }
+
+    .card-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 22px;
+      font-weight: 600;
+      color: #d1d5db;
+      line-height: 1;
+      padding-top: 4px;
+      user-select: none;
+      transition: color 0.2s;
+      letter-spacing: -0.02em;
+    }
+    .card:hover .card-num { color: var(--card-accent, var(--accent-dim)); }
+
+    .card-body { min-width: 0; }
+
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border: 1px solid transparent;
+      line-height: 1.6;
+    }
+    .tag-cn  { color: var(--c-cn);    background: var(--bg-cn);    border-color: var(--bd-cn); }
+    .tag-mod { color: var(--c-model); background: var(--bg-model); border-color: var(--bd-model); }
+    .tag-dev { color: var(--c-dev);   background: var(--bg-dev);   border-color: var(--bd-dev); }
+    .tag-sec { color: var(--c-sec);   background: var(--bg-sec);   border-color: var(--bd-sec); }
+    .tag-ind { color: var(--c-ind);   background: var(--bg-ind);   border-color: var(--bd-ind); }
+    .tag-biz { color: var(--c-biz);   background: var(--bg-biz);   border-color: var(--bd-biz); }
+
+    .card-title {
+      font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.38;
+      margin-bottom: 9px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-source {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 5px 13px;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      background: #eff6ff;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .card-link:hover { background: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+    .card-link svg { transition: transform 0.15s; }
+    .card-link:hover svg { transform: translateX(2px); }
+
+    footer {
+      text-align: center;
+      padding: 28px 20px 36px;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; background: #dbeafe; border-color: #93c5fd; }
+    footer a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card { animation: none; opacity: 1; transform: none; }
+      .header-eyebrow .dot { animation: none; }
+      .card-link svg { transition: none; }
+      .card, .card-link { transition: none; }
+    }
+
+    @media (max-width: 580px) {
+      header { padding: 44px 20px 36px; }
+      .card { grid-template-columns: 1fr; padding: 18px 18px 16px; border-left-width: 2px; }
+      .card-num { display: none; }
+      .card-title { font-size: 16px; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 48px;
+      background: rgba(9, 18, 40, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+    }
+    .nav-back, .nav-pager-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #93c5fd;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      transition: background .15s, color .15s;
+      white-space: nowrap;
+      touch-action: manipulation;
+    }
+    .nav-back:hover, .nav-pager-link:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .nav-back:focus-visible, .nav-pager-link:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
+    .nav-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em;
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+    }
+    .nav-pager { display: flex; gap: 4px; }
+    .nav-pager-link.disabled { opacity: 0.25; pointer-events: none; }
+    body { padding-top: 48px; }
+    @media (max-width: 480px) { .nav-title { display: none; } }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="站点导航">
+  <a class="nav-back" href="index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11 7H3M3 7L7 3M3 7L7 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    返回列表
+  </a>
+  <span class="nav-title" aria-hidden="true">AI 行业快讯</span>
+  <div class="nav-pager">
+    <a class="nav-pager-link" href="ai-news-20260604-0915.html" aria-label="上一期">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M9 3L5 7L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      上一期
+    </a>
+    <a class="nav-pager-link disabled" aria-label="下一期（暂无）" aria-disabled="true" tabindex="-1">
+      下一期
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M5 3L9 7L5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="header-eyebrow" aria-hidden="true">
+      <span class="dot"></span>
+      AI Daily Briefing
+      <span class="dot"></span>
+    </div>
+    <h1>AI 行业快讯 <em>Top 10</em></h1>
+    <p class="header-subtitle">DeepSeek首轮融资$74亿腾讯CATL领投估值$590亿 · Claude Opus 4.8编程速度2.5倍 · Apple WWDC 2026 Siri重构年付$10亿买Gemini · 智谱MiniMax纳入恒生科技指数</p>
+    <div class="header-pills">
+      <span class="header-pill">2026年6月5日</span>
+      <span class="header-pill">北京时间 08:04</span>
+      <span class="header-pill">权威媒体综合整理</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-header">
+    <span class="section-title">本期精选</span>
+    <span class="section-count">10 条重要消息</span>
+  </div>
+
+  <div class="cards">
+
+    <!-- 01 -->
+    <article class="card cat-cn">
+      <div class="card-num">01</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 中国 · DeepSeek首轮外部融资$74亿</span>
+          <span class="tag tag-cn">腾讯 · CATL · 国家AI产业基金 · 估值$590亿 · 梁文锋持股40%</span>
+        </div>
+        <div class="card-title">DeepSeek历史上首次接受外部融资：$74亿目标、估值最高$590亿，腾讯+CATL+国家AI产业投资基金三方联合领投——中国开源AI旗帜公司正式启动加速扩张</div>
+        <p class="card-summary">
+          据彭博社、CNBC等多家媒体于2026年6月3日—4日的报道，中国AI初创公司深度求索（DeepSeek）正在寻求完成其历史上第一轮外部融资，融资规模约74亿美元（人民币约537亿元），公司估值目标在520亿至590亿美元之间。若融资顺利完成，将跻身中国科技史上规模最大的私募融资交易之列。投资方构成与战略含义：① 腾讯控股——互联网巨头出手背书，标志着DeepSeek的开源生态与微信/腾讯云生态进一步深度绑定的战略预期；② 宁德时代（CATL）——全球最大动力电池制造商入局，显示AI与能源/制造产业的跨界布局正成为大型产业资本的战略选项；③ 国家人工智能产业投资基金——国家队直接参与，是北京对DeepSeek作为中国AI"国家队"地位的正式认定，也是国家AI战略资本最近期的一次公开动作；④ 创始人梁文锋本人预计出资约40%，约合30亿美元，体现创始人对公司长期价值的高确信度押注。DeepSeek背景：深度求索由量化对冲基金幻方科技（High-Flyer）孵化，创立初期几乎完全依赖幻方科技的算力与资金，历史上从未接受任何外部战略资本。2025年1月，DeepSeek V3和R1系列模型以媲美美国顶尖闭源模型的性能引发全球震惊，"DeepSeek时刻"成为2025年AI产业最重要的单一事件之一，直接引发英伟达股价单日蒸发5000亿美元市值。此次融资意义：① 资金用途——扩大模型研究规模、增强算力储备（尤其是在美国芯片出口管制持续收紧背景下寻求替代算力来源）、加速商业化；② 估值横向对比——$590亿估值将DeepSeek置于全球AI初创公司估值排行榜前五，低于Anthropic（$9650亿）和OpenAI（估值1万亿+），但高于同期多数欧洲AI公司；③ 中国AI资本化浪潮——继MiniMax、智谱AI港股上市之后，DeepSeek的外部融资是中国AI基础模型公司资本化进程的第三个重要里程碑，表明中国AI头部公司正集体从"研究型"向"资本驱动规模化"的战略转变。路透社援引知情人士称，融资条款仍在商谈中，预计数周内完成交割。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Bloomberg · CNBC · TechStartups · Yahoo Finance · China Money Network</span>
+          <a class="card-link" href="https://www.bloomberg.com/news/articles/2026-06-03/deepseek-close-to-sealing-7-billion-funding-in-historic-ai-deal" target="_blank" rel="noopener" aria-label="阅读原文：Bloomberg - DeepSeek $7.4B融资报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="card cat-model">
+      <div class="card-num">02</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">Anthropic Claude Opus 4.8 正式发布</span>
+          <span class="tag tag-mod">编程速度2.5倍 · 成本降70% · 漏洞检测4倍提升 · AWS托管多代理沙盒</span>
+        </div>
+        <div class="card-title">Anthropic发布Claude Opus 4.8：编程速度较4.7提升2.5倍、运营成本降低70%、代码缺陷检测率提升4倍，配套AWS自托管多代理沙盒平台同步上线——企业级编程代理能力再次大幅跃升</div>
+        <p class="card-summary">
+          Anthropic于2026年6月2日正式发布Claude Opus 4.8，这是Opus 4.x系列中迄今能力最强、性价比最高的版本，同步在Claude Platform on AWS推出托管多代理编排平台（包含webhook、多代理协作和自托管沙盒功能）。核心性能提升：① 编程速度——Claude Opus 4.8在编程任务上比4.7快2.5倍，在Fast模式（推理加速模式）下的输出速度进一步提升，且Fast模式运营成本比上一代同档Fast模式降低了3倍；② 成本结构——Opus 4.8的API调用成本相比4.7降低约70%，使重度API用户（尤其是运行持续代理工作流的企业）的月均AI支出大幅收窄；③ 代码缺陷检测——在内部基准测试中，Opus 4.8遗漏代码缺陷的概率比4.7低约75%（即检测率提升约4倍），尤其在多文件、跨模块的中大型代码库中表现更为突出；④ 协作能力——Anthropic将4.8定位为"更有效的协作者"——不仅能完成任务，还能更主动地识别上下游依赖、提前规避潜在问题，减少人机往返次数。AWS平台配套能力：Anthropic同步上线了基于Claude Platform on AWS的三项企业新功能：a) 托管Webhook——Claude代理可通过标准化webhook接口接收来自第三方服务（Slack、Jira、GitHub等）的实时事件触发；b) 多代理编排——单个任务可由多个专属Claude代理协同完成，支持代理间通信与结果聚合；c) 自托管代码沙盒——企业可在自己的AWS VPC内运行Claude代码执行环境，确保代码执行数据不出网络边界，满足金融、医疗等合规需求。竞争背景：Opus 4.8的发布与OpenAI GPT-5.3-Codex同周（后者同样于近日发布），标志着顶级AI公司在"代理编程"赛道的正面对决进入最激烈阶段。从SWE-bench Verified最新评分来看，Opus 4.8和GPT-5.3-Codex分数差距在2%以内，竞争已到"刀光剑影"地步。开发者可通过Claude API（claude-opus-4-8）或claude.ai Pro/Team/Enterprise立即访问。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Anthropic官方 · TechCrunch · Evrimagaci · Releasebot · Claude API Docs</span>
+          <a class="card-link" href="https://www.anthropic.com/news" target="_blank" rel="noopener" aria-label="阅读原文：Anthropic Claude Opus 4.8发布公告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="card cat-ind">
+      <div class="card-num">03</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-ind">Apple WWDC 2026 · 6月8日开幕</span>
+          <span class="tag tag-ind">Siri史上最大重构 · 谷歌Gemini $10亿/年 · iOS 27 Extensions · Dynamic Island Siri</span>
+        </div>
+        <div class="card-title">Apple WWDC 2026（6月8日开幕）前瞻：Siri全面重构由谷歌定制1.2万亿参数Gemini模型驱动，Apple每年支付谷歌$10亿，iOS 27向Claude/ChatGPT开放第三方Extensions——苹果AI战略从"自研执念"转向"最优整合"历史性决策</div>
+        <p class="card-summary">
+          苹果公司年度全球开发者大会WWDC 2026将于北京时间2026年6月9日凌晨1时开幕（美国太平洋时间6月8日上午10时，San Jose），预计持续6月8日至12日。今年WWDC最核心的看点是苹果AI战略的历史性转向，多家权威媒体（TechCrunch、9to5Mac、MacRumors、Neowin）于大会开幕前披露了关键细节。Siri重构核心内容：① Gemini驱动——苹果已完成与谷歌的商业谈判，将每年向谷歌支付约10亿美元，换取一个专为苹果定制的、参数量达1.2万亿的Gemini模型许可，用于驱动全面重构的Siri；这是苹果有史以来向外部AI供应商支付的最大单笔技术许可费，标志着苹果承认其自研AI模型能力"尚不达标"；② 独立应用——新Siri将以独立App的形式存在，对话界面采用iMessage风格气泡，支持历史对话搜索；③ Dynamic Island整合——新Siri界面将在iPhone的Dynamic Island中触发，点击/长按即弹出带有发光光标的"搜索或询问"提示；④ 混合推理架构——设备端轻量蒸馏模型处理隐私敏感查询（本地不离设备），复杂问题触发安全云端处理，Gemini负责最高难度推理；⑤ 暗色主题——新Siri界面目前仅有深色模式，与WWDC 2026视觉风格（深色渐变）完全对齐。第三方AI Extensions生态：iOS 27将通过新的"Extensions"框架向第三方AI助手开放集成，Claude（Anthropic）、ChatGPT（OpenAI）以及Google Gemini可作为Siri的平行可选项，用户可在搜索栏直接切换使用哪个AI引擎。这意味着苹果将系统级AI入口从"独家把持"改为"开放生态"，是前所未有的战略让步。竞争背景：Google Gemini获得苹果背书后，其月活将直接受益于苹果设备全球17亿活跃用户的分发渠道，这被行业分析师普遍认为将显著强化Gemini相对于OpenAI的商业竞争力。WWDC开幕在即，本期快讯将持续跟踪正式发布动态。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch · 9to5Mac · MacRumors · Neowin · Newsweek · PCQuest</span>
+          <a class="card-link" href="https://techcrunch.com/2026/06/04/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/" target="_blank" rel="noopener" aria-label="阅读原文：TechCrunch WWDC 2026前瞻">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="card cat-cn">
+      <div class="card-num">04</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 中国 · MiniMax M3开源全模态模型</span>
+          <span class="tag tag-mod">MSA稀疏注意力 · 百万Token · 算力1/20 · 超越GPT-5.5与Gemini 3.1 Pro · 5-10%成本</span>
+        </div>
+        <div class="card-title">中国MiniMax M3开源全模态模型发布：自研MSA稀疏注意力架构将百万Token推理算力压缩至前代1/20，性能超越GPT-5.5与Gemini 3.1 Pro，成本仅其5-10%——中国开源模型架构效率再度领跑全球</div>
+        <p class="card-summary">
+          中国AI公司MiniMax于2026年6月1日发布MiniMax M3，这是第一个将"前沿编程与代理性能 + 百万Token上下文窗口 + 原生多模态"三者合一的开源权重模型，并以颠覆性的成本效率在国际AI评测排行榜上超越了GPT-5.5和Gemini 3.1 Pro。MiniMax稀疏注意力（MSA）架构详解：MiniMax M3的核心创新是MiniMax Sparse Attention（MSA）——一种以KV块选择替代全注意力的架构设计。传统Transformer在长上下文下计算复杂度随Token数量平方增长；MSA通过稀疏块选择机制，在百万Token尺度下将每Token的计算量压缩至上一代MiniMax模型的1/20。具体性能表现：预填充（prompt读取）速度提升9.7倍、解码（token生成）速度提升15.6倍，同时在主流推理质量基准上保持与稠密注意力相近的准确度。成本对比：① 推理成本——M3的API定价约为GPT-5.5的5%至10%，在需要处理超长文档（法律合同、代码库、学术论文全文）的企业场景中，运营成本节省极为显著；② 硬件需求——稀疏架构也大幅降低了部署所需的显存，使中等规模企业可在消费级GPU集群上自托管M3。多模态与编程能力：MiniMax M3原生支持文本、图像和视频作为输入，在HumanEval/SWE-bench等代码基准上的得分已超越GPT-5.5，在某些多步骤代理任务上甚至达到与GPT-5.5相当的水平。开源策略的战略价值：继阿里Qwen系列在开源模型生态全球登顶之后，MiniMax M3的发布进一步强化了中国AI公司在开源技术话语权上的地位。中国AI实验室正以"高性能+低成本+开源"的组合策略，系统性地挑战OpenAI、Anthropic等闭源模型的商业模式护城河。MiniMax股票（港交所上市，股价自年初上市以来已涨超300%）在M3发布后的交易日进一步上涨约8%。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">VentureBeat · The Decoder · TechTimes · Lushbinary · OpenRouter</span>
+          <a class="card-link" href="https://venturebeat.com/technology/minimax-m3-debuts-eclipsing-gpt-5-5-and-gemini-3-1-pro-on-key-benchmark-performance-for-just-5-10-of-the-cost" target="_blank" rel="noopener" aria-label="阅读原文：VentureBeat - MiniMax M3发布报道">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 -->
+    <article class="card cat-sec">
+      <div class="card-num">05</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-sec">Anthropic Project Glasswing扩展 · 关键基础设施</span>
+          <span class="tag tag-sec">Claude Mythos · NATO · Okta · 三星 · SK海力士 · 10000+零日漏洞 · 15+国家</span>
+        </div>
+        <div class="card-title">Anthropic将Claude Mythos部署至全球150+关键基础设施组织：NATO、Okta、三星、SK海力士等机构接入Project Glasswing，AI已发现10000+高危零日漏洞，防护覆盖逾1亿人——AI主动防御改写网络安全格局</div>
+        <p class="card-summary">
+          Anthropic于2026年6月2日宣布大幅扩展Project Glasswing安全漏洞发现计划，将Claude Mythos——Anthropic迄今最强大的安全专用AI模型——的访问权限扩展至全球15个以上国家约150个新组织，这些组织主要来自电力、水务、医疗、通信和金融等关键基础设施行业，其产品或服务一旦遭到网络攻击，将直接影响超过1亿用户。合作伙伴代表：本次公布的代表性合作机构包括——北约（NATO）、美国身份安全管理平台Okta、韩国科技巨头三星电子、半导体存储龙头SK海力士、欧盟网络安全局（ENISA）。这些组织的共同特征是：其数字系统承载着高度敏感的国家级或社会级功能，任何重大安全漏洞都具有系统性风险。Claude Mythos能力背景：Mythos是Anthropic为安全任务特别训练和优化的模型，于2026年4月首次向包括美国政府在内的50家初始合作伙伴开放Mythos Preview版本。Mythos的核心安全能力是大规模代码库扫描——可在数周内扫描数千万行代码，自动识别"高危"或"严重"安全缺陷，包括零日漏洞（即尚未公开披露、补丁尚未发布的漏洞）。初步成果：自4月首次开放以来，参与Glasswing的初始50家合作机构已累计通过Mythos发现超过10000个被标记为"高危"或"严重"的安全缺陷，这一数字超出了Anthropic内部团队的预期。后续计划：Anthropic表示将在"数周内"向所有Claude订阅客户开放Mythos级别的模型，但需要在此之前完成一套"防滥用护栏"的构建，以防止恶意行为者利用Mythos进行攻击性漏洞利用。行业影响：Glasswing模式代表了"AI主动防御"的一种新范式——AI不再只是辅助人工分析师，而是以比任何人力团队快数百倍的速度进行自主漏洞挖掘，从而将防御侧的时间优势从月/年压缩至天/周。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch · SecurityWeek · Anthropic官方 · Cybersecurity Dive · WinBuzzer</span>
+          <a class="card-link" href="https://techcrunch.com/2026/06/02/anthropic-scales-claude-mythos-to-critical-infrastructure-in-15-countries/" target="_blank" rel="noopener" aria-label="阅读原文：TechCrunch - Anthropic Mythos扩展至关键基础设施">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 -->
+    <article class="card cat-biz">
+      <div class="card-num">06</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-cn">🇨🇳 中国 · 智谱AI与MiniMax纳入恒生科技指数</span>
+          <span class="tag tag-biz">6月5日生效 · 股票通 · HK$1390亿南向资金 · IPO以来涨逾300%</span>
+        </div>
+        <div class="card-title">智谱AI和MiniMax今日（6月5日）正式纳入恒生科技指数并开启沪深港通资格：预计触发HK$1390亿南向资金涌入，两股自年初港股上市以来均已飙升逾300%——香港正式确立中国AI资本市场主场地位</div>
+        <p class="card-summary">
+          2026年6月5日，恒生指数公司宣布的调整正式生效：中国AI基础模型公司智谱AI（Knowledge Atlas Technology，旗下运营Zhipu AI）和MiniMax Group被纳入恒生科技指数（HSTECH），两支股票同步获得沪深港通南向交易资格。资本流入预期：① Bloomberg Intelligence测算，智谱AI通过股票通可触发最高约HK$920亿（约合118亿美元）的南向被动与主动资金买入；② MiniMax预计吸引最高HK$470亿（约合60亿美元）南向资金；③ 合计约HK$1390亿，相当于这两家公司当前总市值的约35—40%，是近年来港股单次调整触发的最大预期资金流入之一。股价表现回顾：智谱AI和MiniMax均于2026年1月在香港交易所挂牌，当时均受到超额认购，上市首日均录得超过100%涨幅。截至6月5日，两股相对各自IPO价格的涨幅均超过300%。智谱AI母公司同时旗下运营的GLM-4系列模型已进入全球LM Arena排行榜前15；MiniMax则因其6月1日发布的M3模型在国际基准上超越GPT-5.5而获得广泛关注。港股AI生态意义：MiniMax和智谱的成功上市是2026年迄今"中国AI资本化"最重要的两个节点，两公司的市值膨胀正在为整个港股AI板块注入流动性与信心。此次纳入科技指数并开通内地资金渠道，将进一步拉低中国内地机构和个人投资者在境内渠道参与全球AI资产的门槛。分析师指出：随着DeepSeek即将完成74亿美元一级市场融资，以及MiniMax/智谱进入恒生指数，中国AI行业"一级市场—二级市场—国际资本"全链条打通，正在加速形成。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">SCMP · Bloomberg · IndiaInfoline · Moomoo · IndexBox · YuanTalks</span>
+          <a class="card-link" href="https://www.scmp.com/business/china-business/article/3354580/china-ai-firms-zhipu-minimax-join-hong-kongs-hang-seng-tech-index" target="_blank" rel="noopener" aria-label="阅读原文：SCMP - 智谱MiniMax纳入恒生科技指数">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 -->
+    <article class="card cat-dev">
+      <div class="card-num">07</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">AI三层编程协议栈自发形成 · Cursor + Claude Code + Codex</span>
+          <span class="tag tag-dev">Cursor日常编辑 · Claude Code架构重构 · Codex跨天自动化 · 90%高速团队同时用两种以上</span>
+        </div>
+        <div class="card-title">Cursor+Claude Code+Codex自发形成三层AI编程"协议栈"：Cursor负责日常编辑·Claude Code处理多文件架构·Codex执行跨天无人值守任务——高速研发团队90%同时使用两个以上工具，"选哪个"争论正式终结</div>
+        <p class="card-summary">
+          The New Stack、Pragmatic Engineer等技术媒体于2026年6月初的深度分析报告揭示了一个正在成为业界共识的现象：Cursor、Claude Code和OpenAI Codex三款顶级AI编程工具并未如预期中走向"赢家通吃"，而是自发演化出了分工明确的三层协议栈结构，开发团队正在以叠加而非替代的方式使用它们。三层协议栈结构：① 编辑层（Cursor）——Cursor 3.3作为VS Code分支，在"内联AI编辑"和"日常feature开发"场景中占据主导，尤其受前端开发者青睐：其在JSX/TSX组件生成、CSS-in-JS重构、Next.js页面迁移等场景的交互体验无工具可及；Cursor内置的Bugbot还可在提交前自动扫描新增代码的逻辑漏洞；② 架构层（Claude Code）——Claude Code凭借对大型代码库的深度理解（跨文件追踪组件依赖、理解多层抽象逻辑）在"架构重构"和"全栈功能开发"场景中占优，当需要同时改动10+文件、涉及前后端接口协商或数据库schema变更时，Claude Code的综合推理能力明显优于竞品；③ 自动化层（Codex）——OpenAI Codex（GPT-5.3-Codex）负责"跨天自动化任务"，在云端可并发运行多个代理，支持1000+步骤无人工干预的复杂工作流（如批量测试重构、依赖升级、跨仓库重命名等），适合"设置任务+次日查结果"的异步工作模式。前端开发含义：对于前端开发者而言，这一三层栈意味着：日常组件开发和UI微调用Cursor（速度快、IDE原生）；前后端接口设计、状态管理重构和性能优化用Claude Code（推理深、理解全局）；CI/CD流水线维护、组件库版本升级用Codex（批量自动化、无需实时监控）。模型已不是核心差异因素：分析报告的核心结论是——在SWE-bench Verified上，三款工具的领先分数已收窄至2%以内，"哪个模型更强"已不再是选择依据；真正的竞争维度已转向工作流整合、审批模型和分发渠道。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">The New Stack · Pragmatic Engineer · Digital Applied · AIBucket.io · DEV Community</span>
+          <a class="card-link" href="https://thenewstack.io/ai-coding-tool-stack/" target="_blank" rel="noopener" aria-label="阅读原文：The New Stack - AI编程栈融合分析">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 -->
+    <article class="card cat-dev">
+      <div class="card-num">08</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-dev">Vercel v0 用户突破600万 · 前端AI工具里程碑</span>
+          <span class="tag tag-dev">全栈Next.js沙箱 · Git PR集成 · Supabase · Token计费 · 设计师直接发布生产代码</span>
+        </div>
+        <div class="card-title">Vercel v0用户突破600万：全栈Next.js沙箱+Git PR直通生产部署+Supabase数据库集成正式上线——AI前端原型工具完成从"UI生成器"到"全栈生产工具"的跨越，设计师和产品经理可绕过工程师独立发布代码</div>
+        <p class="card-summary">
+          Vercel旗下AI前端生成工具v0于2026年2月完成重大版本升级，并于近期公布平台注册用户突破600万这一里程碑数据。这一系列更新标志着v0从"AI UI组件生成器"完成了向"全栈生产工具"的关键跃升，彻底改变了前端开发的角色分工。2026版核心新功能：① 全栈Next.js沙盒——v0的画布环境现已升级为完整的Next.js App Router全栈开发环境，支持在同一个对话上下文中创建API Routes、Server Actions、中间件和数据库读写操作；这意味着开发者无需离开v0就可以构建并测试端到端的完整应用功能，而不仅是前端页面；② Git PR集成——v0为每次对话生成一个独立的Git分支，可直接向主干发起Pull Request，并在PR合并时触发Vercel自动部署；这让非工程师角色（设计师、产品经理）也能遵循正规的代码审查流程贡献生产代码；③ Supabase数据库集成——通过内置的Supabase连接器，v0可直接在对话中执行数据库CRUD操作，包括建表、查询和权限配置，无需单独打开Supabase控制台；④ Figma导入——高级计划支持直接从Figma导入设计稿，AI自动生成对应的React/Tailwind CSS组件，设计到代码交付时间从"数小时"压缩至"数分钟"。Token计费模式：v0在2026年2月同步切换为Token计费模式（类似LLM API），告别固定额度限制，精确按生成复杂度计费，重度用户月均成本显著下降。前端开发工作流革命：分析人士指出，v0 2026版代表了AI工具从"辅助编程"向"替代低复杂度前端工程"的明确跃进——对于营销落地页、管理后台、内部工具等场景，产品和设计可以完全通过v0自主完成从需求到上线的全流程，绕过传统前端开发排期。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">Vercel官方 · NxCode · MakeAnAppLike · Taskade · WeavAI · Automation Atlas</span>
+          <a class="card-link" href="https://vercel.com/blog/introducing-the-new-v0" target="_blank" rel="noopener" aria-label="阅读原文：Vercel v0全面升级官方公告">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 09 -->
+    <article class="card cat-model">
+      <div class="card-num">09</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-mod">OpenAI GPT-5.3-Codex · 代理编程里程碑</span>
+          <span class="tag tag-mod">Mac全应用自主控制 · 1000+步骤无人干预 · 内置浏览器 · Gartner代理编程领导者 · 430万周活用户</span>
+        </div>
+        <div class="card-title">OpenAI GPT-5.3-Codex发布：可自主控制Mac全部应用（后台计算机使用），1000+步骤全程无人工干预，内置浏览器支持前端页面直接标注指令——Gartner认定OpenAI为企业级代理编程象限"领导者"，430万开发者周活</div>
+        <p class="card-summary">
+          OpenAI于近期发布GPT-5.3-Codex，这是Codex代理编程系列目前能力最强的版本，相较于GPT-5.2-Codex在代理执行能力上实现了质的飞跃——从"能写代码的模型"升级为"能控制计算机完成几乎所有开发者日常工作的自主代理"。后台计算机控制（Background Computer Use）：GPT-5.3-Codex现支持在Mac环境下的后台计算机使用——Codex可以在用户工作的同时，以独立光标在后台并行操作计算机上的任意应用（浏览器、Xcode、终端、Figma、Slack等），无需用户切换窗口或暂停工作；多个Codex代理可同时在同一台Mac上并行工作而互不干扰。1000+步骤自主执行：OpenAI公开了Codex在真实软件工程任务上的测试数据：在完整的软件开发任务上（包括代码理解→重构→测试→调试→PR提交），GPT-5.3-Codex可自主完成超过1000个连续工具调用，全程无需人工干预。内置浏览器+前端标注：Codex应用现内置了一个完整的浏览器环境，开发者可以在页面上直接用注释标注UI问题或需求（类似在截图上画圈），Codex会基于这些视觉标注精准修改对应的前端代码——这对前端开发和游戏开发尤其实用。Gartner企业认定：OpenAI被Gartner评定为2026年"企业AI代理编程"Magic Quadrant的领导者，Codex目前拥有超过430万周活开发者用户。速度与成本：GPT-5.3-Codex相较5.2-Codex速度提升约25%，API调用成本持平，使现有集成用户的使用成本比即将退役的o3-based Codex降低约20%。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">OpenAI官方 · NVIDIA Blog · IntuitionLabs · MindStudio · Tosea.ai</span>
+          <a class="card-link" href="https://openai.com/index/codex-for-almost-everything/" target="_blank" rel="noopener" aria-label="阅读原文：OpenAI Codex for Almost Everything">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card cat-ind">
+      <div class="card-num">10</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag tag-ind">SAP Sapphire 2026 · Joule Studio GA</span>
+          <span class="tag tag-ind">200+企业代理 · LangChain/LlamaIndex原生 · 6月首批生产部署 · "自治企业"战略</span>
+        </div>
+        <div class="card-title">SAP Sapphire 2026发布Joule Studio全量版（GA）：200+企业级专属AI代理覆盖财务/HR/供应链，支持LangChain/LlamaIndex/n8n原生开发，6月起首批企业生产环境部署——全球最大ERP平台全面拥抱"自治企业"战略</div>
+        <p class="card-summary">
+          在2026年5月举行的SAP Sapphire年度大会上，SAP宣布Joule Studio进入全面可用（General Availability）状态，首批生产客户于2026年6月起正式开始迁移，标志着全球最大企业管理软件平台正式宣告进入"自治企业"（Autonomous Enterprise）时代。Joule Studio核心能力：① 200+专属AI代理——SAP发布了涵盖核心HR（招聘、入职、绩效、薪酬、学习发展）、Finance（财务对账、预算预测、应收应付自动化）、Supply Chain（库存优化、供应商评估、物流调度）的超过200个即用型AI代理；② 企业数据原生接地——这些代理的独特优势在于与SAP系统的深度语义绑定——代理可直接访问SAP S/4HANA、SuccessFactors、Ariba中的实时业务数据，无需ETL管道或数据复制；③ Pro-Code框架支持——Joule Studio 2.0支持LangChain、LlamaIndex、Pydantic AI等主流代理框架，企业可构建自定义代理并将其嵌入现有的SAP工作流；同时内嵌了n8n可视化多代理编排界面，让非工程师的业务分析师也能设计代理流程；④ 免费设计时访问——2026年底前，SAP合作伙伴和客户可免费获得Joule Studio的设计时访问权限（公平使用限制内），大幅降低企业试用门槛。战略背景：SAP此前已推出Joule作为对话式AI助手，但Joule Studio代表了从"对话辅助"到"自主执行"的质变——代理不再等待用户提问，而是主动监控业务事件（如订单超期、库存预警、合同到期）并自主触发处理流程。对SAP客户的实际影响：SAP拥有超过4.5万家企业客户，运行着全球35%以上的企业ERP交易数据，Joule Studio的全量上线意味着数以百计的财务、HR和供应链自动化场景在2026年下半年将大规模落地，这是AI在企业后台系统渗透速度最快的一次。
+        </p>
+        <div class="card-footer">
+          <span class="card-source">SAP News Center · SAPinsider · SiliconANGLE · Constellation Research · SAP Community</span>
+          <a class="card-link" href="https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/" target="_blank" rel="noopener" aria-label="阅读原文：SAP Sapphire 2026自治企业战略官方发布">
+            阅读原文
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M2 9L9 2M9 2H4M9 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  由 <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> 自动整理 · 每日更新 · 2026-06-05 08:04 BJT
+</footer>
+
+</body>
+</html>
